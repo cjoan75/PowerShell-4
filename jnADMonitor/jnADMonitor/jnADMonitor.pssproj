@@ -27,7 +27,15 @@
   </PropertyGroup>
   <ItemGroup />
   <ItemGroup>
+    <Compile Include="Get-jnADCSStatus-v3.ps1" />
+    <Compile Include="Get-jnADDSStatus-v3.ps1" />
+    <Compile Include="Get-jnDHCPStatus-v3.ps1" />
+    <Compile Include="Get-jnDNSStatus-v3.ps1" />
+    <Compile Include="Get-jnRADIUSStatus-v3.ps1" />
     <Compile Include="jnADMonitor.ps1" />
+    <Compile Include="Set-CredentialFile.ps1" />
+    <Compile Include="Set-TrustedHosts.ps1" />
+    <Compile Include="Test-jnConnection-v3.ps1" />
   </ItemGroup>
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
   <Target Name="Build" />
