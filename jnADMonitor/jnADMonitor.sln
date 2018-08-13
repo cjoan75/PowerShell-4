@@ -5,6 +5,8 @@ VisualStudioVersion = 15.0.27703.2035
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{F5034706-568F-408A-B7B3-4D38C6DB8A32}") = "jnADMonitor", "jnADMonitor\jnADMonitor.pssproj", "{6CAFC0C6-A428-4D30-A9F9-700E829FEA51}"
 EndProject
+Project("{F5034706-568F-408A-B7B3-4D38C6DB8A32}") = "jnADMonitor-v3", "jnADMonitor-v3\jnADMonitor-v3.pssproj", "{5D9CE98B-7F2D-4CEB-AEC8-B464DAE908FC}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -15,6 +17,10 @@ Global
 		{6CAFC0C6-A428-4D30-A9F9-700E829FEA51}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{6CAFC0C6-A428-4D30-A9F9-700E829FEA51}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{6CAFC0C6-A428-4D30-A9F9-700E829FEA51}.Release|Any CPU.Build.0 = Release|Any CPU
+		{5D9CE98B-7F2D-4CEB-AEC8-B464DAE908FC}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{5D9CE98B-7F2D-4CEB-AEC8-B464DAE908FC}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{5D9CE98B-7F2D-4CEB-AEC8-B464DAE908FC}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{5D9CE98B-7F2D-4CEB-AEC8-B464DAE908FC}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
