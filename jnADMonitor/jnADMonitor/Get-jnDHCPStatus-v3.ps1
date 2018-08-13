@@ -310,7 +310,7 @@ param (
 	[Parameter(Mandatory=$True)][array]$Data
 )
 	
-	$procName = "IF_ProblemManagement2"
+	$procName = "IF_ProblemManagement"
 	
 	$cmd = new-object "System.Data.SqlClient.SqlCommand" 
 	$cmd.CommandType = [System.Data.CommandType]::StoredProcedure 
@@ -683,7 +683,7 @@ param (
     [Parameter(Mandatory=$True)][array]$Data
 )
 	
-	$ProcName = "IF_ProblemManagement2"	
+	$procName = "IF_ProblemManagement"	
 
 	$cmd = new-object "System.Data.SqlClient.SqlCommand" 
 	$cmd.CommandType = [System.Data.CommandType]::StoredProcedure 
@@ -1496,7 +1496,7 @@ param (
 	[Parameter(Mandatory=$True)][array]$Data
 )
 	
-	$procName = "IF_ProblemManagement2"
+	$procName = "IF_ProblemManagement"
 	
 	$cmd = new-object "System.Data.SqlClient.SqlCommand" 
 	$cmd.CommandType = [System.Data.CommandType]::StoredProcedure 
