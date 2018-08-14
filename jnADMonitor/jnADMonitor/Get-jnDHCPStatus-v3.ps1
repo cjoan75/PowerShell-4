@@ -7,7 +7,8 @@
 
 $ServiceFlag = "DHCP"
 $DomainName = $ManagedServerFQDN.SubString($ManagedServerFQDN.IndexOf(".")+1)
-$FilePath = "$env:USERPROFILE\Documents\$($userPrincipalName).cred"
+#$FilePath = "$env:USERPROFILE\Documents\$($userPrincipalName).cred"
+$FilePath = "C:\Users\AdMonAdm\Documents\ADMON\v3\$($userPrincipalName).cred"
 if (Test-Path $FilePath)
 {
 	$credential = Import-Clixml -Path $FilePath

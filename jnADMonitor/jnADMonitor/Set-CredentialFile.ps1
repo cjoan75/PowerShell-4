@@ -19,7 +19,7 @@ if ($PSVersionTable.PSVersion.Major -ge 3)
 		$pwd = ConvertTo-SecureString $ht.pwd -AsPlainText -Force
 		$credential = New-Object -TypeName System.Management.Automation.PSCredential -ArgumentList $ht.upn, $pwd
 	
-		$FilePath = "$env:USERPROFILE\Documents\$($ht.upn).cred"
+		$FilePath = "$env:USERPROFILE\Documents\ADMON\v3\$($ht.upn).cred"
 		if ($credential) {$credential | Export-CliXml $FilePath}
 		Write-Host (ls $FilePath)
 	}
