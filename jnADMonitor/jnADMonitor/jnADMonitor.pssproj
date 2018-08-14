@@ -26,9 +26,6 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
-    <Folder Include="TaskScheduler\" />
-  </ItemGroup>
-  <ItemGroup>
     <Compile Include="Get-jnADCSStatus-v3.ps1" />
     <Compile Include="Get-jnADDSStatus-v3.ps1" />
     <Compile Include="Get-jnDHCPStatus-v3.ps1" />
@@ -37,6 +34,12 @@
     <Compile Include="Set-CredentialFile.ps1" />
     <Compile Include="Set-TrustedHosts.ps1" />
     <Compile Include="Test-jnConnection-v3.ps1" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="NewFolder1\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="NewFolder1\Test-jnConnection-v3.xml" />
   </ItemGroup>
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
   <Target Name="Build" />
