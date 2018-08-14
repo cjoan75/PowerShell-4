@@ -1241,8 +1241,9 @@ try {
 								$hash.OperatingSystemServicePack = $OS.ServicePackMajorVersion.ToString()
 								$hash.PSVersion = $PSVersionTable.PSVersion.Major
 								$hash.jnUTCMonitored = (Get-Date).ToUniversalTime()
+
 								$hash.IsError = $False
-						
+
 								<# CERTUTIL -CAINFO Name: Display CA name
 									
 								certutil -CAInfo name
@@ -1422,7 +1423,12 @@ try {
 								
 								gci Cert:\Localmachine\ -Recurse| ? {$_.Subject -like "CN=$($hash.CAName)*"} | sort Thumbprint -unique | select NotAfter, Subject | ft -a
 								
-[lgeadpmse1q.lge.net]: PS C:\Users\TEMP.LGE.001\Documents> invoke-command -cn BSNDR10-DC11 -script {gci Cert:\Localmachine\ -Recurse | ? {$_.Subject -like "CN=lgeissuingca6*"} | select * -first 1 }
+[lgeadpmse1q.lge.net]: PS C:\Users\TEMP.LGE.001\Documents> 
+$session = New-PSSession -cn BSNDR10-DC11.lge.net
+$buf = invoke-command -Session $session -script {
+	gci Cert:\Localmachine\ -Recurse | ? {$_.Subject -like "CN=lgeissuingca6*"} | sort Thumbprint -unique | sort NotAfter -Descending
+}
+$buf.CACertificate.NotAfter.ToString("yyyyMMdd-HHmmss") + "`t" + $buf.IsCACertExpiringIndays
 
 
 PSPath             : Microsoft.PowerShell.Security\Certificate::Localmachine\CA\4CC456549008464C58E78442F29935F157D6C31
@@ -1461,8 +1467,15 @@ PSShowComputerName : True
 								if (! $buf)
 								{
 									$hash.IsError = $True
-									$hash.CACertificate = $null
 								} else {
+									#$buf.NotAfter	<<< sets IsError to TRUE, if .NotAfter is less than last specified days.
+									$hash.IsCACertExpiringInDays = $False
+									if ($buf.NotAfter -lt (Get-Date).AddDays(1 * 7))
+									{
+										$hash.IsCACertExpiringInDays = $True
+										$hash.IsError = $True
+									}
+
 									$hash.CACertificate = $buf
 								}
 								Write-Debug -Message "`$buf: $($buf)"
@@ -1754,8 +1767,13 @@ param (
 				$CrlPublishStatus = $data[$i].CrlPublishStatus
 				$DeltaCrlPublishStatus = $data[$i].DeltaCrlPublishStatus
 
-				$ProbScrp = "CAName(" + $data[$i].CAName + "); DNSName(" + $data[$i].DNSName + "); CAType(" + $data[$i].CAType + "); PingAdmin(" + $PingAdmin + "); Ping(" + $Ping + "); CrlPublishStatus(" + $CrlPublishStatus + "); DeltaCrlPublishStatus(" + $DeltaCrlPublishStatus + ")"
-		
+				if ($data[$i].IsCACertExpiringInDays)
+				{
+					$ProbScrp = "CACertExpiringIn($($data[$i].CACertificate.NotAfter.ToString("yyyy-MM-dd HH:mm:ss"))): $($data[$i].CACertificate.Subject)"
+				} else {
+					#$ProbScrp = "CAName(" + $data[$i].CAName + "); DNSName(" + $data[$i].DNSName + "); CAType(" + $data[$i].CAType + "); PingAdmin(" + $PingAdmin + "); Ping(" + $Ping + "); CrlPublishStatus(" + $CrlPublishStatus + "); DeltaCrlPublishStatus(" + $DeltaCrlPublishStatus + ")"
+					$ProbScrp = "CAName($($data[$i].CAName)); DNSName($($data[$i].DNSName)); CAType($($data[$i].CAType)); PingAdmin($($PingAdmin)); Ping($($Ping)); CrlPublishStatus($($CrlPublishStatus)); DeltaCrlPublishStatus($($DeltaCrlPublishStatus))"
+				}
 				$SQLParameter1 = New-Object System.Data.SqlClient.SqlParameter("@MonitoredTime", $Data[$i].jnUTCMonitored)
 				$SQLParameter2 = New-Object System.Data.SqlClient.SqlParameter("@Company", $DomainName)
 				$SQLParameter3 = New-Object System.Data.SqlClient.SqlParameter("@ADService", "ADCS")
@@ -1778,6 +1796,7 @@ param (
 				$cmd.Connection.Close()
 				$rowcount +=  1
 			}
+
 		} # End of for.
 
 		if ($rowcount) {Write-Host "[ProblemManagement] inserted: $($rowcount)" -fore yellow}
