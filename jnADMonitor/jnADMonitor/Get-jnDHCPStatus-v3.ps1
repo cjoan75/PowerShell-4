@@ -1285,7 +1285,7 @@ try {
 								if (Test-Path $FilePath)
 								{
 									$hash.ClientExists = $True
-									$buf = & $FilePath --Query --Quiet --timeout 30 --tries 1
+									$buf = & $FilePath --Query --Quiet --tries 1
 									if ($buf) {$hash.IsAvailableByClient = $True}
 									else {
 										# Determines the service availability for DHCP Lease.

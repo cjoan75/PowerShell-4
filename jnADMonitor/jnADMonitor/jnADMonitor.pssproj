@@ -39,6 +39,14 @@
   <ItemGroup>
     <Folder Include="TaskScheduler\" />
   </ItemGroup>
+  <ItemGroup>
+    <Content Include="TaskScheduler\ADCS-v3.xml" />
+    <Content Include="TaskScheduler\ADDS-v3.xml" />
+    <Content Include="TaskScheduler\Connection-v3.xml" />
+    <Content Include="TaskScheduler\DHCP-v3.xml" />
+    <Content Include="TaskScheduler\DNS-v3.xml" />
+    <Content Include="TaskScheduler\RADIUS-v3.xml" />
+  </ItemGroup>
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
   <Target Name="Build" />
   <Import Project="$(MSBuildExtensionsPath)\PowerShell Tools for Visual Studio\PowerShellTools.targets" Condition="Exists('$(MSBuildExtensionsPath)\PowerShell Tools for Visual Studio\PowerShellTools.targets')" />
