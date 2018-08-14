@@ -404,11 +404,11 @@ try {
 			if (! $data[$i].CanPing)
 				{$SQLParameter6 = New-Object System.Data.SqlClient.SqlParameter("@CanPing", "Null")}
 			else {$SQLParameter6 = New-Object System.Data.SqlClient.SqlParameter("@CanPing", $data[$i].CanPing.Tostring())}
-
+			<#
 			if (! $data[$i].CanPort135)
 				{$SQLParameter3 = New-Object System.Data.SqlClient.SqlParameter("@CanPort135", "Null")}
 			else {$SQLParameter3 = New-Object System.Data.SqlClient.SqlParameter("@CanPort135", $data[$i].CanPort135.Tostring())}
-
+			#>
 			if (! $data[$i].CanPort5985)
 				{$SQLParameter2 = New-Object System.Data.SqlClient.SqlParameter("@CanPort5985", "Null")}
 			else {$SQLParameter2 = New-Object System.Data.SqlClient.SqlParameter("@CanPort5985", $data[$i].CanPort5985.Tostring())}
@@ -418,7 +418,7 @@ try {
 			[void]$cmd.Parameters.Add($SQLParameter4)
 			[void]$cmd.Parameters.Add($SQLParameter5)
 			[void]$cmd.Parameters.Add($SQLParameter6)
-			[void]$cmd.Parameters.Add($SQLParameter3)
+			#[void]$cmd.Parameters.Add($SQLParameter3)
 			[void]$cmd.Parameters.Add($SQLParameter2)
 
 			Write-Debug -Message "ConnectionString: $($cmd.Connection.ConnectionString)."
