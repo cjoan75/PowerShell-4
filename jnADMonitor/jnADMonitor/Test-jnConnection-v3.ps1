@@ -15,7 +15,7 @@ if (Test-Path $FilePath)
 	$jnUTCMonitored = (Get-Date).ToUniversalTime().ToString("yyyyMMddTHHmmss")
 	$Message = "$($jnUTCMonitored): ERROR: The credential file not found: $FilePath"
 
-	Insert-MonitoringTaskLogs -TaskType BEGIN -ServiceType $ServiceFlag -jnUTCMonitored $jnUTCMonitored -TaskScript $Message
+	Insert-MonitoringTaskLogs -TaskType BEGIN -ServiceType $ServiceFlag -jnUTCMonitored $jnUTCMonitored -DomainName $DomainName -TaskScript $Message
 }
 Write-Host "`nReady for $($ManagedServerFQDN) (logged on as $($credential.UserName))`n"
 
@@ -28,12 +28,12 @@ if ($Servers)
 	$jnUTCMonitored = (Get-Date).ToUniversalTime().ToString("yyyyMMddTHHmmss")
 	$Message = "$($jnUTCMonitored): ERROR: No servers returned."
 
-	Insert-MonitoringTaskLogs -TaskType END -ServiceType $ServiceFlag -jnUTCMonitored $jnUTCMonitored -TaskScript $Message
+	Insert-MonitoringTaskLogs -TaskType END -ServiceType $ServiceFlag -jnUTCMonitored $jnUTCMonitored -DomainName $DomainName -TaskScript $Message
 }
 
 # Log the BEGIN time as GMT.
 $jnUTCMonitored = (Get-Date).ToUniversalTime()
-Insert-MonitoringTaskLogs -TaskType BEGIN -ServiceType $ServiceFlag -jnUTCMonitored $jnUTCMonitored
+Insert-MonitoringTaskLogs -TaskType BEGIN -ServiceType $ServiceFlag -jnUTCMonitored $jnUTCMonitored -DomainName $DomainName
 
 # Get connection status.
 
@@ -196,7 +196,7 @@ Catch {
 	$Message = "$($jnUTCMonitored): ERROR: $($Error[0])"
 
 	# Log the END time as GMT.
-	Insert-MonitoringTaskLogs -TaskType END -ServiceType $ServiceFlag -jnUTCMonitored $jnUTCMonitored -TaskScript $Message
+	Insert-MonitoringTaskLogs -TaskType END -ServiceType $ServiceFlag -jnUTCMonitored $jnUTCMonitored -DomainName $DomainName -TaskScript $Message
 }
 Finally {
 		
@@ -436,7 +436,7 @@ Catch {
 	$Message = "$($jnUTCMonitored): ERROR: $($Error[0])"
 
 	# Log the END time as GMT.
-	Insert-MonitoringTaskLogs -TaskType END -ServiceType $ServiceFlag -jnUTCMonitored $jnUTCMonitored -TaskScript $Message
+	Insert-MonitoringTaskLogs -TaskType END -ServiceType $ServiceFlag -jnUTCMonitored $jnUTCMonitored -DomainName $DomainName -TaskScript $Message
 }
 Finally {
 		
@@ -450,5 +450,5 @@ if ($myResult) {Insert-Connection -Data $myResult}
 
 # Log the END time as GMT.
 $jnUTCMonitored = (Get-Date).ToUniversalTime()
-Insert-MonitoringTaskLogs -TaskType END -ServiceType $ServiceFlag -jnUTCMonitored $jnUTCMonitored
+Insert-MonitoringTaskLogs -TaskType END -ServiceType $ServiceFlag -jnUTCMonitored $jnUTCMonitored -DomainName $DomainName
 

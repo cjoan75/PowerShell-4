@@ -316,6 +316,9 @@ param (
 	, [Parameter(Mandatory=$True)][ValidateSet("SERVERS", "CONNECT", "ADDS", "ADCS", "DNS", "DHCP", "RADIUS", "HEALTH")]
 	[string]$ServiceType
 	
+	, [Parameter(Mandatory=$True)]
+	[string]$DomainName
+
 	, [string]$TaskScript
 )
 
