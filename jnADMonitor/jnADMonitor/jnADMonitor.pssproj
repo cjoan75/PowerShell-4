@@ -34,12 +34,10 @@
     <Compile Include="Set-CredentialFile.ps1" />
     <Compile Include="Set-TrustedHosts.ps1" />
     <Compile Include="Test-jnConnection-v3.ps1" />
+    <Compile Include="TaskScheduler\test.ps1" />
   </ItemGroup>
   <ItemGroup>
-    <Folder Include="NewFolder1\" />
-  </ItemGroup>
-  <ItemGroup>
-    <Content Include="NewFolder1\Test-jnConnection-v3.xml" />
+    <Folder Include="TaskScheduler\" />
   </ItemGroup>
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
   <Target Name="Build" />
