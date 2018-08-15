@@ -1,0 +1,47 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<PSInfo>
+  <Items>
+    <Item Domain="LGE.NET">
+      <Company>LG Electronics</Company>
+      <Server>LGEADPMSE3Q</Server>
+      <Admuser><![CDATA[Monitor_admin]]></Admuser>
+      <Admpwd><![CDATA[@lgeuser@#]]></Admpwd>
+    </Item>
+    <Item Domain="LGDISPLAY.GLOBAL">
+      <Company>LG Display</Company>
+      <Server>LGDIADP001P</Server>
+      <Admuser><![CDATA[monitor_admin_lgd]]></Admuser>
+      <Admpwd><![CDATA[LGD@dmin1!]]></Admpwd>
+    </Item>
+    <Item Domain="LGCHEM.COM">
+      <Company>LG Chemistry</Company>
+      <Server>LCHADDCHQ1</Server>
+      <Admuser><![CDATA[monitor_admin_lgc]]></Admuser>
+      <Admpwd><![CDATA[lgchem2014]]></Admpwd>
+    </Item>
+    <Item Domain="CORP.LGCNS.COM">
+      <Company>LGCNS U-cloud</Company>
+      <Server>LCNPSDC01</Server>
+      <Admuser><![CDATA[monitor_admin_ucloud]]></Admuser>
+      <Admpwd><![CDATA[#fhzjf01]]></Admpwd>
+    </Item> 
+    <Item Domain="LGCLOUD.COM">
+      <Company>LGCNS P-cloud</Company>
+      <Server>LCNSCPDC00</Server>
+      <Admuser><![CDATA[monitor_admin_pcloud]]></Admuser>
+      <Admpwd><![CDATA[#fhzjf01]]></Admpwd>
+    </Item>
+    <Item Domain="HIPLAZA.NET">
+      <Company>LG Hiplaza</Company>
+      <Server>HIPAADDC01</Server>
+      <Admuser><![CDATA[monitor_admin_hip]]></Admuser>
+      <Admpwd><![CDATA[!qaz2wsx3e]]></Admpwd>
+    </Item>
+    <Item Domain="CORP.LGERICSSON.COM">
+      <Company>LG Nortel</Company>
+      <Server>LESPVDC01</Server>
+      <Admuser><![CDATA[monitor_admin_ericsson]]></Admuser>
+      <Admpwd><![CDATA[!qaz2wsx]]></Admpwd>
+    </Item>
+  </Items>
+</PSInfo>

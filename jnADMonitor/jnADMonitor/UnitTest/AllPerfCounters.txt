@@ -1,0 +1,1708 @@
+﻿<#
+All Counters:
+
+\ADWS\Active Web Service Sessions
+\ADWS\Allocated Connections
+\ADWS\ChangeOptionalFeature Operations Per Second
+\ADWS\ChangePassword Operations Per Second
+\ADWS\Create Operations Per Second
+\ADWS\Custom Action Cache Size
+\ADWS\Custom Action DS RPC Cache Connection Creation Rate
+\ADWS\Custom Action DS RPC Cache Connection Reuse Rate
+\ADWS\Custom Action DS RPC Cache Maximum Possible Size
+\ADWS\Custom Action LDAP Cache Connection Creation Rate
+\ADWS\Custom Action LDAP Cache Connection Reuse Rate
+\ADWS\Custom Action LDAP Cache Maximum Possible Size
+\ADWS\Delete Operations Per Second
+\ADWS\Enumerate Operations Per Second
+\ADWS\Get Operations Per Second
+\ADWS\GetADDomain Operations Per Second
+\ADWS\GetADDomainController Operations Per Second
+\ADWS\GetADForest Operations Per Second
+\ADWS\GetADGroupMember Operations Per Second
+\ADWS\GetADPrincipalAuthorizationGroup Operations Per Second
+\ADWS\GetADPrincipalGroupMembership Operations Per Second
+\ADWS\GetVersion Operations Per Second
+\ADWS\MoveADOperationMasterRole Operations Per Second
+\ADWS\Non-reserved Connections In Use
+\ADWS\Number of Directory Instances
+\ADWS\Open Enumeration Contexts
+\ADWS\Open Web Service Sessions
+\ADWS\Possible Connections
+\ADWS\Pull Operations Per Second
+\ADWS\Put Operations Per Second
+\ADWS\Reserved Connections
+\ADWS\Reserved Connections In Use
+\ADWS\SetPassword Operations Per Second
+\ADWS\TranslateName Operations Per Second
+\ADWS\Web Service Sessions Created Per Second
+\DFS Replication Connections(*)\Bandwidth Savings Using DFS Replication
+\DFS Replication Connections(*)\Bytes Received Per Second
+\DFS Replication Connections(*)\Compressed Size of Files Received
+\DFS Replication Connections(*)\RDC Bytes Received
+\DFS Replication Connections(*)\RDC Compressed Size of Files Received
+\DFS Replication Connections(*)\RDC Number of Files Received
+\DFS Replication Connections(*)\RDC Size of Files Received
+\DFS Replication Connections(*)\Size of Files Received
+\DFS Replication Connections(*)\Total Bytes Received
+\DFS Replication Connections(*)\Total Files Received
+\DirectoryServices(*)\AB ANR/sec
+\DirectoryServices(*)\AB Browses/sec
+\DirectoryServices(*)\AB Client Sessions
+\DirectoryServices(*)\AB Matches/sec
+\DirectoryServices(*)\AB Property Reads/sec
+\DirectoryServices(*)\AB Proxy Lookups/sec
+\DirectoryServices(*)\AB Searches/sec
+\DirectoryServices(*)\ATQ Estimated Queue Delay
+\DirectoryServices(*)\ATQ Outstanding Queued Requests
+\DirectoryServices(*)\ATQ Request Latency
+\DirectoryServices(*)\ATQ Threads LDAP
+\DirectoryServices(*)\ATQ Threads Other
+\DirectoryServices(*)\ATQ Threads Total
+\DirectoryServices(*)\Base searches/sec
+\DirectoryServices(*)\Database adds/sec
+\DirectoryServices(*)\Database deletes/sec
+\DirectoryServices(*)\Database modifys/sec
+\DirectoryServices(*)\Database recycles/sec
+\DirectoryServices(*)\Digest Binds/sec
+\DirectoryServices(*)\DRA Highest USN Committed (High part)
+\DirectoryServices(*)\DRA Highest USN Committed (Low part)
+\DirectoryServices(*)\DRA Highest USN Issued (High part)
+\DirectoryServices(*)\DRA Highest USN Issued (Low part)
+\DirectoryServices(*)\DRA Inbound Bytes Compressed (Between Sites, After Compression) Since Boot
+\DirectoryServices(*)\DRA Inbound Bytes Compressed (Between Sites, After Compression)/sec
+\DirectoryServices(*)\DRA Inbound Bytes Compressed (Between Sites, Before Compression) Since Boot
+\DirectoryServices(*)\DRA Inbound Bytes Compressed (Between Sites, Before Compression)/sec
+\DirectoryServices(*)\DRA Inbound Bytes Not Compressed (Within Site) Since Boot\DirectoryServices(*)\DRA Inbound Bytes Not Compressed (Within Site)/sec
+\DirectoryServices(*)\DRA Inbound Bytes Total Since Boot
+\DirectoryServices(*)\DRA Inbound Bytes Total/sec
+\DirectoryServices(*)\DRA Inbound Full Sync Objects Remaining
+\DirectoryServices(*)\DRA Inbound Link Value Updates Remaining in Packet
+\DirectoryServices(*)\DRA Inbound Object Updates Remaining in Packet
+\DirectoryServices(*)\DRA Inbound Objects Applied/sec
+\DirectoryServices(*)\DRA Inbound Objects Filtered/sec
+\DirectoryServices(*)\DRA Inbound Objects/sec
+\DirectoryServices(*)\DRA Inbound Properties Applied/sec
+\DirectoryServices(*)\DRA Inbound Properties Filtered/sec
+\DirectoryServices(*)\DRA Inbound Properties Total/sec
+\DirectoryServices(*)\DRA Inbound Total Updates Remaining in Packet
+\DirectoryServices(*)\DRA Inbound Values (DNs only)/sec
+\DirectoryServices(*)\DRA Inbound Values Total/sec
+\DirectoryServices(*)\DRA Outbound Bytes Compressed (Between Sites, After Compression) Since Boot
+\DirectoryServices(*)\DRA Outbound Bytes Compressed (Between Sites, After Compression)/sec
+\DirectoryServices(*)\DRA Outbound Bytes Compressed (Between Sites, Before Compression) Since Boot
+\DirectoryServices(*)\DRA Outbound Bytes Compressed (Between Sites, Before Compression)/sec
+\DirectoryServices(*)\DRA Outbound Bytes Not Compressed (Within Site) Since Boot
+\DirectoryServices(*)\DRA Outbound Bytes Not Compressed (Within Site)/sec
+\DirectoryServices(*)\DRA Outbound Bytes Total Since Boot
+\DirectoryServices(*)\DRA Outbound Bytes Total/sec
+\DirectoryServices(*)\DRA Outbound Objects Filtered/sec
+\DirectoryServices(*)\DRA Outbound Objects/sec
+\DirectoryServices(*)\DRA Outbound Properties/sec
+\DirectoryServices(*)\DRA Outbound Values (DNs only)/sec
+\DirectoryServices(*)\DRA Outbound Values Total/sec
+\DirectoryServices(*)\DRA Pending Replication Operations
+\DirectoryServices(*)\DRA Pending Replication Synchronizations
+\DirectoryServices(*)\DRA Sync Failures on Schema Mismatch
+\DirectoryServices(*)\DRA Sync Requests Made
+\DirectoryServices(*)\DRA Sync Requests Successful
+\DirectoryServices(*)\DRA Threads Getting NC Changes
+\DirectoryServices(*)\DRA Threads Getting NC Changes Holding Semaphore
+\DirectoryServices(*)\DS % Reads from DRA
+\DirectoryServices(*)\DS % Reads from KCC
+\DirectoryServices(*)\DS % Reads from LSA
+\DirectoryServices(*)\DS % Reads from NSPI
+\DirectoryServices(*)\DS % Reads from NTDSAPI
+\DirectoryServices(*)\DS % Reads from SAM
+\DirectoryServices(*)\DS % Reads Other
+\DirectoryServices(*)\DS % Searches from DRA
+\DirectoryServices(*)\DS % Searches from KCC
+\DirectoryServices(*)\DS % Searches from LDAP
+\DirectoryServices(*)\DS % Searches from LSA
+\DirectoryServices(*)\DS % Searches from NSPI
+\DirectoryServices(*)\DS % Searches from NTDSAPI
+\DirectoryServices(*)\DS % Searches from SAM
+\DirectoryServices(*)\DS % Searches Other
+\DirectoryServices(*)\DS % Writes from DRA
+\DirectoryServices(*)\DS % Writes from KCC
+\DirectoryServices(*)\DS % Writes from LDAP
+\DirectoryServices(*)\DS % Writes from LSA
+\DirectoryServices(*)\DS % Writes from NSPI
+\DirectoryServices(*)\DS % Writes from NTDSAPI
+\DirectoryServices(*)\DS % Writes from SAM
+\DirectoryServices(*)\DS % Writes Other
+\DirectoryServices(*)\DS Client Binds/sec
+\DirectoryServices(*)\DS Client Name Translations/sec
+\DirectoryServices(*)\DS Directory Reads/sec
+\DirectoryServices(*)\DS Directory Searches/sec
+\DirectoryServices(*)\DS Directory Writes/sec
+\DirectoryServices(*)\DS Monitor List Size
+\DirectoryServices(*)\DS Name Cache hit rate
+\DirectoryServices(*)\DS Notify Queue Size
+\DirectoryServices(*)\DS Search sub-operations/sec
+\DirectoryServices(*)\DS Security Descriptor Propagations Events
+\DirectoryServices(*)\DS Security Descriptor Propagator Average Exclusion Time
+\DirectoryServices(*)\DS Security Descriptor Propagator Runtime Queue
+\DirectoryServices(*)\DS Security Descriptor sub-operations/sec
+\DirectoryServices(*)\DS Server Binds/sec
+\DirectoryServices(*)\DS Server Name Translations/sec
+\DirectoryServices(*)\DS Threads in Use
+\DirectoryServices(*)\External Binds/sec
+\DirectoryServices(*)\Fast Binds/sec
+\DirectoryServices(*)\LDAP Active Threads
+\DirectoryServices(*)\LDAP Bind Time
+\DirectoryServices(*)\LDAP Client Sessions
+\DirectoryServices(*)\LDAP Closed Connections/sec
+\DirectoryServices(*)\LDAP New Connections/sec
+\DirectoryServices(*)\LDAP New SSL Connections/sec
+\DirectoryServices(*)\LDAP Searches/sec
+\DirectoryServices(*)\LDAP Successful Binds/sec
+\DirectoryServices(*)\LDAP UDP operations/sec
+\DirectoryServices(*)\LDAP Writes/sec
+\DirectoryServices(*)\Link Values Cleaned/sec
+\DirectoryServices(*)\Negotiated Binds/sec
+\DirectoryServices(*)\NTLM Binds/sec
+\DirectoryServices(*)\Onelevel searches/sec
+\DirectoryServices(*)\Phantoms Cleaned/sec
+\DirectoryServices(*)\Phantoms Visited/sec
+\DirectoryServices(*)\SAM Account Group Evaluation Latency
+\DirectoryServices(*)\SAM Display Information Queries/sec
+\DirectoryServices(*)\SAM Domain Local Group Membership Evaluations/sec
+\DirectoryServices(*)\SAM Enumerations/sec
+\DirectoryServices(*)\SAM GC Evaluations/sec
+\DirectoryServices(*)\SAM Global Group Membership Evaluations/sec
+\DirectoryServices(*)\SAM Machine Creation Attempts/sec
+\DirectoryServices(*)\SAM Membership Changes/sec
+\DirectoryServices(*)\SAM Non-Transitive Membership Evaluations/sec
+\DirectoryServices(*)\SAM Password Changes/sec
+\DirectoryServices(*)\SAM Resource Group Evaluation Latency
+\DirectoryServices(*)\SAM Successful Computer Creations/sec: Includes all requests
+\DirectoryServices(*)\SAM Successful User Creations/sec
+\DirectoryServices(*)\SAM Transitive Membership Evaluations/sec
+\DirectoryServices(*)\SAM Universal Group Membership Evaluations/sec
+\DirectoryServices(*)\SAM User Creation Attempts/sec
+\DirectoryServices(*)\Simple Binds/sec
+\DirectoryServices(*)\Subtree searches/sec
+\DirectoryServices(*)\Tombstones Garbage Collected/sec
+\DirectoryServices(*)\Tombstones Visited/sec
+\FileReplicaConn(*)\Authentications
+\FileReplicaConn(*)\Authentications in Error
+\FileReplicaConn(*)\Bindings
+\FileReplicaConn(*)\Bindings in Error
+\FileReplicaConn(*)\Communication Timeouts
+\FileReplicaConn(*)\Fetch Blocks Received
+\FileReplicaConn(*)\Fetch Blocks Received in Bytes
+\FileReplicaConn(*)\Fetch Blocks Sent
+\FileReplicaConn(*)\Fetch Blocks Sent in Bytes
+\FileReplicaConn(*)\Fetch Requests Received
+\FileReplicaConn(*)\Fetch Requests Sent
+\FileReplicaConn(*)\Inbound Change Orders Dampened
+\FileReplicaConn(*)\Join Notifications Received
+\FileReplicaConn(*)\Join Notifications Sent
+\FileReplicaConn(*)\Joins
+\FileReplicaConn(*)\Local Change Orders Sent
+\FileReplicaConn(*)\Local Change Orders Sent At Join
+\FileReplicaConn(*)\Outbound Change Orders Dampened
+\FileReplicaConn(*)\Packets Sent
+\FileReplicaConn(*)\Packets Sent in Bytes
+\FileReplicaConn(*)\Packets Sent in Error
+\FileReplicaConn(*)\Remote Change Orders Received
+\FileReplicaConn(*)\Remote Change Orders Sent
+\FileReplicaConn(*)\Unjoins
+\LogicalDisk(*)\% Disk Read Time
+\LogicalDisk(*)\% Disk Time
+\LogicalDisk(*)\% Disk Write Time
+\LogicalDisk(*)\% Free Space
+\LogicalDisk(*)\% Idle Time
+\LogicalDisk(*)\Avg. Disk Bytes/Read
+\LogicalDisk(*)\Avg. Disk Bytes/Transfer
+\LogicalDisk(*)\Avg. Disk Bytes/Write
+\LogicalDisk(*)\Avg. Disk Queue Length
+\LogicalDisk(*)\Avg. Disk Read Queue Length
+\LogicalDisk(*)\Avg. Disk sec/Read
+\LogicalDisk(*)\Avg. Disk sec/Transfer
+\LogicalDisk(*)\Avg. Disk sec/Write
+\LogicalDisk(*)\Avg. Disk Write Queue Length
+\LogicalDisk(*)\Current Disk Queue Length
+\LogicalDisk(*)\Disk Bytes/sec
+\LogicalDisk(*)\Disk Read Bytes/sec
+\LogicalDisk(*)\Disk Reads/sec
+\LogicalDisk(*)\Disk Transfers/sec
+\LogicalDisk(*)\Disk Write Bytes/sec
+\LogicalDisk(*)\Disk Writes/sec
+\LogicalDisk(*)\Free Megabytes
+\LogicalDisk(*)\Split IO/Sec
+\Memory\% Committed Bytes In Use
+\Memory\Available Bytes
+\Memory\Available KBytes
+\Memory\Available MBytes
+\Memory\Cache Bytes
+\Memory\Cache Bytes Peak
+\Memory\Cache Faults/sec
+\Memory\Commit Limit
+\Memory\Committed Bytes
+\Memory\Demand Zero Faults/sec
+\Memory\Free & Zero Page List Bytes
+\Memory\Free System Page Table Entries
+\Memory\Modified Page List Bytes
+\Memory\Page Faults/sec
+\Memory\Page Reads/sec
+\Memory\Page Writes/sec
+\Memory\Pages Input/sec
+\Memory\Pages Output/sec
+\Memory\Pages/sec
+\Memory\Pool Nonpaged Allocs
+\Memory\Pool Nonpaged Bytes
+\Memory\Pool Paged Allocs
+\Memory\Pool Paged Bytes
+\Memory\Pool Paged Resident Bytes
+\Memory\Standby Cache Core Bytes
+\Memory\Standby Cache Normal Priority Bytes
+\Memory\Standby Cache Reserve Bytes
+\Memory\System Cache Resident Bytes
+\Memory\System Code Resident Bytes
+\Memory\System Code Total Bytes
+\Memory\System Driver Resident Bytes
+\Memory\System Driver Total Bytes
+\Memory\Transition Faults/sec
+\Memory\Transition Pages RePurposed/sec
+\Memory\Write Copies/sec
+\Netlogon(*)\Average Semaphore Hold Time
+\Netlogon(*)\Semaphore Acquires
+\Netlogon(*)\Semaphore Holders
+\Netlogon(*)\Semaphore Timeouts
+\Netlogon(*)\Semaphore Waiters
+\NTDS\AB ANR/sec
+\NTDS\AB Browses/sec
+\NTDS\AB Client Sessions
+\NTDS\AB Matches/sec
+\NTDS\AB Property Reads/sec
+\NTDS\AB Proxy Lookups/sec
+\NTDS\AB Searches/sec
+\NTDS\ATQ Estimated Queue Delay
+\NTDS\ATQ Outstanding Queued Requests
+\NTDS\ATQ Request Latency
+\NTDS\ATQ Threads LDAP
+\NTDS\ATQ Threads Other
+\NTDS\ATQ Threads Total
+\NTDS\Base searches/sec
+\NTDS\Database adds/sec
+\NTDS\Database deletes/sec
+\NTDS\Database modifys/sec
+\NTDS\Database recycles/sec
+\NTDS\Digest Binds/sec
+\NTDS\DRA Highest USN Committed (High part)
+\NTDS\DRA Highest USN Committed (Low part)
+\NTDS\DRA Highest USN Issued (High part)
+\NTDS\DRA Highest USN Issued (Low part)
+\NTDS\DRA Inbound Bytes Compressed (Between Sites, After Compression) Since Boot
+\NTDS\DRA Inbound Bytes Compressed (Between Sites, After Compression)/sec
+\NTDS\DRA Inbound Bytes Compressed (Between Sites, Before Compression) Since Boot
+\NTDS\DRA Inbound Bytes Compressed (Between Sites, Before Compression)/sec
+\NTDS\DRA Inbound Bytes Not Compressed (Within Site) Since Boot
+\NTDS\DRA Inbound Bytes Not Compressed (Within Site)/sec
+\NTDS\DRA Inbound Bytes Total Since Boot
+\NTDS\DRA Inbound Bytes Total/sec
+\NTDS\DRA Inbound Full Sync Objects Remaining
+\NTDS\DRA Inbound Link Value Updates Remaining in Packet
+\NTDS\DRA Inbound Object Updates Remaining in Packet
+\NTDS\DRA Inbound Objects Applied/sec
+\NTDS\DRA Inbound Objects Filtered/sec
+\NTDS\DRA Inbound Objects/sec
+\NTDS\DRA Inbound Properties Applied/sec
+\NTDS\DRA Inbound Properties Filtered/sec
+\NTDS\DRA Inbound Properties Total/sec
+\NTDS\DRA Inbound Total Updates Remaining in Packet
+\NTDS\DRA Inbound Values (DNs only)/sec
+\NTDS\DRA Inbound Values Total/sec
+\NTDS\DRA Outbound Bytes Compressed (Between Sites, After Compression) Since Boot
+\NTDS\DRA Outbound Bytes Compressed (Between Sites, After Compression)/sec
+\NTDS\DRA Outbound Bytes Compressed (Between Sites, Before Compression) Since Boot
+\NTDS\DRA Outbound Bytes Compressed (Between Sites, Before Compression)/sec
+\NTDS\DRA Outbound Bytes Not Compressed (Within Site) Since Boot
+\NTDS\DRA Outbound Bytes Not Compressed (Within Site)/sec
+\NTDS\DRA Outbound Bytes Total Since Boot
+\NTDS\DRA Outbound Bytes Total/sec
+\NTDS\DRA Outbound Objects Filtered/sec
+\NTDS\DRA Outbound Objects/sec
+\NTDS\DRA Outbound Properties/sec
+\NTDS\DRA Outbound Values (DNs only)/sec
+\NTDS\DRA Outbound Values Total/sec
+\NTDS\DRA Pending Replication Operations
+\NTDS\DRA Pending Replication Synchronizations
+\NTDS\DRA Sync Failures on Schema Mismatch
+\NTDS\DRA Sync Requests Made
+\NTDS\DRA Sync Requests Successful
+\NTDS\DRA Threads Getting NC Changes
+\NTDS\DRA Threads Getting NC Changes Holding Semaphore
+\NTDS\DS % Reads from DRA
+\NTDS\DS % Reads from KCC
+\NTDS\DS % Reads from LSA
+\NTDS\DS % Reads from NSPI
+\NTDS\DS % Reads from NTDSAPI
+\NTDS\DS % Reads from SAM
+\NTDS\DS % Reads Other
+\NTDS\DS % Searches from DRA
+\NTDS\DS % Searches from KCC
+\NTDS\DS % Searches from LDAP
+\NTDS\DS % Searches from LSA
+\NTDS\DS % Searches from NSPI
+\NTDS\DS % Searches from NTDSAPI
+\NTDS\DS % Searches from SAM
+\NTDS\DS % Searches Other
+\NTDS\DS % Writes from DRA
+\NTDS\DS % Writes from KCC
+\NTDS\DS % Writes from LDAP
+\NTDS\DS % Writes from LSA
+\NTDS\DS % Writes from NSPI
+\NTDS\DS % Writes from NTDSAPI
+\NTDS\DS % Writes from SAM
+\NTDS\DS % Writes Other
+\NTDS\DS Client Binds/sec
+\NTDS\DS Client Name Translations/sec
+\NTDS\DS Directory Reads/sec
+\NTDS\DS Directory Searches/sec
+\NTDS\DS Directory Writes/sec
+\NTDS\DS Monitor List Size
+\NTDS\DS Name Cache hit rate
+\NTDS\DS Notify Queue Size
+\NTDS\DS Search sub-operations/sec
+\NTDS\DS Security Descriptor Propagations Events
+\NTDS\DS Security Descriptor Propagator Average Exclusion Time
+\NTDS\DS Security Descriptor Propagator Runtime Queue
+\NTDS\DS Security Descriptor sub-operations/sec
+\NTDS\DS Server Binds/sec
+\NTDS\DS Server Name Translations/sec
+\NTDS\DS Threads in Use
+\NTDS\External Binds/sec
+\NTDS\Fast Binds/sec
+\NTDS\LDAP Active Threads
+\NTDS\LDAP Bind Time
+\NTDS\LDAP Client Sessions
+\NTDS\LDAP Closed Connections/sec
+\NTDS\LDAP New Connections/sec
+\NTDS\LDAP New SSL Connections/sec
+\NTDS\LDAP Searches/sec
+\NTDS\LDAP Successful Binds/sec
+\NTDS\LDAP UDP operations/sec
+\NTDS\LDAP Writes/sec
+\NTDS\Link Values Cleaned/sec
+\NTDS\Negotiated Binds/sec
+\NTDS\NTLM Binds/sec
+\NTDS\Onelevel searches/sec
+\NTDS\Phantoms Cleaned/sec
+\NTDS\Phantoms Visited/sec
+\NTDS\SAM Account Group Evaluation Latency
+\NTDS\SAM Display Information Queries/sec
+\NTDS\SAM Domain Local Group Membership Evaluations/sec
+\NTDS\SAM Enumerations/sec
+\NTDS\SAM GC Evaluations/sec
+\NTDS\SAM Global Group Membership Evaluations/sec
+\NTDS\SAM Machine Creation Attempts/sec
+\NTDS\SAM Membership Changes/sec
+\NTDS\SAM Non-Transitive Membership Evaluations/sec
+\NTDS\SAM Password Changes/sec
+\NTDS\SAM Resource Group Evaluation Latency
+\NTDS\SAM Successful Computer Creations/sec: Includes all requests
+\NTDS\SAM Successful User Creations/sec
+\NTDS\SAM Transitive Membership Evaluations/sec
+\NTDS\SAM Universal Group Membership Evaluations/sec
+\NTDS\SAM User Creation Attempts/sec
+\NTDS\Simple Binds/sec
+\NTDS\Subtree searches/sec
+\NTDS\Tombstones Garbage Collected/sec
+\NTDS\Tombstones Visited/sec
+\Process(*)\% Privileged Time
+\Process(*)\% Processor Time
+\Process(*)\% User Time
+\Process(*)\Creating Process ID
+\Process(*)\Elapsed Time
+\Process(*)\Handle Count
+\Process(*)\ID Process
+\Process(*)\IO Data Bytes/sec
+\Process(*)\IO Data Operations/sec
+\Process(*)\IO Other Bytes/sec
+\Process(*)\IO Other Operations/sec
+\Process(*)\IO Read Bytes/sec
+\Process(*)\IO Read Operations/sec
+\Process(*)\IO Write Bytes/sec
+\Process(*)\IO Write Operations/sec
+\Process(*)\Page Faults/sec
+\Process(*)\Page File Bytes
+\Process(*)\Page File Bytes Peak
+\Process(*)\Pool Nonpaged Bytes
+\Process(*)\Pool Paged Bytes
+\Process(*)\Priority Base
+\Process(*)\Private Bytes
+\Process(*)\Thread Count
+\Process(*)\Virtual Bytes
+\Process(*)\Virtual Bytes Peak
+\Process(*)\Working Set
+\Process(*)\Working Set - Private
+\Process(*)\Working Set Peak
+\Processor(*)\% C1 Time
+\Processor(*)\% C2 Time
+\Processor(*)\% C3 Time
+\Processor(*)\% DPC Time
+\Processor(*)\% Idle Time
+\Processor(*)\% Interrupt Time
+\Processor(*)\% Privileged Time
+\Processor(*)\% Processor Time
+\Processor(*)\% User Time
+\Processor(*)\C1 Transitions/sec
+\Processor(*)\C2 Transitions/sec
+\Processor(*)\C3 Transitions/sec
+\Processor(*)\DPC Rate
+\Processor(*)\DPCs Queued/sec
+\Processor(*)\Interrupts/sec
+
+#>
+
+
+<#
+All PathsWithInstances:
+
+\DFS Replication Connections(*)\Bandwidth Savings Using DFS Replication
+\DFS Replication Connections(*)\Bytes Received Per Second
+\DFS Replication Connections(*)\Compressed Size of Files Received
+\DFS Replication Connections(*)\RDC Bytes Received
+\DFS Replication Connections(*)\RDC Compressed Size of Files Received
+\DFS Replication Connections(*)\RDC Number of Files Received
+\DFS Replication Connections(*)\RDC Size of Files Received
+\DFS Replication Connections(*)\Size of Files Received
+\DFS Replication Connections(*)\Total Bytes Received
+\DFS Replication Connections(*)\Total Files Received
+\DirectoryServices(NTDS)\AB ANR/sec
+\DirectoryServices(NTDS)\AB Browses/sec
+\DirectoryServices(NTDS)\AB Client Sessions
+\DirectoryServices(NTDS)\AB Matches/sec
+\DirectoryServices(NTDS)\AB Property Reads/sec
+\DirectoryServices(NTDS)\AB Proxy Lookups/sec
+\DirectoryServices(NTDS)\AB Searches/sec
+\DirectoryServices(NTDS)\ATQ Estimated Queue Delay
+\DirectoryServices(NTDS)\ATQ Outstanding Queued Requests
+\DirectoryServices(NTDS)\ATQ Request Latency
+\DirectoryServices(NTDS)\ATQ Threads LDAP
+\DirectoryServices(NTDS)\ATQ Threads Other
+\DirectoryServices(NTDS)\ATQ Threads Total
+\DirectoryServices(NTDS)\Base searches/sec
+\DirectoryServices(NTDS)\Database adds/sec
+\DirectoryServices(NTDS)\Database deletes/sec
+\DirectoryServices(NTDS)\Database modifys/sec
+\DirectoryServices(NTDS)\Database recycles/sec
+\DirectoryServices(NTDS)\Digest Binds/sec
+\DirectoryServices(NTDS)\DRA Highest USN Committed (High part)
+\DirectoryServices(NTDS)\DRA Highest USN Committed (Low part)
+\DirectoryServices(NTDS)\DRA Highest USN Issued (High part)
+\DirectoryServices(NTDS)\DRA Highest USN Issued (Low part)
+\DirectoryServices(NTDS)\DRA Inbound Bytes Compressed (Between Sites, After Compression) Since Boot
+\DirectoryServices(NTDS)\DRA Inbound Bytes Compressed (Between Sites, After Compression)/sec
+\DirectoryServices(NTDS)\DRA Inbound Bytes Compressed (Between Sites, Before Compression) Since Boot
+\DirectoryServices(NTDS)\DRA Inbound Bytes Compressed (Between Sites, Before Compression)/sec
+\DirectoryServices(NTDS)\DRA Inbound Bytes Not Compressed (Within Site) Since Boot
+\DirectoryServices(NTDS)\DRA Inbound Bytes Not Compressed (Within Site)/sec
+\DirectoryServices(NTDS)\DRA Inbound Bytes Total Since Boot
+\DirectoryServices(NTDS)\DRA Inbound Bytes Total/sec
+\DirectoryServices(NTDS)\DRA Inbound Full Sync Objects Remaining
+\DirectoryServices(NTDS)\DRA Inbound Link Value Updates Remaining in Packet
+\DirectoryServices(NTDS)\DRA Inbound Object Updates Remaining in Packet
+\DirectoryServices(NTDS)\DRA Inbound Objects Applied/sec
+\DirectoryServices(NTDS)\DRA Inbound Objects Filtered/sec
+\DirectoryServices(NTDS)\DRA Inbound Objects/sec
+\DirectoryServices(NTDS)\DRA Inbound Properties Applied/sec
+\DirectoryServices(NTDS)\DRA Inbound Properties Filtered/sec
+\DirectoryServices(NTDS)\DRA Inbound Properties Total/sec
+\DirectoryServices(NTDS)\DRA Inbound Total Updates Remaining in Packet
+\DirectoryServices(NTDS)\DRA Inbound Values (DNs only)/sec
+\DirectoryServices(NTDS)\DRA Inbound Values Total/sec
+\DirectoryServices(NTDS)\DRA Outbound Bytes Compressed (Between Sites, After Compression) Since Boot
+\DirectoryServices(NTDS)\DRA Outbound Bytes Compressed (Between Sites, After Compression)/sec
+\DirectoryServices(NTDS)\DRA Outbound Bytes Compressed (Between Sites, Before Compression) Since Boot
+\DirectoryServices(NTDS)\DRA Outbound Bytes Compressed (Between Sites, Before Compression)/sec
+\DirectoryServices(NTDS)\DRA Outbound Bytes Not Compressed (Within Site) Since Boot
+\DirectoryServices(NTDS)\DRA Outbound Bytes Not Compressed (Within Site)/sec
+\DirectoryServices(NTDS)\DRA Outbound Bytes Total Since Boot
+\DirectoryServices(NTDS)\DRA Outbound Bytes Total/sec
+\DirectoryServices(NTDS)\DRA Outbound Objects Filtered/sec
+\DirectoryServices(NTDS)\DRA Outbound Objects/sec
+\DirectoryServices(NTDS)\DRA Outbound Properties/sec
+\DirectoryServices(NTDS)\DRA Outbound Values (DNs only)/sec
+\DirectoryServices(NTDS)\DRA Outbound Values Total/sec
+\DirectoryServices(NTDS)\DRA Pending Replication Operations
+\DirectoryServices(NTDS)\DRA Pending Replication Synchronizations
+\DirectoryServices(NTDS)\DRA Sync Failures on Schema Mismatch
+\DirectoryServices(NTDS)\DRA Sync Requests Made
+\DirectoryServices(NTDS)\DRA Sync Requests Successful
+\DirectoryServices(NTDS)\DRA Threads Getting NC Changes
+\DirectoryServices(NTDS)\DRA Threads Getting NC Changes Holding Semaphore
+\DirectoryServices(NTDS)\DS % Reads from DRA
+\DirectoryServices(NTDS)\DS % Reads from KCC
+\DirectoryServices(NTDS)\DS % Reads from LSA
+\DirectoryServices(NTDS)\DS % Reads from NSPI
+\DirectoryServices(NTDS)\DS % Reads from NTDSAPI
+\DirectoryServices(NTDS)\DS % Reads from SAM
+\DirectoryServices(NTDS)\DS % Reads Other
+\DirectoryServices(NTDS)\DS % Searches from DRA
+\DirectoryServices(NTDS)\DS % Searches from KCC
+\DirectoryServices(NTDS)\DS % Searches from LDAP
+\DirectoryServices(NTDS)\DS % Searches from LSA
+\DirectoryServices(NTDS)\DS % Searches from NSPI
+\DirectoryServices(NTDS)\DS % Searches from NTDSAPI
+\DirectoryServices(NTDS)\DS % Searches from SAM
+\DirectoryServices(NTDS)\DS % Searches Other
+\DirectoryServices(NTDS)\DS % Writes from DRA
+\DirectoryServices(NTDS)\DS % Writes from KCC
+\DirectoryServices(NTDS)\DS % Writes from LDAP
+\DirectoryServices(NTDS)\DS % Writes from LSA
+\DirectoryServices(NTDS)\DS % Writes from NSPI
+\DirectoryServices(NTDS)\DS % Writes from NTDSAPI
+\DirectoryServices(NTDS)\DS % Writes from SAM
+\DirectoryServices(NTDS)\DS % Writes Other
+\DirectoryServices(NTDS)\DS Client Binds/sec
+\DirectoryServices(NTDS)\DS Client Name Translations/sec
+\DirectoryServices(NTDS)\DS Directory Reads/sec
+\DirectoryServices(NTDS)\DS Directory Searches/sec
+\DirectoryServices(NTDS)\DS Directory Writes/sec
+\DirectoryServices(NTDS)\DS Monitor List Size
+\DirectoryServices(NTDS)\DS Name Cache hit rate
+\DirectoryServices(NTDS)\DS Notify Queue Size
+\DirectoryServices(NTDS)\DS Search sub-operations/sec
+\DirectoryServices(NTDS)\DS Security Descriptor Propagations Events
+\DirectoryServices(NTDS)\DS Security Descriptor Propagator Average Exclusion Time
+\DirectoryServices(NTDS)\DS Security Descriptor Propagator Runtime Queue
+\DirectoryServices(NTDS)\DS Security Descriptor sub-operations/sec
+\DirectoryServices(NTDS)\DS Server Binds/sec
+\DirectoryServices(NTDS)\DS Server Name Translations/sec
+\DirectoryServices(NTDS)\DS Threads in Use
+\DirectoryServices(NTDS)\External Binds/sec
+\DirectoryServices(NTDS)\Fast Binds/sec
+\DirectoryServices(NTDS)\LDAP Active Threads
+\DirectoryServices(NTDS)\LDAP Bind Time
+\DirectoryServices(NTDS)\LDAP Client Sessions
+\DirectoryServices(NTDS)\LDAP Closed Connections/sec
+\DirectoryServices(NTDS)\LDAP New Connections/sec
+\DirectoryServices(NTDS)\LDAP New SSL Connections/sec
+\DirectoryServices(NTDS)\LDAP Searches/sec
+\DirectoryServices(NTDS)\LDAP Successful Binds/sec
+\DirectoryServices(NTDS)\LDAP UDP operations/sec
+\DirectoryServices(NTDS)\LDAP Writes/sec
+\DirectoryServices(NTDS)\Link Values Cleaned/sec
+\DirectoryServices(NTDS)\Negotiated Binds/sec
+\DirectoryServices(NTDS)\NTLM Binds/sec
+\DirectoryServices(NTDS)\Onelevel searches/sec
+\DirectoryServices(NTDS)\Phantoms Cleaned/sec
+\DirectoryServices(NTDS)\Phantoms Visited/sec
+\DirectoryServices(NTDS)\SAM Account Group Evaluation Latency
+\DirectoryServices(NTDS)\SAM Display Information Queries/sec
+\DirectoryServices(NTDS)\SAM Domain Local Group Membership Evaluations/sec
+\DirectoryServices(NTDS)\SAM Enumerations/sec
+\DirectoryServices(NTDS)\SAM GC Evaluations/sec
+\DirectoryServices(NTDS)\SAM Global Group Membership Evaluations/sec
+\DirectoryServices(NTDS)\SAM Machine Creation Attempts/sec
+\DirectoryServices(NTDS)\SAM Membership Changes/sec
+\DirectoryServices(NTDS)\SAM Non-Transitive Membership Evaluations/sec
+\DirectoryServices(NTDS)\SAM Password Changes/sec
+\DirectoryServices(NTDS)\SAM Resource Group Evaluation Latency
+\DirectoryServices(NTDS)\SAM Successful Computer Creations/sec: Includes all requests
+\DirectoryServices(NTDS)\SAM Successful User Creations/sec
+\DirectoryServices(NTDS)\SAM Transitive Membership Evaluations/sec
+\DirectoryServices(NTDS)\SAM Universal Group Membership Evaluations/sec
+\DirectoryServices(NTDS)\SAM User Creation Attempts/sec
+\DirectoryServices(NTDS)\Simple Binds/sec
+\DirectoryServices(NTDS)\Subtree searches/sec
+\DirectoryServices(NTDS)\Tombstones Garbage Collected/sec
+\DirectoryServices(NTDS)\Tombstones Visited/sec
+\FileReplicaConn(d:\sysvol\domain::FROM:LGE\AICHQ10-DC13$)\Authentications
+\FileReplicaConn(d:\sysvol\domain::FROM:LGE\AICHQ10-DC13$)\Authentications in Error
+\FileReplicaConn(d:\sysvol\domain::FROM:LGE\AICHQ10-DC13$)\Bindings
+\FileReplicaConn(d:\sysvol\domain::FROM:LGE\AICHQ10-DC13$)\Bindings in Error
+\FileReplicaConn(d:\sysvol\domain::FROM:LGE\AICHQ10-DC13$)\Communication Timeouts
+\FileReplicaConn(d:\sysvol\domain::FROM:LGE\AICHQ10-DC13$)\Fetch Blocks Received
+\FileReplicaConn(d:\sysvol\domain::FROM:LGE\AICHQ10-DC13$)\Fetch Blocks Received in Bytes
+\FileReplicaConn(d:\sysvol\domain::FROM:LGE\AICHQ10-DC13$)\Fetch Blocks Sent
+\FileReplicaConn(d:\sysvol\domain::FROM:LGE\AICHQ10-DC13$)\Fetch Blocks Sent in Bytes
+\FileReplicaConn(d:\sysvol\domain::FROM:LGE\AICHQ10-DC13$)\Fetch Requests Received
+\FileReplicaConn(d:\sysvol\domain::FROM:LGE\AICHQ10-DC13$)\Fetch Requests Sent
+\FileReplicaConn(d:\sysvol\domain::FROM:LGE\AICHQ10-DC13$)\Inbound Change Orders Dampened
+\FileReplicaConn(d:\sysvol\domain::FROM:LGE\AICHQ10-DC13$)\Join Notifications Received
+\FileReplicaConn(d:\sysvol\domain::FROM:LGE\AICHQ10-DC13$)\Join Notifications Sent
+\FileReplicaConn(d:\sysvol\domain::FROM:LGE\AICHQ10-DC13$)\Joins
+\FileReplicaConn(d:\sysvol\domain::FROM:LGE\AICHQ10-DC13$)\Local Change Orders Sent
+\FileReplicaConn(d:\sysvol\domain::FROM:LGE\AICHQ10-DC13$)\Local Change Orders Sent At Join
+\FileReplicaConn(d:\sysvol\domain::FROM:LGE\AICHQ10-DC13$)\Outbound Change Orders Dampened
+\FileReplicaConn(d:\sysvol\domain::FROM:LGE\AICHQ10-DC13$)\Packets Sent
+\FileReplicaConn(d:\sysvol\domain::FROM:LGE\AICHQ10-DC13$)\Packets Sent in Bytes
+\FileReplicaConn(d:\sysvol\domain::FROM:LGE\AICHQ10-DC13$)\Packets Sent in Error
+\FileReplicaConn(d:\sysvol\domain::FROM:LGE\AICHQ10-DC13$)\Remote Change Orders Received
+\FileReplicaConn(d:\sysvol\domain::FROM:LGE\AICHQ10-DC13$)\Remote Change Orders Sent
+\FileReplicaConn(d:\sysvol\domain::FROM:LGE\AICHQ10-DC13$)\Unjoins
+\FileReplicaConn(d:\sysvol\domain::FROM:LGE\AZ-MF10-DC11$)\Authentications
+\FileReplicaConn(d:\sysvol\domain::FROM:LGE\AZ-MF10-DC11$)\Authentications in Error
+\FileReplicaConn(d:\sysvol\domain::FROM:LGE\AZ-MF10-DC11$)\Bindings
+\FileReplicaConn(d:\sysvol\domain::FROM:LGE\AZ-MF10-DC11$)\Bindings in Error
+\FileReplicaConn(d:\sysvol\domain::FROM:LGE\AZ-MF10-DC11$)\Communication Timeouts
+\FileReplicaConn(d:\sysvol\domain::FROM:LGE\AZ-MF10-DC11$)\Fetch Blocks Received
+\FileReplicaConn(d:\sysvol\domain::FROM:LGE\AZ-MF10-DC11$)\Fetch Blocks Received in Bytes
+\FileReplicaConn(d:\sysvol\domain::FROM:LGE\AZ-MF10-DC11$)\Fetch Blocks Sent
+\FileReplicaConn(d:\sysvol\domain::FROM:LGE\AZ-MF10-DC11$)\Fetch Blocks Sent in Bytes
+\FileReplicaConn(d:\sysvol\domain::FROM:LGE\AZ-MF10-DC11$)\Fetch Requests Received
+\FileReplicaConn(d:\sysvol\domain::FROM:LGE\AZ-MF10-DC11$)\Fetch Requests Sent
+\FileReplicaConn(d:\sysvol\domain::FROM:LGE\AZ-MF10-DC11$)\Inbound Change Orders Dampened
+\FileReplicaConn(d:\sysvol\domain::FROM:LGE\AZ-MF10-DC11$)\Join Notifications Received
+\FileReplicaConn(d:\sysvol\domain::FROM:LGE\AZ-MF10-DC11$)\Join Notifications Sent
+\FileReplicaConn(d:\sysvol\domain::FROM:LGE\AZ-MF10-DC11$)\Joins
+\FileReplicaConn(d:\sysvol\domain::FROM:LGE\AZ-MF10-DC11$)\Local Change Orders Sent
+\FileReplicaConn(d:\sysvol\domain::FROM:LGE\AZ-MF10-DC11$)\Local Change Orders Sent At Join
+\FileReplicaConn(d:\sysvol\domain::FROM:LGE\AZ-MF10-DC11$)\Outbound Change Orders Dampened
+\FileReplicaConn(d:\sysvol\domain::FROM:LGE\AZ-MF10-DC11$)\Packets Sent
+\FileReplicaConn(d:\sysvol\domain::FROM:LGE\AZ-MF10-DC11$)\Packets Sent in Bytes
+\FileReplicaConn(d:\sysvol\domain::FROM:LGE\AZ-MF10-DC11$)\Packets Sent in Error
+\FileReplicaConn(d:\sysvol\domain::FROM:LGE\AZ-MF10-DC11$)\Remote Change Orders Received
+\FileReplicaConn(d:\sysvol\domain::FROM:LGE\AZ-MF10-DC11$)\Remote Change Orders Sent
+\FileReplicaConn(d:\sysvol\domain::FROM:LGE\AZ-MF10-DC11$)\Unjoins
+\FileReplicaConn(d:\sysvol\domain::FROM:LGE\MS-SO10-DC11$)\Authentications
+\FileReplicaConn(d:\sysvol\domain::FROM:LGE\MS-SO10-DC11$)\Authentications in Error
+\FileReplicaConn(d:\sysvol\domain::FROM:LGE\MS-SO10-DC11$)\Bindings
+\FileReplicaConn(d:\sysvol\domain::FROM:LGE\MS-SO10-DC11$)\Bindings in Error
+\FileReplicaConn(d:\sysvol\domain::FROM:LGE\MS-SO10-DC11$)\Communication Timeouts
+\FileReplicaConn(d:\sysvol\domain::FROM:LGE\MS-SO10-DC11$)\Fetch Blocks Received
+\FileReplicaConn(d:\sysvol\domain::FROM:LGE\MS-SO10-DC11$)\Fetch Blocks Received in Bytes
+\FileReplicaConn(d:\sysvol\domain::FROM:LGE\MS-SO10-DC11$)\Fetch Blocks Sent
+\FileReplicaConn(d:\sysvol\domain::FROM:LGE\MS-SO10-DC11$)\Fetch Blocks Sent in Bytes
+\FileReplicaConn(d:\sysvol\domain::FROM:LGE\MS-SO10-DC11$)\Fetch Requests Received
+\FileReplicaConn(d:\sysvol\domain::FROM:LGE\MS-SO10-DC11$)\Fetch Requests Sent
+\FileReplicaConn(d:\sysvol\domain::FROM:LGE\MS-SO10-DC11$)\Inbound Change Orders Dampened
+\FileReplicaConn(d:\sysvol\domain::FROM:LGE\MS-SO10-DC11$)\Join Notifications Received
+\FileReplicaConn(d:\sysvol\domain::FROM:LGE\MS-SO10-DC11$)\Join Notifications Sent
+\FileReplicaConn(d:\sysvol\domain::FROM:LGE\MS-SO10-DC11$)\Joins
+\FileReplicaConn(d:\sysvol\domain::FROM:LGE\MS-SO10-DC11$)\Local Change Orders Sent
+\FileReplicaConn(d:\sysvol\domain::FROM:LGE\MS-SO10-DC11$)\Local Change Orders Sent At Join
+\FileReplicaConn(d:\sysvol\domain::FROM:LGE\MS-SO10-DC11$)\Outbound Change Orders Dampened
+\FileReplicaConn(d:\sysvol\domain::FROM:LGE\MS-SO10-DC11$)\Packets Sent
+\FileReplicaConn(d:\sysvol\domain::FROM:LGE\MS-SO10-DC11$)\Packets Sent in Bytes
+\FileReplicaConn(d:\sysvol\domain::FROM:LGE\MS-SO10-DC11$)\Packets Sent in Error
+\FileReplicaConn(d:\sysvol\domain::FROM:LGE\MS-SO10-DC11$)\Remote Change Orders Received
+\FileReplicaConn(d:\sysvol\domain::FROM:LGE\MS-SO10-DC11$)\Remote Change Orders Sent
+\FileReplicaConn(d:\sysvol\domain::FROM:LGE\MS-SO10-DC11$)\Unjoins
+\FileReplicaConn(d:\sysvol\domain::FROM:LGE\MS-SO10-DC12$)\Authentications
+\FileReplicaConn(d:\sysvol\domain::FROM:LGE\MS-SO10-DC12$)\Authentications in Error
+\FileReplicaConn(d:\sysvol\domain::FROM:LGE\MS-SO10-DC12$)\Bindings
+\FileReplicaConn(d:\sysvol\domain::FROM:LGE\MS-SO10-DC12$)\Bindings in Error
+\FileReplicaConn(d:\sysvol\domain::FROM:LGE\MS-SO10-DC12$)\Communication Timeouts
+\FileReplicaConn(d:\sysvol\domain::FROM:LGE\MS-SO10-DC12$)\Fetch Blocks Received
+\FileReplicaConn(d:\sysvol\domain::FROM:LGE\MS-SO10-DC12$)\Fetch Blocks Received in Bytes
+\FileReplicaConn(d:\sysvol\domain::FROM:LGE\MS-SO10-DC12$)\Fetch Blocks Sent
+\FileReplicaConn(d:\sysvol\domain::FROM:LGE\MS-SO10-DC12$)\Fetch Blocks Sent in Bytes
+\FileReplicaConn(d:\sysvol\domain::FROM:LGE\MS-SO10-DC12$)\Fetch Requests Received
+\FileReplicaConn(d:\sysvol\domain::FROM:LGE\MS-SO10-DC12$)\Fetch Requests Sent
+\FileReplicaConn(d:\sysvol\domain::FROM:LGE\MS-SO10-DC12$)\Inbound Change Orders Dampened
+\FileReplicaConn(d:\sysvol\domain::FROM:LGE\MS-SO10-DC12$)\Join Notifications Received
+\FileReplicaConn(d:\sysvol\domain::FROM:LGE\MS-SO10-DC12$)\Join Notifications Sent
+\FileReplicaConn(d:\sysvol\domain::FROM:LGE\MS-SO10-DC12$)\Joins
+\FileReplicaConn(d:\sysvol\domain::FROM:LGE\MS-SO10-DC12$)\Local Change Orders Sent
+\FileReplicaConn(d:\sysvol\domain::FROM:LGE\MS-SO10-DC12$)\Local Change Orders Sent At Join
+\FileReplicaConn(d:\sysvol\domain::FROM:LGE\MS-SO10-DC12$)\Outbound Change Orders Dampened
+\FileReplicaConn(d:\sysvol\domain::FROM:LGE\MS-SO10-DC12$)\Packets Sent
+\FileReplicaConn(d:\sysvol\domain::FROM:LGE\MS-SO10-DC12$)\Packets Sent in Bytes
+\FileReplicaConn(d:\sysvol\domain::FROM:LGE\MS-SO10-DC12$)\Packets Sent in Error
+\FileReplicaConn(d:\sysvol\domain::FROM:LGE\MS-SO10-DC12$)\Remote Change Orders Received
+\FileReplicaConn(d:\sysvol\domain::FROM:LGE\MS-SO10-DC12$)\Remote Change Orders Sent
+\FileReplicaConn(d:\sysvol\domain::FROM:LGE\MS-SO10-DC12$)\Unjoins
+\FileReplicaConn(d:\sysvol\domain::FROM:LGE\RS-MF10-DC11$)\Authentications
+\FileReplicaConn(d:\sysvol\domain::FROM:LGE\RS-MF10-DC11$)\Authentications in Error
+\FileReplicaConn(d:\sysvol\domain::FROM:LGE\RS-MF10-DC11$)\Bindings
+\FileReplicaConn(d:\sysvol\domain::FROM:LGE\RS-MF10-DC11$)\Bindings in Error
+\FileReplicaConn(d:\sysvol\domain::FROM:LGE\RS-MF10-DC11$)\Communication Timeouts
+\FileReplicaConn(d:\sysvol\domain::FROM:LGE\RS-MF10-DC11$)\Fetch Blocks Received
+\FileReplicaConn(d:\sysvol\domain::FROM:LGE\RS-MF10-DC11$)\Fetch Blocks Received in Bytes
+\FileReplicaConn(d:\sysvol\domain::FROM:LGE\RS-MF10-DC11$)\Fetch Blocks Sent
+\FileReplicaConn(d:\sysvol\domain::FROM:LGE\RS-MF10-DC11$)\Fetch Blocks Sent in Bytes
+\FileReplicaConn(d:\sysvol\domain::FROM:LGE\RS-MF10-DC11$)\Fetch Requests Received
+\FileReplicaConn(d:\sysvol\domain::FROM:LGE\RS-MF10-DC11$)\Fetch Requests Sent
+\FileReplicaConn(d:\sysvol\domain::FROM:LGE\RS-MF10-DC11$)\Inbound Change Orders Dampened
+\FileReplicaConn(d:\sysvol\domain::FROM:LGE\RS-MF10-DC11$)\Join Notifications Received
+\FileReplicaConn(d:\sysvol\domain::FROM:LGE\RS-MF10-DC11$)\Join Notifications Sent
+\FileReplicaConn(d:\sysvol\domain::FROM:LGE\RS-MF10-DC11$)\Joins
+\FileReplicaConn(d:\sysvol\domain::FROM:LGE\RS-MF10-DC11$)\Local Change Orders Sent
+\FileReplicaConn(d:\sysvol\domain::FROM:LGE\RS-MF10-DC11$)\Local Change Orders Sent At Join
+\FileReplicaConn(d:\sysvol\domain::FROM:LGE\RS-MF10-DC11$)\Outbound Change Orders Dampened
+\FileReplicaConn(d:\sysvol\domain::FROM:LGE\RS-MF10-DC11$)\Packets Sent
+\FileReplicaConn(d:\sysvol\domain::FROM:LGE\RS-MF10-DC11$)\Packets Sent in Bytes
+\FileReplicaConn(d:\sysvol\domain::FROM:LGE\RS-MF10-DC11$)\Packets Sent in Error
+\FileReplicaConn(d:\sysvol\domain::FROM:LGE\RS-MF10-DC11$)\Remote Change Orders Received
+\FileReplicaConn(d:\sysvol\domain::FROM:LGE\RS-MF10-DC11$)\Remote Change Orders Sent
+\FileReplicaConn(d:\sysvol\domain::FROM:LGE\RS-MF10-DC11$)\Unjoins
+\FileReplicaConn(d:\sysvol\domain::FROM:LGE\SP-RD10-DC10$)\Authentications
+\FileReplicaConn(d:\sysvol\domain::FROM:LGE\SP-RD10-DC10$)\Authentications in Error
+\FileReplicaConn(d:\sysvol\domain::FROM:LGE\SP-RD10-DC10$)\Bindings
+\FileReplicaConn(d:\sysvol\domain::FROM:LGE\SP-RD10-DC10$)\Bindings in Error
+\FileReplicaConn(d:\sysvol\domain::FROM:LGE\SP-RD10-DC10$)\Communication Timeouts
+\FileReplicaConn(d:\sysvol\domain::FROM:LGE\SP-RD10-DC10$)\Fetch Blocks Received
+\FileReplicaConn(d:\sysvol\domain::FROM:LGE\SP-RD10-DC10$)\Fetch Blocks Received in Bytes
+\FileReplicaConn(d:\sysvol\domain::FROM:LGE\SP-RD10-DC10$)\Fetch Blocks Sent
+\FileReplicaConn(d:\sysvol\domain::FROM:LGE\SP-RD10-DC10$)\Fetch Blocks Sent in Bytes
+\FileReplicaConn(d:\sysvol\domain::FROM:LGE\SP-RD10-DC10$)\Fetch Requests Received
+\FileReplicaConn(d:\sysvol\domain::FROM:LGE\SP-RD10-DC10$)\Fetch Requests Sent
+\FileReplicaConn(d:\sysvol\domain::FROM:LGE\SP-RD10-DC10$)\Inbound Change Orders Dampened
+\FileReplicaConn(d:\sysvol\domain::FROM:LGE\SP-RD10-DC10$)\Join Notifications Received
+\FileReplicaConn(d:\sysvol\domain::FROM:LGE\SP-RD10-DC10$)\Join Notifications Sent
+\FileReplicaConn(d:\sysvol\domain::FROM:LGE\SP-RD10-DC10$)\Joins
+\FileReplicaConn(d:\sysvol\domain::FROM:LGE\SP-RD10-DC10$)\Local Change Orders Sent
+\FileReplicaConn(d:\sysvol\domain::FROM:LGE\SP-RD10-DC10$)\Local Change Orders Sent At Join
+\FileReplicaConn(d:\sysvol\domain::FROM:LGE\SP-RD10-DC10$)\Outbound Change Orders Dampened
+\FileReplicaConn(d:\sysvol\domain::FROM:LGE\SP-RD10-DC10$)\Packets Sent
+\FileReplicaConn(d:\sysvol\domain::FROM:LGE\SP-RD10-DC10$)\Packets Sent in Bytes
+\FileReplicaConn(d:\sysvol\domain::FROM:LGE\SP-RD10-DC10$)\Packets Sent in Error
+\FileReplicaConn(d:\sysvol\domain::FROM:LGE\SP-RD10-DC10$)\Remote Change Orders Received
+\FileReplicaConn(d:\sysvol\domain::FROM:LGE\SP-RD10-DC10$)\Remote Change Orders Sent
+\FileReplicaConn(d:\sysvol\domain::FROM:LGE\SP-RD10-DC10$)\Unjoins
+\FileReplicaConn(d:\sysvol\domain::FROM:LGE\SPTMF10-DC11$)\Authentications
+\FileReplicaConn(d:\sysvol\domain::FROM:LGE\SPTMF10-DC11$)\Authentications in Error
+\FileReplicaConn(d:\sysvol\domain::FROM:LGE\SPTMF10-DC11$)\Bindings
+\FileReplicaConn(d:\sysvol\domain::FROM:LGE\SPTMF10-DC11$)\Bindings in Error
+\FileReplicaConn(d:\sysvol\domain::FROM:LGE\SPTMF10-DC11$)\Communication Timeouts
+\FileReplicaConn(d:\sysvol\domain::FROM:LGE\SPTMF10-DC11$)\Fetch Blocks Received
+\FileReplicaConn(d:\sysvol\domain::FROM:LGE\SPTMF10-DC11$)\Fetch Blocks Received in Bytes
+\FileReplicaConn(d:\sysvol\domain::FROM:LGE\SPTMF10-DC11$)\Fetch Blocks Sent
+\FileReplicaConn(d:\sysvol\domain::FROM:LGE\SPTMF10-DC11$)\Fetch Blocks Sent in Bytes
+\FileReplicaConn(d:\sysvol\domain::FROM:LGE\SPTMF10-DC11$)\Fetch Requests Received
+\FileReplicaConn(d:\sysvol\domain::FROM:LGE\SPTMF10-DC11$)\Fetch Requests Sent
+\FileReplicaConn(d:\sysvol\domain::FROM:LGE\SPTMF10-DC11$)\Inbound Change Orders Dampened
+\FileReplicaConn(d:\sysvol\domain::FROM:LGE\SPTMF10-DC11$)\Join Notifications Received
+\FileReplicaConn(d:\sysvol\domain::FROM:LGE\SPTMF10-DC11$)\Join Notifications Sent
+\FileReplicaConn(d:\sysvol\domain::FROM:LGE\SPTMF10-DC11$)\Joins
+\FileReplicaConn(d:\sysvol\domain::FROM:LGE\SPTMF10-DC11$)\Local Change Orders Sent
+\FileReplicaConn(d:\sysvol\domain::FROM:LGE\SPTMF10-DC11$)\Local Change Orders Sent At Join
+\FileReplicaConn(d:\sysvol\domain::FROM:LGE\SPTMF10-DC11$)\Outbound Change Orders Dampened
+\FileReplicaConn(d:\sysvol\domain::FROM:LGE\SPTMF10-DC11$)\Packets Sent
+\FileReplicaConn(d:\sysvol\domain::FROM:LGE\SPTMF10-DC11$)\Packets Sent in Bytes
+\FileReplicaConn(d:\sysvol\domain::FROM:LGE\SPTMF10-DC11$)\Packets Sent in Error
+\FileReplicaConn(d:\sysvol\domain::FROM:LGE\SPTMF10-DC11$)\Remote Change Orders Received
+\FileReplicaConn(d:\sysvol\domain::FROM:LGE\SPTMF10-DC11$)\Remote Change Orders Sent
+\FileReplicaConn(d:\sysvol\domain::FROM:LGE\SPTMF10-DC11$)\Unjoins
+\FileReplicaConn(d:\sysvol\domain::FROM:LGE\SVLRD10-DC10$)\Authentications
+\FileReplicaConn(d:\sysvol\domain::FROM:LGE\SVLRD10-DC10$)\Authentications in Error
+\FileReplicaConn(d:\sysvol\domain::FROM:LGE\SVLRD10-DC10$)\Bindings
+\FileReplicaConn(d:\sysvol\domain::FROM:LGE\SVLRD10-DC10$)\Bindings in Error
+\FileReplicaConn(d:\sysvol\domain::FROM:LGE\SVLRD10-DC10$)\Communication Timeouts
+\FileReplicaConn(d:\sysvol\domain::FROM:LGE\SVLRD10-DC10$)\Fetch Blocks Received
+\FileReplicaConn(d:\sysvol\domain::FROM:LGE\SVLRD10-DC10$)\Fetch Blocks Received in Bytes
+\FileReplicaConn(d:\sysvol\domain::FROM:LGE\SVLRD10-DC10$)\Fetch Blocks Sent
+\FileReplicaConn(d:\sysvol\domain::FROM:LGE\SVLRD10-DC10$)\Fetch Blocks Sent in Bytes
+\FileReplicaConn(d:\sysvol\domain::FROM:LGE\SVLRD10-DC10$)\Fetch Requests Received
+\FileReplicaConn(d:\sysvol\domain::FROM:LGE\SVLRD10-DC10$)\Fetch Requests Sent
+\FileReplicaConn(d:\sysvol\domain::FROM:LGE\SVLRD10-DC10$)\Inbound Change Orders Dampened
+\FileReplicaConn(d:\sysvol\domain::FROM:LGE\SVLRD10-DC10$)\Join Notifications Received
+\FileReplicaConn(d:\sysvol\domain::FROM:LGE\SVLRD10-DC10$)\Join Notifications Sent
+\FileReplicaConn(d:\sysvol\domain::FROM:LGE\SVLRD10-DC10$)\Joins
+\FileReplicaConn(d:\sysvol\domain::FROM:LGE\SVLRD10-DC10$)\Local Change Orders Sent
+\FileReplicaConn(d:\sysvol\domain::FROM:LGE\SVLRD10-DC10$)\Local Change Orders Sent At Join
+\FileReplicaConn(d:\sysvol\domain::FROM:LGE\SVLRD10-DC10$)\Outbound Change Orders Dampened
+\FileReplicaConn(d:\sysvol\domain::FROM:LGE\SVLRD10-DC10$)\Packets Sent
+\FileReplicaConn(d:\sysvol\domain::FROM:LGE\SVLRD10-DC10$)\Packets Sent in Bytes
+\FileReplicaConn(d:\sysvol\domain::FROM:LGE\SVLRD10-DC10$)\Packets Sent in Error
+\FileReplicaConn(d:\sysvol\domain::FROM:LGE\SVLRD10-DC10$)\Remote Change Orders Received
+\FileReplicaConn(d:\sysvol\domain::FROM:LGE\SVLRD10-DC10$)\Remote Change Orders Sent
+\FileReplicaConn(d:\sysvol\domain::FROM:LGE\SVLRD10-DC10$)\Unjoins
+\FileReplicaConn(d:\sysvol\domain::FROM:LGE\TWNHQ10-DC13$)\Authentications
+\FileReplicaConn(d:\sysvol\domain::FROM:LGE\TWNHQ10-DC13$)\Authentications in Error
+\FileReplicaConn(d:\sysvol\domain::FROM:LGE\TWNHQ10-DC13$)\Bindings
+\FileReplicaConn(d:\sysvol\domain::FROM:LGE\TWNHQ10-DC13$)\Bindings in Error
+\FileReplicaConn(d:\sysvol\domain::FROM:LGE\TWNHQ10-DC13$)\Communication Timeouts
+\FileReplicaConn(d:\sysvol\domain::FROM:LGE\TWNHQ10-DC13$)\Fetch Blocks Received
+\FileReplicaConn(d:\sysvol\domain::FROM:LGE\TWNHQ10-DC13$)\Fetch Blocks Received in Bytes
+\FileReplicaConn(d:\sysvol\domain::FROM:LGE\TWNHQ10-DC13$)\Fetch Blocks Sent
+\FileReplicaConn(d:\sysvol\domain::FROM:LGE\TWNHQ10-DC13$)\Fetch Blocks Sent in Bytes
+\FileReplicaConn(d:\sysvol\domain::FROM:LGE\TWNHQ10-DC13$)\Fetch Requests Received
+\FileReplicaConn(d:\sysvol\domain::FROM:LGE\TWNHQ10-DC13$)\Fetch Requests Sent
+\FileReplicaConn(d:\sysvol\domain::FROM:LGE\TWNHQ10-DC13$)\Inbound Change Orders Dampened
+\FileReplicaConn(d:\sysvol\domain::FROM:LGE\TWNHQ10-DC13$)\Join Notifications Received
+\FileReplicaConn(d:\sysvol\domain::FROM:LGE\TWNHQ10-DC13$)\Join Notifications Sent
+\FileReplicaConn(d:\sysvol\domain::FROM:LGE\TWNHQ10-DC13$)\Joins
+\FileReplicaConn(d:\sysvol\domain::FROM:LGE\TWNHQ10-DC13$)\Local Change Orders Sent
+\FileReplicaConn(d:\sysvol\domain::FROM:LGE\TWNHQ10-DC13$)\Local Change Orders Sent At Join
+\FileReplicaConn(d:\sysvol\domain::FROM:LGE\TWNHQ10-DC13$)\Outbound Change Orders Dampened
+\FileReplicaConn(d:\sysvol\domain::FROM:LGE\TWNHQ10-DC13$)\Packets Sent
+\FileReplicaConn(d:\sysvol\domain::FROM:LGE\TWNHQ10-DC13$)\Packets Sent in Bytes
+\FileReplicaConn(d:\sysvol\domain::FROM:LGE\TWNHQ10-DC13$)\Packets Sent in Error
+\FileReplicaConn(d:\sysvol\domain::FROM:LGE\TWNHQ10-DC13$)\Remote Change Orders Received
+\FileReplicaConn(d:\sysvol\domain::FROM:LGE\TWNHQ10-DC13$)\Remote Change Orders Sent
+\FileReplicaConn(d:\sysvol\domain::FROM:LGE\TWNHQ10-DC13$)\Unjoins
+\FileReplicaConn(d:\sysvol\domain::TO:LGE\AICHQ10-DC13$)\Authentications
+\FileReplicaConn(d:\sysvol\domain::TO:LGE\AICHQ10-DC13$)\Authentications in Err
+or
+\FileReplicaConn(d:\sysvol\domain::TO:LGE\AICHQ10-DC13$)\Bindings
+\FileReplicaConn(d:\sysvol\domain::TO:LGE\AICHQ10-DC13$)\Bindings in Error
+\FileReplicaConn(d:\sysvol\domain::TO:LGE\AICHQ10-DC13$)\Communication Timeouts
+\FileReplicaConn(d:\sysvol\domain::TO:LGE\AICHQ10-DC13$)\Fetch Blocks Received
+\FileReplicaConn(d:\sysvol\domain::TO:LGE\AICHQ10-DC13$)\Fetch Blocks Received 
+in Bytes
+\FileReplicaConn(d:\sysvol\domain::TO:LGE\AICHQ10-DC13$)\Fetch Blocks Sent
+\FileReplicaConn(d:\sysvol\domain::TO:LGE\AICHQ10-DC13$)\Fetch Blocks Sent in B
+ytes
+\FileReplicaConn(d:\sysvol\domain::TO:LGE\AICHQ10-DC13$)\Fetch Requests Receive
+d
+\FileReplicaConn(d:\sysvol\domain::TO:LGE\AICHQ10-DC13$)\Fetch Requests Sent
+\FileReplicaConn(d:\sysvol\domain::TO:LGE\AICHQ10-DC13$)\Inbound Change Orders 
+Dampened
+\FileReplicaConn(d:\sysvol\domain::TO:LGE\AICHQ10-DC13$)\Join Notifications Rec
+eived
+\FileReplicaConn(d:\sysvol\domain::TO:LGE\AICHQ10-DC13$)\Join Notifications Sen
+t
+\FileReplicaConn(d:\sysvol\domain::TO:LGE\AICHQ10-DC13$)\Joins
+\FileReplicaConn(d:\sysvol\domain::TO:LGE\AICHQ10-DC13$)\Local Change Orders Se
+nt
+\FileReplicaConn(d:\sysvol\domain::TO:LGE\AICHQ10-DC13$)\Local Change Orders Se
+nt At Join
+\FileReplicaConn(d:\sysvol\domain::TO:LGE\AICHQ10-DC13$)\Outbound Change Orders
+ Dampened
+\FileReplicaConn(d:\sysvol\domain::TO:LGE\AICHQ10-DC13$)\Packets Sent
+\FileReplicaConn(d:\sysvol\domain::TO:LGE\AICHQ10-DC13$)\Packets Sent in Bytes
+\FileReplicaConn(d:\sysvol\domain::TO:LGE\AICHQ10-DC13$)\Packets Sent in Error
+\FileReplicaConn(d:\sysvol\domain::TO:LGE\AICHQ10-DC13$)\Remote Change Orders R
+eceived
+\FileReplicaConn(d:\sysvol\domain::TO:LGE\AICHQ10-DC13$)\Remote Change Orders S
+ent
+\FileReplicaConn(d:\sysvol\domain::TO:LGE\AICHQ10-DC13$)\Unjoins
+\FileReplicaConn(d:\sysvol\domain::TO:LGE\CB-SO10-DC11$)\Authentications
+\FileReplicaConn(d:\sysvol\domain::TO:LGE\CB-SO10-DC11$)\Authentications in Err
+or
+\FileReplicaConn(d:\sysvol\domain::TO:LGE\CB-SO10-DC11$)\Bindings
+\FileReplicaConn(d:\sysvol\domain::TO:LGE\CB-SO10-DC11$)\Bindings in Error
+\FileReplicaConn(d:\sysvol\domain::TO:LGE\CB-SO10-DC11$)\Communication Timeouts
+\FileReplicaConn(d:\sysvol\domain::TO:LGE\CB-SO10-DC11$)\Fetch Blocks Received
+\FileReplicaConn(d:\sysvol\domain::TO:LGE\CB-SO10-DC11$)\Fetch Blocks Received 
+in Bytes
+\FileReplicaConn(d:\sysvol\domain::TO:LGE\CB-SO10-DC11$)\Fetch Blocks Sent
+\FileReplicaConn(d:\sysvol\domain::TO:LGE\CB-SO10-DC11$)\Fetch Blocks Sent in B
+ytes
+\FileReplicaConn(d:\sysvol\domain::TO:LGE\CB-SO10-DC11$)\Fetch Requests Receive
+d
+\FileReplicaConn(d:\sysvol\domain::TO:LGE\CB-SO10-DC11$)\Fetch Requests Sent
+\FileReplicaConn(d:\sysvol\domain::TO:LGE\CB-SO10-DC11$)\Inbound Change Orders 
+Dampened
+\FileReplicaConn(d:\sysvol\domain::TO:LGE\CB-SO10-DC11$)\Join Notifications Rec
+eived
+\FileReplicaConn(d:\sysvol\domain::TO:LGE\CB-SO10-DC11$)\Join Notifications Sen
+t
+\FileReplicaConn(d:\sysvol\domain::TO:LGE\CB-SO10-DC11$)\Joins
+\FileReplicaConn(d:\sysvol\domain::TO:LGE\CB-SO10-DC11$)\Local Change Orders Se
+nt
+\FileReplicaConn(d:\sysvol\domain::TO:LGE\CB-SO10-DC11$)\Local Change Orders Se
+nt At Join
+\FileReplicaConn(d:\sysvol\domain::TO:LGE\CB-SO10-DC11$)\Outbound Change Orders
+ Dampened
+\FileReplicaConn(d:\sysvol\domain::TO:LGE\CB-SO10-DC11$)\Packets Sent
+\FileReplicaConn(d:\sysvol\domain::TO:LGE\CB-SO10-DC11$)\Packets Sent in Bytes
+\FileReplicaConn(d:\sysvol\domain::TO:LGE\CB-SO10-DC11$)\Packets Sent in Error
+\FileReplicaConn(d:\sysvol\domain::TO:LGE\CB-SO10-DC11$)\Remote Change Orders R
+eceived
+\FileReplicaConn(d:\sysvol\domain::TO:LGE\CB-SO10-DC11$)\Remote Change Orders S
+ent
+\FileReplicaConn(d:\sysvol\domain::TO:LGE\CB-SO10-DC11$)\Unjoins
+\FileReplicaConn(d:\sysvol\domain::TO:LGE\MU-SD10-DC10$)\Authentications
+\FileReplicaConn(d:\sysvol\domain::TO:LGE\MU-SD10-DC10$)\Authentications in Err
+or
+\FileReplicaConn(d:\sysvol\domain::TO:LGE\MU-SD10-DC10$)\Bindings
+\FileReplicaConn(d:\sysvol\domain::TO:LGE\MU-SD10-DC10$)\Bindings in Error
+\FileReplicaConn(d:\sysvol\domain::TO:LGE\MU-SD10-DC10$)\Communication Timeouts
+\FileReplicaConn(d:\sysvol\domain::TO:LGE\MU-SD10-DC10$)\Fetch Blocks Received
+\FileReplicaConn(d:\sysvol\domain::TO:LGE\MU-SD10-DC10$)\Fetch Blocks Received 
+in Bytes
+\FileReplicaConn(d:\sysvol\domain::TO:LGE\MU-SD10-DC10$)\Fetch Blocks Sent
+\FileReplicaConn(d:\sysvol\domain::TO:LGE\MU-SD10-DC10$)\Fetch Blocks Sent in B
+ytes
+\FileReplicaConn(d:\sysvol\domain::TO:LGE\MU-SD10-DC10$)\Fetch Requests Receive
+d
+\FileReplicaConn(d:\sysvol\domain::TO:LGE\MU-SD10-DC10$)\Fetch Requests Sent
+\FileReplicaConn(d:\sysvol\domain::TO:LGE\MU-SD10-DC10$)\Inbound Change Orders 
+Dampened
+\FileReplicaConn(d:\sysvol\domain::TO:LGE\MU-SD10-DC10$)\Join Notifications Rec
+eived
+\FileReplicaConn(d:\sysvol\domain::TO:LGE\MU-SD10-DC10$)\Join Notifications Sen
+t
+\FileReplicaConn(d:\sysvol\domain::TO:LGE\MU-SD10-DC10$)\Joins
+\FileReplicaConn(d:\sysvol\domain::TO:LGE\MU-SD10-DC10$)\Local Change Orders Se
+nt
+\FileReplicaConn(d:\sysvol\domain::TO:LGE\MU-SD10-DC10$)\Local Change Orders Se
+nt At Join
+\FileReplicaConn(d:\sysvol\domain::TO:LGE\MU-SD10-DC10$)\Outbound Change Orders
+ Dampened
+\FileReplicaConn(d:\sysvol\domain::TO:LGE\MU-SD10-DC10$)\Packets Sent
+\FileReplicaConn(d:\sysvol\domain::TO:LGE\MU-SD10-DC10$)\Packets Sent in Bytes
+\FileReplicaConn(d:\sysvol\domain::TO:LGE\MU-SD10-DC10$)\Packets Sent in Error
+\FileReplicaConn(d:\sysvol\domain::TO:LGE\MU-SD10-DC10$)\Remote Change Orders R
+eceived
+\FileReplicaConn(d:\sysvol\domain::TO:LGE\MU-SD10-DC10$)\Remote Change Orders S
+ent
+\FileReplicaConn(d:\sysvol\domain::TO:LGE\MU-SD10-DC10$)\Unjoins
+\FileReplicaConn(d:\sysvol\domain::TO:LGE\PR-SO10-DC11$)\Authentications
+\FileReplicaConn(d:\sysvol\domain::TO:LGE\PR-SO10-DC11$)\Authentications in Err
+or
+\FileReplicaConn(d:\sysvol\domain::TO:LGE\PR-SO10-DC11$)\Bindings
+\FileReplicaConn(d:\sysvol\domain::TO:LGE\PR-SO10-DC11$)\Bindings in Error
+\FileReplicaConn(d:\sysvol\domain::TO:LGE\PR-SO10-DC11$)\Communication Timeouts
+\FileReplicaConn(d:\sysvol\domain::TO:LGE\PR-SO10-DC11$)\Fetch Blocks Received
+\FileReplicaConn(d:\sysvol\domain::TO:LGE\PR-SO10-DC11$)\Fetch Blocks Received 
+in Bytes
+\FileReplicaConn(d:\sysvol\domain::TO:LGE\PR-SO10-DC11$)\Fetch Blocks Sent
+\FileReplicaConn(d:\sysvol\domain::TO:LGE\PR-SO10-DC11$)\Fetch Blocks Sent in B
+ytes
+\FileReplicaConn(d:\sysvol\domain::TO:LGE\PR-SO10-DC11$)\Fetch Requests Receive
+d
+\FileReplicaConn(d:\sysvol\domain::TO:LGE\PR-SO10-DC11$)\Fetch Requests Sent
+\FileReplicaConn(d:\sysvol\domain::TO:LGE\PR-SO10-DC11$)\Inbound Change Orders 
+Dampened
+\FileReplicaConn(d:\sysvol\domain::TO:LGE\PR-SO10-DC11$)\Join Notifications Rec
+eived
+\FileReplicaConn(d:\sysvol\domain::TO:LGE\PR-SO10-DC11$)\Join Notifications Sen
+t
+\FileReplicaConn(d:\sysvol\domain::TO:LGE\PR-SO10-DC11$)\Joins
+\FileReplicaConn(d:\sysvol\domain::TO:LGE\PR-SO10-DC11$)\Local Change Orders Se
+nt
+\FileReplicaConn(d:\sysvol\domain::TO:LGE\PR-SO10-DC11$)\Local Change Orders Se
+nt At Join
+\FileReplicaConn(d:\sysvol\domain::TO:LGE\PR-SO10-DC11$)\Outbound Change Orders
+ Dampened
+\FileReplicaConn(d:\sysvol\domain::TO:LGE\PR-SO10-DC11$)\Packets Sent
+\FileReplicaConn(d:\sysvol\domain::TO:LGE\PR-SO10-DC11$)\Packets Sent in Bytes
+\FileReplicaConn(d:\sysvol\domain::TO:LGE\PR-SO10-DC11$)\Packets Sent in Error
+\FileReplicaConn(d:\sysvol\domain::TO:LGE\PR-SO10-DC11$)\Remote Change Orders R
+eceived
+\FileReplicaConn(d:\sysvol\domain::TO:LGE\PR-SO10-DC11$)\Remote Change Orders S
+ent
+\FileReplicaConn(d:\sysvol\domain::TO:LGE\PR-SO10-DC11$)\Unjoins
+\FileReplicaConn(d:\sysvol\domain::TO:LGE\PS-SO10-DC11$)\Authentications
+\FileReplicaConn(d:\sysvol\domain::TO:LGE\PS-SO10-DC11$)\Authentications in Err
+or
+\FileReplicaConn(d:\sysvol\domain::TO:LGE\PS-SO10-DC11$)\Bindings
+\FileReplicaConn(d:\sysvol\domain::TO:LGE\PS-SO10-DC11$)\Bindings in Error
+\FileReplicaConn(d:\sysvol\domain::TO:LGE\PS-SO10-DC11$)\Communication Timeouts
+\FileReplicaConn(d:\sysvol\domain::TO:LGE\PS-SO10-DC11$)\Fetch Blocks Received
+\FileReplicaConn(d:\sysvol\domain::TO:LGE\PS-SO10-DC11$)\Fetch Blocks Received 
+in Bytes
+\FileReplicaConn(d:\sysvol\domain::TO:LGE\PS-SO10-DC11$)\Fetch Blocks Sent
+\FileReplicaConn(d:\sysvol\domain::TO:LGE\PS-SO10-DC11$)\Fetch Blocks Sent in B
+ytes
+\FileReplicaConn(d:\sysvol\domain::TO:LGE\PS-SO10-DC11$)\Fetch Requests Receive
+d
+\FileReplicaConn(d:\sysvol\domain::TO:LGE\PS-SO10-DC11$)\Fetch Requests Sent
+\FileReplicaConn(d:\sysvol\domain::TO:LGE\PS-SO10-DC11$)\Inbound Change Orders 
+Dampened
+\FileReplicaConn(d:\sysvol\domain::TO:LGE\PS-SO10-DC11$)\Join Notifications Rec
+eived
+\FileReplicaConn(d:\sysvol\domain::TO:LGE\PS-SO10-DC11$)\Join Notifications Sen
+t
+\FileReplicaConn(d:\sysvol\domain::TO:LGE\PS-SO10-DC11$)\Joins
+\FileReplicaConn(d:\sysvol\domain::TO:LGE\PS-SO10-DC11$)\Local Change Orders Se
+nt
+\FileReplicaConn(d:\sysvol\domain::TO:LGE\PS-SO10-DC11$)\Local Change Orders Se
+nt At Join
+\FileReplicaConn(d:\sysvol\domain::TO:LGE\PS-SO10-DC11$)\Outbound Change Orders
+ Dampened
+\FileReplicaConn(d:\sysvol\domain::TO:LGE\PS-SO10-DC11$)\Packets Sent
+\FileReplicaConn(d:\sysvol\domain::TO:LGE\PS-SO10-DC11$)\Packets Sent in Bytes
+\FileReplicaConn(d:\sysvol\domain::TO:LGE\PS-SO10-DC11$)\Packets Sent in Error
+\FileReplicaConn(d:\sysvol\domain::TO:LGE\PS-SO10-DC11$)\Remote Change Orders R
+eceived
+\FileReplicaConn(d:\sysvol\domain::TO:LGE\PS-SO10-DC11$)\Remote Change Orders S
+ent
+\FileReplicaConn(d:\sysvol\domain::TO:LGE\PS-SO10-DC11$)\Unjoins
+\FileReplicaConn(d:\sysvol\domain::TO:LGE\SP-RD10-DC10$)\Authentications
+\FileReplicaConn(d:\sysvol\domain::TO:LGE\SP-RD10-DC10$)\Authentications in Err
+or
+\FileReplicaConn(d:\sysvol\domain::TO:LGE\SP-RD10-DC10$)\Bindings
+\FileReplicaConn(d:\sysvol\domain::TO:LGE\SP-RD10-DC10$)\Bindings in Error
+\FileReplicaConn(d:\sysvol\domain::TO:LGE\SP-RD10-DC10$)\Communication Timeouts
+\FileReplicaConn(d:\sysvol\domain::TO:LGE\SP-RD10-DC10$)\Fetch Blocks Received
+\FileReplicaConn(d:\sysvol\domain::TO:LGE\SP-RD10-DC10$)\Fetch Blocks Received 
+in Bytes
+\FileReplicaConn(d:\sysvol\domain::TO:LGE\SP-RD10-DC10$)\Fetch Blocks Sent
+\FileReplicaConn(d:\sysvol\domain::TO:LGE\SP-RD10-DC10$)\Fetch Blocks Sent in B
+ytes
+\FileReplicaConn(d:\sysvol\domain::TO:LGE\SP-RD10-DC10$)\Fetch Requests Receive
+d
+\FileReplicaConn(d:\sysvol\domain::TO:LGE\SP-RD10-DC10$)\Fetch Requests Sent
+\FileReplicaConn(d:\sysvol\domain::TO:LGE\SP-RD10-DC10$)\Inbound Change Orders 
+Dampened
+\FileReplicaConn(d:\sysvol\domain::TO:LGE\SP-RD10-DC10$)\Join Notifications Rec
+eived
+\FileReplicaConn(d:\sysvol\domain::TO:LGE\SP-RD10-DC10$)\Join Notifications Sen
+t
+\FileReplicaConn(d:\sysvol\domain::TO:LGE\SP-RD10-DC10$)\Joins
+\FileReplicaConn(d:\sysvol\domain::TO:LGE\SP-RD10-DC10$)\Local Change Orders Se
+nt
+\FileReplicaConn(d:\sysvol\domain::TO:LGE\SP-RD10-DC10$)\Local Change Orders Se
+nt At Join
+\FileReplicaConn(d:\sysvol\domain::TO:LGE\SP-RD10-DC10$)\Outbound Change Orders
+ Dampened
+\FileReplicaConn(d:\sysvol\domain::TO:LGE\SP-RD10-DC10$)\Packets Sent
+\FileReplicaConn(d:\sysvol\domain::TO:LGE\SP-RD10-DC10$)\Packets Sent in Bytes
+\FileReplicaConn(d:\sysvol\domain::TO:LGE\SP-RD10-DC10$)\Packets Sent in Error
+\FileReplicaConn(d:\sysvol\domain::TO:LGE\SP-RD10-DC10$)\Remote Change Orders R
+eceived
+\FileReplicaConn(d:\sysvol\domain::TO:LGE\SP-RD10-DC10$)\Remote Change Orders S
+ent
+\FileReplicaConn(d:\sysvol\domain::TO:LGE\SP-RD10-DC10$)\Unjoins
+\FileReplicaConn(d:\sysvol\domain::TO:LGE\SPSSO10-DC11$)\Authentications
+\FileReplicaConn(d:\sysvol\domain::TO:LGE\SPSSO10-DC11$)\Authentications in Err
+or
+\FileReplicaConn(d:\sysvol\domain::TO:LGE\SPSSO10-DC11$)\Bindings
+\FileReplicaConn(d:\sysvol\domain::TO:LGE\SPSSO10-DC11$)\Bindings in Error
+\FileReplicaConn(d:\sysvol\domain::TO:LGE\SPSSO10-DC11$)\Communication Timeouts
+\FileReplicaConn(d:\sysvol\domain::TO:LGE\SPSSO10-DC11$)\Fetch Blocks Received
+\FileReplicaConn(d:\sysvol\domain::TO:LGE\SPSSO10-DC11$)\Fetch Blocks Received 
+in Bytes
+\FileReplicaConn(d:\sysvol\domain::TO:LGE\SPSSO10-DC11$)\Fetch Blocks Sent
+\FileReplicaConn(d:\sysvol\domain::TO:LGE\SPSSO10-DC11$)\Fetch Blocks Sent in B
+ytes
+\FileReplicaConn(d:\sysvol\domain::TO:LGE\SPSSO10-DC11$)\Fetch Requests Receive
+d
+\FileReplicaConn(d:\sysvol\domain::TO:LGE\SPSSO10-DC11$)\Fetch Requests Sent
+\FileReplicaConn(d:\sysvol\domain::TO:LGE\SPSSO10-DC11$)\Inbound Change Orders 
+Dampened
+\FileReplicaConn(d:\sysvol\domain::TO:LGE\SPSSO10-DC11$)\Join Notifications Rec
+eived
+\FileReplicaConn(d:\sysvol\domain::TO:LGE\SPSSO10-DC11$)\Join Notifications Sen
+t
+\FileReplicaConn(d:\sysvol\domain::TO:LGE\SPSSO10-DC11$)\Joins
+\FileReplicaConn(d:\sysvol\domain::TO:LGE\SPSSO10-DC11$)\Local Change Orders Se
+nt
+\FileReplicaConn(d:\sysvol\domain::TO:LGE\SPSSO10-DC11$)\Local Change Orders Se
+nt At Join
+\FileReplicaConn(d:\sysvol\domain::TO:LGE\SPSSO10-DC11$)\Outbound Change Orders
+ Dampened
+\FileReplicaConn(d:\sysvol\domain::TO:LGE\SPSSO10-DC11$)\Packets Sent
+\FileReplicaConn(d:\sysvol\domain::TO:LGE\SPSSO10-DC11$)\Packets Sent in Bytes
+\FileReplicaConn(d:\sysvol\domain::TO:LGE\SPSSO10-DC11$)\Packets Sent in Error
+\FileReplicaConn(d:\sysvol\domain::TO:LGE\SPSSO10-DC11$)\Remote Change Orders R
+eceived
+\FileReplicaConn(d:\sysvol\domain::TO:LGE\SPSSO10-DC11$)\Remote Change Orders S
+ent
+\FileReplicaConn(d:\sysvol\domain::TO:LGE\SPSSO10-DC11$)\Unjoins
+\FileReplicaConn(d:\sysvol\domain::TO:LGE\SPTMF10-DC11$)\Authentications
+\FileReplicaConn(d:\sysvol\domain::TO:LGE\SPTMF10-DC11$)\Authentications in Err
+or
+\FileReplicaConn(d:\sysvol\domain::TO:LGE\SPTMF10-DC11$)\Bindings
+\FileReplicaConn(d:\sysvol\domain::TO:LGE\SPTMF10-DC11$)\Bindings in Error
+\FileReplicaConn(d:\sysvol\domain::TO:LGE\SPTMF10-DC11$)\Communication Timeouts
+\FileReplicaConn(d:\sysvol\domain::TO:LGE\SPTMF10-DC11$)\Fetch Blocks Received
+\FileReplicaConn(d:\sysvol\domain::TO:LGE\SPTMF10-DC11$)\Fetch Blocks Received 
+in Bytes
+\FileReplicaConn(d:\sysvol\domain::TO:LGE\SPTMF10-DC11$)\Fetch Blocks Sent
+\FileReplicaConn(d:\sysvol\domain::TO:LGE\SPTMF10-DC11$)\Fetch Blocks Sent in B
+ytes
+\FileReplicaConn(d:\sysvol\domain::TO:LGE\SPTMF10-DC11$)\Fetch Requests Receive
+d
+\FileReplicaConn(d:\sysvol\domain::TO:LGE\SPTMF10-DC11$)\Fetch Requests Sent
+\FileReplicaConn(d:\sysvol\domain::TO:LGE\SPTMF10-DC11$)\Inbound Change Orders 
+Dampened
+\FileReplicaConn(d:\sysvol\domain::TO:LGE\SPTMF10-DC11$)\Join Notifications Rec
+eived
+\FileReplicaConn(d:\sysvol\domain::TO:LGE\SPTMF10-DC11$)\Join Notifications Sen
+t
+\FileReplicaConn(d:\sysvol\domain::TO:LGE\SPTMF10-DC11$)\Joins
+\FileReplicaConn(d:\sysvol\domain::TO:LGE\SPTMF10-DC11$)\Local Change Orders Se
+nt
+\FileReplicaConn(d:\sysvol\domain::TO:LGE\SPTMF10-DC11$)\Local Change Orders Se
+nt At Join
+\FileReplicaConn(d:\sysvol\domain::TO:LGE\SPTMF10-DC11$)\Outbound Change Orders
+ Dampened
+\FileReplicaConn(d:\sysvol\domain::TO:LGE\SPTMF10-DC11$)\Packets Sent
+\FileReplicaConn(d:\sysvol\domain::TO:LGE\SPTMF10-DC11$)\Packets Sent in Bytes
+\FileReplicaConn(d:\sysvol\domain::TO:LGE\SPTMF10-DC11$)\Packets Sent in Error
+\FileReplicaConn(d:\sysvol\domain::TO:LGE\SPTMF10-DC11$)\Remote Change Orders R
+eceived
+\FileReplicaConn(d:\sysvol\domain::TO:LGE\SPTMF10-DC11$)\Remote Change Orders S
+ent
+\FileReplicaConn(d:\sysvol\domain::TO:LGE\SPTMF10-DC11$)\Unjoins
+\FileReplicaConn(d:\sysvol\domain::TO:LGE\SVLRD10-DC10$)\Authentications
+\FileReplicaConn(d:\sysvol\domain::TO:LGE\SVLRD10-DC10$)\Authentications in Err
+or
+\FileReplicaConn(d:\sysvol\domain::TO:LGE\SVLRD10-DC10$)\Bindings
+\FileReplicaConn(d:\sysvol\domain::TO:LGE\SVLRD10-DC10$)\Bindings in Error
+\FileReplicaConn(d:\sysvol\domain::TO:LGE\SVLRD10-DC10$)\Communication Timeouts
+\FileReplicaConn(d:\sysvol\domain::TO:LGE\SVLRD10-DC10$)\Fetch Blocks Received
+\FileReplicaConn(d:\sysvol\domain::TO:LGE\SVLRD10-DC10$)\Fetch Blocks Received 
+in Bytes
+\FileReplicaConn(d:\sysvol\domain::TO:LGE\SVLRD10-DC10$)\Fetch Blocks Sent
+\FileReplicaConn(d:\sysvol\domain::TO:LGE\SVLRD10-DC10$)\Fetch Blocks Sent in B
+ytes
+\FileReplicaConn(d:\sysvol\domain::TO:LGE\SVLRD10-DC10$)\Fetch Requests Receive
+d
+\FileReplicaConn(d:\sysvol\domain::TO:LGE\SVLRD10-DC10$)\Fetch Requests Sent
+\FileReplicaConn(d:\sysvol\domain::TO:LGE\SVLRD10-DC10$)\Inbound Change Orders 
+Dampened
+\FileReplicaConn(d:\sysvol\domain::TO:LGE\SVLRD10-DC10$)\Join Notifications Rec
+eived
+\FileReplicaConn(d:\sysvol\domain::TO:LGE\SVLRD10-DC10$)\Join Notifications Sen
+t
+\FileReplicaConn(d:\sysvol\domain::TO:LGE\SVLRD10-DC10$)\Joins
+\FileReplicaConn(d:\sysvol\domain::TO:LGE\SVLRD10-DC10$)\Local Change Orders Se
+nt
+\FileReplicaConn(d:\sysvol\domain::TO:LGE\SVLRD10-DC10$)\Local Change Orders Se
+nt At Join
+\FileReplicaConn(d:\sysvol\domain::TO:LGE\SVLRD10-DC10$)\Outbound Change Orders
+ Dampened
+\FileReplicaConn(d:\sysvol\domain::TO:LGE\SVLRD10-DC10$)\Packets Sent
+\FileReplicaConn(d:\sysvol\domain::TO:LGE\SVLRD10-DC10$)\Packets Sent in Bytes
+\FileReplicaConn(d:\sysvol\domain::TO:LGE\SVLRD10-DC10$)\Packets Sent in Error
+\FileReplicaConn(d:\sysvol\domain::TO:LGE\SVLRD10-DC10$)\Remote Change Orders R
+eceived
+\FileReplicaConn(d:\sysvol\domain::TO:LGE\SVLRD10-DC10$)\Remote Change Orders S
+ent
+\FileReplicaConn(d:\sysvol\domain::TO:LGE\SVLRD10-DC10$)\Unjoins
+\LogicalDisk(_Total)\% Disk Read Time
+\LogicalDisk(_Total)\% Disk Time
+\LogicalDisk(_Total)\% Disk Write Time
+\LogicalDisk(_Total)\% Free Space
+\LogicalDisk(_Total)\% Idle Time
+\LogicalDisk(_Total)\Avg. Disk Bytes/Read
+\LogicalDisk(_Total)\Avg. Disk Bytes/Transfer
+\LogicalDisk(_Total)\Avg. Disk Bytes/Write
+\LogicalDisk(_Total)\Avg. Disk Queue Length
+\LogicalDisk(_Total)\Avg. Disk Read Queue Length
+\LogicalDisk(_Total)\Avg. Disk sec/Read
+\LogicalDisk(_Total)\Avg. Disk sec/Transfer
+\LogicalDisk(_Total)\Avg. Disk sec/Write
+\LogicalDisk(_Total)\Avg. Disk Write Queue Length
+\LogicalDisk(_Total)\Current Disk Queue Length
+\LogicalDisk(_Total)\Disk Bytes/sec
+\LogicalDisk(_Total)\Disk Read Bytes/sec
+\LogicalDisk(_Total)\Disk Reads/sec
+\LogicalDisk(_Total)\Disk Transfers/sec
+\LogicalDisk(_Total)\Disk Write Bytes/sec
+\LogicalDisk(_Total)\Disk Writes/sec
+\LogicalDisk(_Total)\Free Megabytes
+\LogicalDisk(_Total)\Split IO/Sec
+\LogicalDisk(C:)\% Disk Read Time
+\LogicalDisk(C:)\% Disk Time
+\LogicalDisk(C:)\% Disk Write Time
+\LogicalDisk(C:)\% Free Space
+\LogicalDisk(C:)\% Idle Time
+\LogicalDisk(C:)\Avg. Disk Bytes/Read
+\LogicalDisk(C:)\Avg. Disk Bytes/Transfer
+\LogicalDisk(C:)\Avg. Disk Bytes/Write
+\LogicalDisk(C:)\Avg. Disk Queue Length
+\LogicalDisk(C:)\Avg. Disk Read Queue Length
+\LogicalDisk(C:)\Avg. Disk sec/Read
+\LogicalDisk(C:)\Avg. Disk sec/Transfer
+\LogicalDisk(C:)\Avg. Disk sec/Write
+\LogicalDisk(C:)\Avg. Disk Write Queue Length
+\LogicalDisk(C:)\Current Disk Queue Length
+\LogicalDisk(C:)\Disk Bytes/sec
+\LogicalDisk(C:)\Disk Read Bytes/sec
+\LogicalDisk(C:)\Disk Reads/sec
+\LogicalDisk(C:)\Disk Transfers/sec
+\LogicalDisk(C:)\Disk Write Bytes/sec
+\LogicalDisk(C:)\Disk Writes/sec
+\LogicalDisk(C:)\Free Megabytes
+\LogicalDisk(C:)\Split IO/Sec
+\LogicalDisk(D:)\% Disk Read Time
+\LogicalDisk(D:)\% Disk Time
+\LogicalDisk(D:)\% Disk Write Time
+\LogicalDisk(D:)\% Free Space
+\LogicalDisk(D:)\% Idle Time
+\LogicalDisk(D:)\Avg. Disk Bytes/Read
+\LogicalDisk(D:)\Avg. Disk Bytes/Transfer
+\LogicalDisk(D:)\Avg. Disk Bytes/Write
+\LogicalDisk(D:)\Avg. Disk Queue Length
+\LogicalDisk(D:)\Avg. Disk Read Queue Length
+\LogicalDisk(D:)\Avg. Disk sec/Read
+\LogicalDisk(D:)\Avg. Disk sec/Transfer
+\LogicalDisk(D:)\Avg. Disk sec/Write
+\LogicalDisk(D:)\Avg. Disk Write Queue Length
+\LogicalDisk(D:)\Current Disk Queue Length
+\LogicalDisk(D:)\Disk Bytes/sec
+\LogicalDisk(D:)\Disk Read Bytes/sec
+\LogicalDisk(D:)\Disk Reads/sec
+\LogicalDisk(D:)\Disk Transfers/sec
+\LogicalDisk(D:)\Disk Write Bytes/sec
+\LogicalDisk(D:)\Disk Writes/sec
+\LogicalDisk(D:)\Free Megabytes
+\LogicalDisk(D:)\Split IO/Sec
+\Netlogon(\\HSVSC10-DC10.AISVC.LGE.NET)\Average Semaphore Hold Time
+\Netlogon(\\HSVSC10-DC10.AISVC.LGE.NET)\Semaphore Acquires
+\Netlogon(\\HSVSC10-DC10.AISVC.LGE.NET)\Semaphore Holders
+\Netlogon(\\HSVSC10-DC10.AISVC.LGE.NET)\Semaphore Timeouts
+\Netlogon(\\HSVSC10-DC10.AISVC.LGE.NET)\Semaphore Waiters
+\Netlogon(\\LGEADPMSE1Q.LGE.NET)\Average Semaphore Hold Time
+\Netlogon(\\LGEADPMSE1Q.LGE.NET)\Semaphore Acquires
+\Netlogon(\\LGEADPMSE1Q.LGE.NET)\Semaphore Holders
+\Netlogon(\\LGEADPMSE1Q.LGE.NET)\Semaphore Timeouts
+\Netlogon(\\LGEADPMSE1Q.LGE.NET)\Semaphore Waiters
+\Netlogon(\\wlfw-dc1.lgeai.com)\Average Semaphore Hold Time
+\Netlogon(\\wlfw-dc1.lgeai.com)\Semaphore Acquires
+\Netlogon(\\wlfw-dc1.lgeai.com)\Semaphore Holders
+\Netlogon(\\wlfw-dc1.lgeai.com)\Semaphore Timeouts
+\Netlogon(\\wlfw-dc1.lgeai.com)\Semaphore Waiters
+\Netlogon(_Total)\Average Semaphore Hold Time
+\Netlogon(_Total)\Semaphore Acquires
+\Netlogon(_Total)\Semaphore Holders
+\Netlogon(_Total)\Semaphore Timeouts
+\Netlogon(_Total)\Semaphore Waiters
+\Process(_Total)\% Privileged Time
+\Process(_Total)\% Processor Time
+\Process(_Total)\% User Time
+\Process(_Total)\Creating Process ID
+\Process(_Total)\Elapsed Time
+\Process(_Total)\Handle Count
+\Process(_Total)\ID Process
+\Process(_Total)\IO Data Bytes/sec
+\Process(_Total)\IO Data Operations/sec
+\Process(_Total)\IO Other Bytes/sec
+\Process(_Total)\IO Other Operations/sec
+\Process(_Total)\IO Read Bytes/sec
+\Process(_Total)\IO Read Operations/sec
+\Process(_Total)\IO Write Bytes/sec
+\Process(_Total)\IO Write Operations/sec
+\Process(_Total)\Page Faults/sec
+\Process(_Total)\Page File Bytes
+\Process(_Total)\Page File Bytes Peak
+\Process(_Total)\Pool Nonpaged Bytes
+\Process(_Total)\Pool Paged Bytes
+\Process(_Total)\Priority Base
+\Process(_Total)\Private Bytes
+\Process(_Total)\Thread Count
+\Process(_Total)\Virtual Bytes
+\Process(_Total)\Virtual Bytes Peak
+\Process(_Total)\Working Set
+\Process(_Total)\Working Set - Private
+\Process(_Total)\Working Set Peak
+\Process(dfsrs)\% Privileged Time
+\Process(dfsrs)\% Processor Time
+\Process(dfsrs)\% User Time
+\Process(dfsrs)\Creating Process ID
+\Process(dfsrs)\Elapsed Time
+\Process(dfsrs)\Handle Count
+\Process(dfsrs)\ID Process
+\Process(dfsrs)\IO Data Bytes/sec
+\Process(dfsrs)\IO Data Operations/sec
+\Process(dfsrs)\IO Other Bytes/sec
+\Process(dfsrs)\IO Other Operations/sec
+\Process(dfsrs)\IO Read Bytes/sec
+\Process(dfsrs)\IO Read Operations/sec
+\Process(dfsrs)\IO Write Bytes/sec
+\Process(dfsrs)\IO Write Operations/sec
+\Process(dfsrs)\Page Faults/sec
+\Process(dfsrs)\Page File Bytes
+\Process(dfsrs)\Page File Bytes Peak
+\Process(dfsrs)\Pool Nonpaged Bytes
+\Process(dfsrs)\Pool Paged Bytes
+\Process(dfsrs)\Priority Base
+\Process(dfsrs)\Private Bytes
+\Process(dfsrs)\Thread Count
+\Process(dfsrs)\Virtual Bytes
+\Process(dfsrs)\Virtual Bytes Peak
+\Process(dfsrs)\Working Set
+\Process(dfsrs)\Working Set - Private
+\Process(dfsrs)\Working Set Peak
+\Process(dns)\% Privileged Time
+\Process(dns)\% Processor Time
+\Process(dns)\% User Time
+\Process(dns)\Creating Process ID
+\Process(dns)\Elapsed Time
+\Process(dns)\Handle Count
+\Process(dns)\ID Process
+\Process(dns)\IO Data Bytes/sec
+\Process(dns)\IO Data Operations/sec
+\Process(dns)\IO Other Bytes/sec
+\Process(dns)\IO Other Operations/sec
+\Process(dns)\IO Read Bytes/sec
+\Process(dns)\IO Read Operations/sec
+\Process(dns)\IO Write Bytes/sec
+\Process(dns)\IO Write Operations/sec
+\Process(dns)\Page Faults/sec
+\Process(dns)\Page File Bytes
+\Process(dns)\Page File Bytes Peak
+\Process(dns)\Pool Nonpaged Bytes
+\Process(dns)\Pool Paged Bytes
+\Process(dns)\Priority Base
+\Process(dns)\Private Bytes
+\Process(dns)\Thread Count
+\Process(dns)\Virtual Bytes
+\Process(dns)\Virtual Bytes Peak
+\Process(dns)\Working Set
+\Process(dns)\Working Set - Private
+\Process(dns)\Working Set Peak
+\Process(iashost)\% Privileged Time
+\Process(iashost)\% Processor Time
+\Process(iashost)\% User Time
+\Process(iashost)\Creating Process ID
+\Process(iashost)\Elapsed Time
+\Process(iashost)\Handle Count
+\Process(iashost)\ID Process
+\Process(iashost)\IO Data Bytes/sec
+\Process(iashost)\IO Data Operations/sec
+\Process(iashost)\IO Other Bytes/sec
+\Process(iashost)\IO Other Operations/sec
+\Process(iashost)\IO Read Bytes/sec
+\Process(iashost)\IO Read Operations/sec
+\Process(iashost)\IO Write Bytes/sec
+\Process(iashost)\IO Write Operations/sec
+\Process(iashost)\Page Faults/sec
+\Process(iashost)\Page File Bytes
+\Process(iashost)\Page File Bytes Peak
+\Process(iashost)\Pool Nonpaged Bytes
+\Process(iashost)\Pool Paged Bytes
+\Process(iashost)\Priority Base
+\Process(iashost)\Private Bytes
+\Process(iashost)\Thread Count
+\Process(iashost)\Virtual Bytes
+\Process(iashost)\Virtual Bytes Peak
+\Process(iashost)\Working Set
+\Process(iashost)\Working Set - Private
+\Process(iashost)\Working Set Peak
+\Process(ismserv)\% Privileged Time
+\Process(ismserv)\% Processor Time
+\Process(ismserv)\% User Time
+\Process(ismserv)\Creating Process ID
+\Process(ismserv)\Elapsed Time
+\Process(ismserv)\Handle Count
+\Process(ismserv)\ID Process
+\Process(ismserv)\IO Data Bytes/sec
+\Process(ismserv)\IO Data Operations/sec
+\Process(ismserv)\IO Other Bytes/sec
+\Process(ismserv)\IO Other Operations/sec
+\Process(ismserv)\IO Read Bytes/sec
+\Process(ismserv)\IO Read Operations/sec
+\Process(ismserv)\IO Write Bytes/sec
+\Process(ismserv)\IO Write Operations/sec
+\Process(ismserv)\Page Faults/sec
+\Process(ismserv)\Page File Bytes
+\Process(ismserv)\Page File Bytes Peak
+\Process(ismserv)\Pool Nonpaged Bytes
+\Process(ismserv)\Pool Paged Bytes
+\Process(ismserv)\Priority Base
+\Process(ismserv)\Private Bytes
+\Process(ismserv)\Thread Count
+\Process(ismserv)\Virtual Bytes
+\Process(ismserv)\Virtual Bytes Peak
+\Process(ismserv)\Working Set
+\Process(ismserv)\Working Set - Private
+\Process(ismserv)\Working Set Peak
+\Process(lsass)\% Privileged Time
+\Process(lsass)\% Processor Time
+\Process(lsass)\% User Time
+\Process(lsass)\Creating Process ID
+\Process(lsass)\Elapsed Time
+\Process(lsass)\Handle Count
+\Process(lsass)\ID Process
+\Process(lsass)\IO Data Bytes/sec
+\Process(lsass)\IO Data Operations/sec
+\Process(lsass)\IO Other Bytes/sec
+\Process(lsass)\IO Other Operations/sec
+\Process(lsass)\IO Read Bytes/sec
+\Process(lsass)\IO Read Operations/sec
+\Process(lsass)\IO Write Bytes/sec
+\Process(lsass)\IO Write Operations/sec
+\Process(lsass)\Page Faults/sec
+\Process(lsass)\Page File Bytes
+\Process(lsass)\Page File Bytes Peak
+\Process(lsass)\Pool Nonpaged Bytes
+\Process(lsass)\Pool Paged Bytes
+\Process(lsass)\Priority Base
+\Process(lsass)\Private Bytes
+\Process(lsass)\Thread Count
+\Process(lsass)\Virtual Bytes
+\Process(lsass)\Virtual Bytes Peak
+\Process(lsass)\Working Set
+\Process(lsass)\Working Set - Private
+\Process(lsass)\Working Set Peak
+\Process(Microsoft.ActiveDirectory.WebServices)\% Privileged Time
+\Process(Microsoft.ActiveDirectory.WebServices)\% Processor Time
+\Process(Microsoft.ActiveDirectory.WebServices)\% User Time
+\Process(Microsoft.ActiveDirectory.WebServices)\Creating Process ID
+\Process(Microsoft.ActiveDirectory.WebServices)\Elapsed Time
+\Process(Microsoft.ActiveDirectory.WebServices)\Handle Count
+\Process(Microsoft.ActiveDirectory.WebServices)\ID Process
+\Process(Microsoft.ActiveDirectory.WebServices)\IO Data Bytes/sec
+\Process(Microsoft.ActiveDirectory.WebServices)\IO Data Operations/sec
+\Process(Microsoft.ActiveDirectory.WebServices)\IO Other Bytes/sec
+\Process(Microsoft.ActiveDirectory.WebServices)\IO Other Operations/sec
+\Process(Microsoft.ActiveDirectory.WebServices)\IO Read Bytes/sec
+\Process(Microsoft.ActiveDirectory.WebServices)\IO Read Operations/sec
+\Process(Microsoft.ActiveDirectory.WebServices)\IO Write Bytes/sec
+\Process(Microsoft.ActiveDirectory.WebServices)\IO Write Operations/sec
+\Process(Microsoft.ActiveDirectory.WebServices)\Page Faults/sec
+\Process(Microsoft.ActiveDirectory.WebServices)\Page File Bytes
+\Process(Microsoft.ActiveDirectory.WebServices)\Page File Bytes Peak
+\Process(Microsoft.ActiveDirectory.WebServices)\Pool Nonpaged Bytes
+\Process(Microsoft.ActiveDirectory.WebServices)\Pool Paged Bytes
+\Process(Microsoft.ActiveDirectory.WebServices)\Priority Base
+\Process(Microsoft.ActiveDirectory.WebServices)\Private Bytes
+\Process(Microsoft.ActiveDirectory.WebServices)\Thread Count
+\Process(Microsoft.ActiveDirectory.WebServices)\Virtual Bytes
+\Process(Microsoft.ActiveDirectory.WebServices)\Virtual Bytes Peak
+\Process(Microsoft.ActiveDirectory.WebServices)\Working Set
+\Process(Microsoft.ActiveDirectory.WebServices)\Working Set - Private
+\Process(Microsoft.ActiveDirectory.WebServices)\Working Set Peak
+\Process(ntfrs)\% Privileged Time
+\Process(ntfrs)\% Processor Time
+\Process(ntfrs)\% User Time
+\Process(ntfrs)\Creating Process ID
+\Process(ntfrs)\Elapsed Time
+\Process(ntfrs)\Handle Count
+\Process(ntfrs)\ID Process
+\Process(ntfrs)\IO Data Bytes/sec
+\Process(ntfrs)\IO Data Operations/sec
+\Process(ntfrs)\IO Other Bytes/sec
+\Process(ntfrs)\IO Other Operations/sec
+\Process(ntfrs)\IO Read Bytes/sec
+\Process(ntfrs)\IO Read Operations/sec
+\Process(ntfrs)\IO Write Bytes/sec
+\Process(ntfrs)\IO Write Operations/sec
+\Process(ntfrs)\Page Faults/sec
+\Process(ntfrs)\Page File Bytes
+\Process(ntfrs)\Page File Bytes Peak
+\Process(ntfrs)\Pool Nonpaged Bytes
+\Process(ntfrs)\Pool Paged Bytes
+\Process(ntfrs)\Priority Base
+\Process(ntfrs)\Private Bytes
+\Process(ntfrs)\Thread Count
+\Process(ntfrs)\Virtual Bytes
+\Process(ntfrs)\Virtual Bytes Peak
+\Process(ntfrs)\Working Set
+\Process(ntfrs)\Working Set - Private
+\Process(ntfrs)\Working Set Peak
+\Processor(_Total)\% C1 Time
+\Processor(_Total)\% C2 Time
+\Processor(_Total)\% C3 Time
+\Processor(_Total)\% DPC Time
+\Processor(_Total)\% Idle Time
+\Processor(_Total)\% Interrupt Time
+\Processor(_Total)\% Privileged Time
+\Processor(_Total)\% Processor Time
+\Processor(_Total)\% User Time
+\Processor(_Total)\C1 Transitions/sec
+\Processor(_Total)\C2 Transitions/sec
+\Processor(_Total)\C3 Transitions/sec
+\Processor(_Total)\DPC Rate
+\Processor(_Total)\DPCs Queued/sec
+\Processor(_Total)\Interrupts/sec
+
+
+#>
+
+
+\NPS Authentication Server\Server Up Time
+\NPS Authentication Server\Server Reset Time
+\NPS Authentication Server\Invalid Requests
+\NPS Authentication Server\Invalid Requests / sec.
+\NPS Authentication Server\Malformed Packets
+\NPS Authentication Server\Bad Authenticators
+\NPS Authentication Server\Dropped Packets
+\NPS Authentication Server\Unknown Type
+\NPS Authentication Server\Access-Requests
+\NPS Authentication Server\Access-Accepts
+\NPS Authentication Server\Access-Rejects
+\NPS Authentication Server\Access-Challenges
+\NPS Authentication Server\Quarantine-Decisions
+\NPS Authentication Server\Probation-Decisions
+\NPS Authentication Server\FullAccess-Decisions
+\NPS Authentication Server\Packets Received
+\NPS Authentication Server\Packets Sent
+\NPS Authentication Server\Malformed Packets / sec.
+\NPS Authentication Server\Bad Authenticators / sec.
+\NPS Authentication Server\Dropped Packets / sec.
+\NPS Authentication Server\Unknown Type / sec.
+\NPS Authentication Server\Access-Requests / sec.
+\NPS Authentication Server\Access-Accepts / sec.
+\NPS Authentication Server\Access-Rejects / sec.
+\NPS Authentication Server\Access-Challenges / sec.
+\NPS Authentication Server\Quarantine-Decisions / sec.
+\NPS Authentication Server\Probation-Decisions / sec.
+\NPS Authentication Server\FullAccess-Decisions / sec.
+\NPS Authentication Server\Packets Received / sec.
+\NPS Authentication Server\Packets Sent / sec.
+\NPS Authentication Clients(*)\Malformed Packets
+\NPS Authentication Clients(*)\Bad Authenticators
+\NPS Authentication Clients(*)\Dropped Packets
+\NPS Authentication Clients(*)\Unknown Type
+\NPS Authentication Clients(*)\Access-Requests
+\NPS Authentication Clients(*)\Access-Accepts
+\NPS Authentication Clients(*)\Access-Rejects
+\NPS Authentication Clients(*)\Access-Challenges
+\NPS Authentication Clients(*)\Quarantine-Decisions
+\NPS Authentication Clients(*)\Probation-Decisions
+\NPS Authentication Clients(*)\FullAccess-Decisions
+\NPS Authentication Clients(*)\Packets Received
+\NPS Authentication Clients(*)\Packets Sent
+\NPS Authentication Clients(*)\Malformed Packets / sec.
+\NPS Authentication Clients(*)\Bad Authenticators / sec.
+\NPS Authentication Clients(*)\Dropped Packets / sec.
+\NPS Authentication Clients(*)\Unknown Type / sec.
+\NPS Authentication Clients(*)\Access-Requests / sec.
+\NPS Authentication Clients(*)\Access-Accepts / sec.
+\NPS Authentication Clients(*)\Access-Rejects / sec.
+\NPS Authentication Clients(*)\Access-Challenges / sec.
+\NPS Authentication Clients(*)\Quarantine-Decisions / sec.
+\NPS Authentication Clients(*)\Probation-Decisions / sec.
+\NPS Authentication Clients(*)\FullAccess-Decisions / sec.
+\NPS Authentication Clients(*)\Packets Received / sec.
+\NPS Authentication Clients(*)\Packets Sent / sec.
+\NPS Accounting Server\Server Up Time
+\NPS Accounting Server\Server Reset Time
+\NPS Accounting Server\Invalid Requests
+\NPS Accounting Server\Invalid Requests / sec.
+\NPS Accounting Server\Malformed Packets
+\NPS Accounting Server\Bad Authenticators
+\NPS Accounting Server\Dropped Packets
+\NPS Accounting Server\Unknown Type
+\NPS Accounting Server\Accounting-Requests
+\NPS Accounting Server\No Record
+\NPS Accounting Server\Accounting-Responses
+\NPS Accounting Server\Packets Received
+\NPS Accounting Server\Packets Sent
+\NPS Accounting Server\Malformed Packets / sec.
+\NPS Accounting Server\Bad Authenticators / sec.
+\NPS Accounting Server\Dropped Packets / sec.
+\NPS Accounting Server\Unknown Type / sec.
+\NPS Accounting Server\Accounting-Requests / sec.
+\NPS Accounting Server\No Record / sec.
+\NPS Accounting Server\Accounting-Responses / sec.
+\NPS Accounting Server\Packets Received / sec.
+\NPS Accounting Server\Packets Sent / sec.
+\NPS Accounting Clients(*)\Malformed Packets
+\NPS Accounting Clients(*)\Bad Authenticators
+\NPS Accounting Clients(*)\Dropped Packets
+\NPS Accounting Clients(*)\Unknown Type
+\NPS Accounting Clients(*)\Accounting-Requests
+\NPS Accounting Clients(*)\No Record
+\NPS Accounting Clients(*)\Accounting-Responses
+\NPS Accounting Clients(*)\Packets Received
+\NPS Accounting Clients(*)\Packets Sent
+\NPS Accounting Clients(*)\Malformed Packets / sec.
+\NPS Accounting Clients(*)\Bad Authenticators / sec.
+\NPS Accounting Clients(*)\Dropped Packets / sec.
+\NPS Accounting Clients(*)\Unknown Type / sec.
+\NPS Accounting Clients(*)\Accounting-Requests / sec.
+\NPS Accounting Clients(*)\No Record / sec.
+\NPS Accounting Clients(*)\Accounting-Responses / sec.
+\NPS Accounting Clients(*)\Packets Received / sec.
+\NPS Accounting Clients(*)\Packets Sent / sec.
+\NPS Authentication Proxy\Invalid Addresses
+\NPS Authentication Proxy\Invalid Addresses / sec.
+\NPS Authentication Proxy\Access-Requests
+\NPS Authentication Proxy\Retransmissions
+\NPS Authentication Proxy\Access-Accepts
+\NPS Authentication Proxy\Access-Rejects
+\NPS Authentication Proxy\Access-Challenges
+\NPS Authentication Proxy\Quarantine-Decisions
+\NPS Authentication Proxy\Probation-Decisions
+\NPS Authentication Proxy\FullAccess-Decisions
+\NPS Authentication Proxy\Unknown Type
+\NPS Authentication Proxy\Malformed Packets
+\NPS Authentication Proxy\Bad Authenticators
+\NPS Authentication Proxy\Dropped Packets
+\NPS Authentication Proxy\Request Timeouts
+\NPS Authentication Proxy\Packets Received
+\NPS Authentication Proxy\Pending Requests
+\NPS Authentication Proxy\Access-Requests / sec.
+\NPS Authentication Proxy\Retransmissions / sec.
+\NPS Authentication Proxy\Access-Accepts / sec.
+\NPS Authentication Proxy\Access-Rejects / sec.
+\NPS Authentication Proxy\Access-Challenges / sec.
+\NPS Authentication Proxy\Quarantine-Decisions / sec.
+\NPS Authentication Proxy\Probation-Decisions / sec.
+\NPS Authentication Proxy\FullAccess-Decisions / sec.
+\NPS Authentication Proxy\Unknown Type / sec.
+\NPS Authentication Proxy\Malformed Packets / sec.
+\NPS Authentication Proxy\Bad Authenticators / sec.
+\NPS Authentication Proxy\Dropped Packets / sec.
+\NPS Authentication Proxy\Request Timeouts / sec.
+\NPS Authentication Proxy\Packets Received / sec.
+\NPS Remote Authentication Servers(*)\Port Number
+\NPS Remote Authentication Servers(*)\Last Round-Trip Time
+\NPS Remote Authentication Servers(*)\Access-Requests
+\NPS Remote Authentication Servers(*)\Retransmissions
+\NPS Remote Authentication Servers(*)\Access-Accepts
+\NPS Remote Authentication Servers(*)\Access-Rejects
+\NPS Remote Authentication Servers(*)\Access-Challenges
+\NPS Remote Authentication Servers(*)\Quarantine-Decisions
+\NPS Remote Authentication Servers(*)\Probation-Decisions
+\NPS Remote Authentication Servers(*)\FullAccess-Decisions
+\NPS Remote Authentication Servers(*)\Unknown Type
+\NPS Remote Authentication Servers(*)\Malformed Packets
+\NPS Remote Authentication Servers(*)\Bad Authenticators
+\NPS Remote Authentication Servers(*)\Dropped Packets
+\NPS Remote Authentication Servers(*)\Request Timeouts
+\NPS Remote Authentication Servers(*)\Packets Received
+\NPS Remote Authentication Servers(*)\Pending Requests
+\NPS Remote Authentication Servers(*)\Access-Requests / sec.
+\NPS Remote Authentication Servers(*)\Retransmissions / sec.
+\NPS Remote Authentication Servers(*)\Access-Accepts / sec.
+\NPS Remote Authentication Servers(*)\Access-Rejects / sec.
+\NPS Remote Authentication Servers(*)\Access-Challenges / sec.
+\NPS Remote Authentication Servers(*)\Quarantine-Decisions / sec.
+\NPS Remote Authentication Servers(*)\Probation-Decisions / sec.
+\NPS Remote Authentication Servers(*)\FullAccess-Decisions / sec.
+\NPS Remote Authentication Servers(*)\Unknown Type / sec.
+\NPS Remote Authentication Servers(*)\Malformed Packets / sec.
+\NPS Remote Authentication Servers(*)\Bad Authenticators / sec.
+\NPS Remote Authentication Servers(*)\Dropped Packets / sec.
+\NPS Remote Authentication Servers(*)\Request Timeouts / sec.
+\NPS Remote Authentication Servers(*)\Packets Received / sec.
+\NPS Accounting Proxy\Invalid Addresses
+\NPS Accounting Proxy\Invalid Addresses / sec.
+\NPS Accounting Proxy\Accounting-Requests
+\NPS Accounting Proxy\Retransmissions
+\NPS Accounting Proxy\Accounting-Responses
+\NPS Accounting Proxy\Unknown Type
+\NPS Accounting Proxy\Malformed Packets
+\NPS Accounting Proxy\Bad Authenticators
+\NPS Accounting Proxy\Dropped Packets
+\NPS Accounting Proxy\Request Timeouts
+\NPS Accounting Proxy\Packets Received
+\NPS Accounting Proxy\Pending Requests
+\NPS Accounting Proxy\Accounting-Requests / sec.
+\NPS Accounting Proxy\Retransmissions / sec.
+\NPS Accounting Proxy\Accounting-Responses / sec.
+\NPS Accounting Proxy\Unknown Type / sec.
+\NPS Accounting Proxy\Malformed Packets / sec.
+\NPS Accounting Proxy\Bad Authenticators / sec.
+\NPS Accounting Proxy\Dropped Packets / sec.
+\NPS Accounting Proxy\Request Timeouts / sec.
+\NPS Accounting Proxy\Packets Received / sec.
+\NPS Remote Accounting Servers(*)\Port Number
+\NPS Remote Accounting Servers(*)\Last Round-Trip Time
+\NPS Remote Accounting Servers(*)\Accounting-Requests
+\NPS Remote Accounting Servers(*)\Retransmissions
+\NPS Remote Accounting Servers(*)\Accounting-Responses
+\NPS Remote Accounting Servers(*)\Unknown Type
+\NPS Remote Accounting Servers(*)\Malformed Packets
+\NPS Remote Accounting Servers(*)\Bad Authenticators
+\NPS Remote Accounting Servers(*)\Dropped Packets
+\NPS Remote Accounting Servers(*)\Request Timeouts
+\NPS Remote Accounting Servers(*)\Packets Received
+\NPS Remote Accounting Servers(*)\Pending Requests
+\NPS Remote Accounting Servers(*)\Accounting-Requests / sec.
+\NPS Remote Accounting Servers(*)\Retransmissions / sec.
+\NPS Remote Accounting Servers(*)\Accounting-Responses / sec.
+\NPS Remote Accounting Servers(*)\Unknown Type / sec.
+\NPS Remote Accounting Servers(*)\Malformed Packets / sec.
+\NPS Remote Accounting Servers(*)\Bad Authenticators / sec.
+\NPS Remote Accounting Servers(*)\Dropped Packets / sec.
+\NPS Remote Accounting Servers(*)\Request Timeouts / sec.
+\NPS Remote Accounting Servers(*)\Packets Received / sec.
+\NPS Policy Engine\Pending Requests
+\NPS Policy Engine\Last Round-Trip Time
+\NPS Policy Engine\Matched Remote Access Policies
+\NPS Policy Engine\Matched Remote Access Policies / sec.
+\NPS System Health Validators(*)\Shv Compliances
+\NPS System Health Validators(*)\Shv NonCompliances
+\NPS System Health Validators(*)\Shv Client-Component Failures
+\NPS System Health Validators(*)\Shv Client-Communication Failures
+\NPS System Health Validators(*)\Shv Server-Component Failures
+\NPS System Health Validators(*)\Shv Server-Communication Failures
+\NPS System Health Validators(*)\Shv Other Failures
+\NPS System Health Validators(*)\Shv None Failures
+\NPS System Health Validators(*)\Shv Last Round-Trip Time
+\NPS System Health Validators(*)\Shv Compliances / sec.
+\NPS System Health Validators(*)\Shv NonCompliances / sec.
+\NPS System Health Validators(*)\Shv Client-Component Failures / sec.
+\NPS System Health Validators(*)\Shv Client-Communication Failures /sec.
+\NPS System Health Validators(*)\Shv Server-Component Failures / sec.
+\NPS System Health Validators(*)\Shv Server-Communication Failures / sec.
+\NPS System Health Validators(*)\Shv Other Failures / sec.
+\NPS System Health Validators(*)\Shv None Failures / sec.
