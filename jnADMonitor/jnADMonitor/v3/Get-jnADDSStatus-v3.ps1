@@ -828,10 +828,8 @@ try {
 			if (! $data[$i].jnServiceFlag) 
 				{$SQLParameter6 = New-Object System.Data.SqlClient.SqlParameter("@ServiceFlag", "Null")}
 			else {$SQLParameter6 = New-Object System.Data.SqlClient.SqlParameter("@ServiceFlag", $data[$i].jnServiceFlag)}
-			if (! $data[$i].IsError) 
-				{$SQLParameter7 = New-Object System.Data.SqlClient.SqlParameter("@IsError", "Null")}
-			else {$SQLParameter7 = New-Object System.Data.SqlClient.SqlParameter("@IsError", $data[$i].IsError.ToString())}
-        
+			
+			$SQLParameter7 = New-Object System.Data.SqlClient.SqlParameter("@IsError", $data[$i].IsError.ToString());
 			$SQLParameter5 = New-Object System.Data.SqlClient.SqlParameter("@UTCMonitored", $data[$i].jnUTCMonitored)
 	         
 			$cmd.Parameters.Clear()
@@ -1583,7 +1581,7 @@ try {
 			$SQLParameter7 = New-Object System.Data.SqlClient.SqlParameter("@OperationMasterRoles", $OPRoles)}
 				
 			$SQLParameter8 = New-Object System.Data.SqlClient.SqlParameter("@UTCMonitored", $data[$i].jnUTCMonitored)
-			$SQLParameter9 = New-Object System.Data.SqlClient.SqlParameter("@IsError", $data[$i].IsError.ToString())
+			$SQLParameter9 = New-Object System.Data.SqlClient.SqlParameter("@IsError", $data[$i].IsError.ToString());
                                
 			$cmd.Parameters.Clear()
                
@@ -1963,7 +1961,7 @@ try {
 			$SQLParameter7 = New-Object System.Data.SqlClient.SqlParameter("@OperationMasterRoles", $OPRoles)}
 		
 			$SQLParameter8 = New-Object System.Data.SqlClient.SqlParameter("@UTCMonitored", $data[$i].jnUTCMonitored)
-			$SQLParameter9 = New-Object System.Data.SqlClient.SqlParameter("@IsError", $data[$i].IsError.ToString())
+			$SQLParameter9 = New-Object System.Data.SqlClient.SqlParameter("@IsError", $data[$i].IsError.ToString());
                          
 			$cmd.Parameters.Clear()
                
@@ -2345,7 +2343,7 @@ try {
 			$SQLParameter7 = New-Object System.Data.SqlClient.SqlParameter("@OperationMasterRoles", $OperationMasterRoles)}
 		
 			$SQLParameter8 = New-Object System.Data.SqlClient.SqlParameter("@UTCMonitored", $data[$i].jnUTCMonitored)
-			$SQLParameter9 = New-Object System.Data.SqlClient.SqlParameter("@IsError", $data[$i].IsError.ToString())
+			$SQLParameter9 = New-Object System.Data.SqlClient.SqlParameter("@IsError", $data[$i].IsError.ToString());
 	    
 			
 			$cmd.Parameters.Clear()
@@ -2760,7 +2758,7 @@ try {
 				{$SQLParameter12 = New-Object System.Data.SqlClient.SqlParameter("@OperatingSystem", "Null")}
 			else {$SQLParameter12 = New-Object System.Data.SqlClient.SqlParameter("@OperatingSystem", $data[$i].OperatingSystem)}
 			
-			$SQLParameter13 = New-Object System.Data.SqlClient.SqlParameter("@IsError", $data[$i].IsError.ToString())
+			$SQLParameter13 = New-Object System.Data.SqlClient.SqlParameter("@IsError", $data[$i].IsError.ToString());
 
 			$cmd.Parameters.Clear()
 
@@ -3152,7 +3150,7 @@ try {
 			$advertising += $Data[$i].dcdiag_advertising[$j] + "<br/>"}
 			$SQLParameter8 = New-Object System.Data.SqlClient.SqlParameter("@dcdiag_advertising", $advertising)}
 		
-			$SQLParameter9 = New-Object System.Data.SqlClient.SqlParameter("@IsError", $Data[$i].IsError.ToString())
+			$SQLParameter9 = New-Object System.Data.SqlClient.SqlParameter("@IsError", $Data[$i].IsError.ToString());
                 
 			$cmd.Parameters.Clear()
                
@@ -3547,7 +3545,7 @@ try {
 				{$SQLParameter9 = New-Object System.Data.SqlClient.SqlParameter("@OperatingSystem", "Null")}
 			else {$SQLParameter9 = New-Object System.Data.SqlClient.SqlParameter("@OperatingSystem", $data[$i].OperatingSystem)}
 		
-			$SQLParameter10 = New-Object System.Data.SqlClient.SqlParameter("@IsError", $data[$i].IsError.ToString())
+			$SQLParameter10 = New-Object System.Data.SqlClient.SqlParameter("@IsError", $data[$i].IsError.ToString());
 
 			$cmd.Parameters.Clear()
                

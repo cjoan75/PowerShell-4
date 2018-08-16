@@ -787,9 +787,8 @@ try {
 			if (! $data[$i].jnServiceFlag) 
 				{$SQLParameter6 = New-Object System.Data.SqlClient.SqlParameter("@ServiceFlag", "Null")}
 			else {$SQLParameter6 = New-Object System.Data.SqlClient.SqlParameter("@ServiceFlag", $data[$i].jnServiceFlag)}
-			if (! $data[$i].IsError) 
-				{$SQLParameter7 = New-Object System.Data.SqlClient.SqlParameter("@IsError", "Null")}
-			else {$SQLParameter7 = New-Object System.Data.SqlClient.SqlParameter("@IsError", $data[$i].IsError.ToString())}
+
+			$SQLParameter7 = New-Object System.Data.SqlClient.SqlParameter("@IsError", $data[$i].IsError.ToString());
         
 			$SQLParameter5 = New-Object System.Data.SqlClient.SqlParameter("@UTCMonitored", $data[$i].jnUTCMonitored)
 	         
@@ -1630,10 +1629,10 @@ try {
 			if (! $data[$i].DatabaseCleanupInterval)
 				{$SQLParameter12 = New-Object System.Data.SqlClient.SqlParameter("@DatabaseCleanupInterval", "Null")}
 			else {$SQLParameter12 = New-Object System.Data.SqlClient.SqlParameter("@DatabaseCleanupInterval", $data[$i].DatabaseCleanupInterval)}
-			$SQLParameter13 = New-Object System.Data.SqlClient.SqlParameter("@IsError", $data[$i].IsError.ToString())
-			if (! $data[$i].IsAvailableByClient)
-				{$SQLParameter14 = New-Object System.Data.SqlClient.SqlParameter("@IsAvailableByClient", "Null")}
-			else {$SQLParameter14 = New-Object System.Data.SqlClient.SqlParameter("@IsAvailableByClient", $data[$i].IsAvailableByClient.ToString())}
+			
+			$SQLParameter13 = New-Object System.Data.SqlClient.SqlParameter("@IsError", $data[$i].IsError.ToString());
+
+			$SQLParameter14 = New-Object System.Data.SqlClient.SqlParameter("@IsAvailableByClient", $data[$i].IsAvailableByClient.ToString());
 			
 
 			$cmd.Parameters.Clear()

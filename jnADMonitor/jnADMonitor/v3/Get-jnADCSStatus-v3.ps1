@@ -792,10 +792,8 @@ try {
 			if (! $data[$i].jnServiceFlag) 
 				{$SQLParameter6 = New-Object System.Data.SqlClient.SqlParameter("@ServiceFlag", "Null")}
 			else {$SQLParameter6 = New-Object System.Data.SqlClient.SqlParameter("@ServiceFlag", $data[$i].jnServiceFlag)}
-			if (!$data[$i].IsError) 
-				{$SQLParameter7 = New-Object System.Data.SqlClient.SqlParameter("@IsError", "Null")}
-			else {$SQLParameter7 = New-Object System.Data.SqlClient.SqlParameter("@IsError", $data[$i].IsError.ToString())}
-        
+
+			$SQLParameter7 = New-Object System.Data.SqlClient.SqlParameter("@IsError", $data[$i].IsError.ToString());
 			$SQLParameter5 = New-Object System.Data.SqlClient.SqlParameter("@UTCMonitored", $data[$i].jnUTCMonitored)
 	         
 			$cmd.Parameters.Clear()
@@ -1902,9 +1900,7 @@ try {
 				$SQLParameter11 = New-Object System.Data.SqlClient.SqlParameter("@DeltaCrlPublishStatus", $data[$i].DeltaCrlPublishStatus)
 			}
 		
-			if (! $data[$i].IsError) 
-				{$SQLParameter12 = New-Object System.Data.SqlClient.SqlParameter("@IsError", "Null")}
-			else {$SQLParameter12 = New-Object System.Data.SqlClient.SqlParameter("@IsError", $data[$i].IsError.ToString())}
+			$SQLParameter12 = New-Object System.Data.SqlClient.SqlParameter("@IsError", $data[$i].IsError.ToString());
 
 			if (! $data[$i].CACertificate.Subject) 
 				{$SQLParameter13 = New-Object System.Data.SqlClient.SqlParameter("@Subject", "Null")}
@@ -2493,9 +2489,8 @@ try {
 		
 			$SQLParameter9 = New-Object System.Data.SqlClient.SqlParameter("@UTCMonitored", $data[$i].jnUTCMonitored)
 		
-			if (! $data[$i].IsError) 
-				{$SQLParameter10 = New-Object System.Data.SqlClient.SqlParameter("@IsError", "Null")}
-			else {$SQLParameter10 = New-Object System.Data.SqlClient.SqlParameter("@IsError", $data[$i].IsError.toString())}
+
+			$SQLParameter10 = New-Object System.Data.SqlClient.SqlParameter("@IsError", $data[$i].IsError.toString());
         
 			$cmd.Parameters.Clear()
                

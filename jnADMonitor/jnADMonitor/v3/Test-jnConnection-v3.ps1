@@ -454,3 +454,4 @@ if ($myResult) {Insert-Connection -Data $myResult}
 $jnUTCMonitored = (Get-Date).ToUniversalTime()
 Insert-MonitoringTaskLogs -TaskType END -ServiceType $ServiceFlag -jnUTCMonitored $jnUTCMonitored -DomainName $DomainName
 
+
