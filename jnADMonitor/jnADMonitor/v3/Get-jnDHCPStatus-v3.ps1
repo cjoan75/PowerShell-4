@@ -1351,7 +1351,7 @@ try {
 		$myResult
 
 	} -ArgumentList ($credential, $Servers, $DebugPreference, $DomainName)
-	$myResult | % {"$($_.jnUTCMonitored)`t$($_.IsError)`t$($_.ComputerName)`t$($_.IsAvailableByClient)`t$($_.ClientExists)"}
+	$myResult | % {"$($_.jnUTCMonitored)`t$($_.IsError)`t$($_.ComputerName)`t$($_.IsAvailableByClient)`t$($_.ClientExists)`t$($_.HasErrorEvents)"}
 	Write-Host "returned: $($myResult.Count), $($session.ComputerName)"
 }
 Catch {
@@ -1524,7 +1524,7 @@ param (
 				}
 				if ((! $data[$i].IsAvailableByClient) -and ($data[$i].ClientExists))
 				{
-					if ($data[$i].ErrorEvents)
+					if ($data[$i].HasErrorEvents)
 					{
 						$Message = $null
 						foreach ($event in $data[$i].ErrorEvents)
