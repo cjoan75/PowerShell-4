@@ -15,7 +15,7 @@ if (Test-Path $FilePath)
 	$jnUTCMonitored = (Get-Date).ToUniversalTime().ToString("yyyyMMddTHHmmss")
 	$Message = "$($jnUTCMonitored): ERROR: The credential file NOT found: $FilePath"
 	
-	Insert-MonitoringTaskLogs -TaskType BEGIN -ServiceType $ServiceFlag -jnUTCMonitored $jnUTCMonitored -DomainName $DomainName -TaskScript $Message
+	Insert-MonitoringTaskLogs -TaskType EXCEPTION -ServiceType $ServiceFlag -jnUTCMonitored $jnUTCMonitored -DomainName $DomainName -TaskScript $Message
 	throw $Message; exit;
 }
 Write-Host "`nReady for $($ManagedServerFQDN) (logged on as $($credential.UserName))`n"
@@ -29,7 +29,7 @@ if ($Servers)
 	$jnUTCMonitored = (Get-Date).ToUniversalTime().ToString("yyyyMMddTHHmmss")
 	$Message = "$($jnUTCMonitored): ERROR: No Servers Retrieved."
 
-	Insert-MonitoringTaskLogs -TaskType BEGIN -ServiceType $ServiceFlag -jnUTCMonitored $jnUTCMonitored -DomainName $DomainName -TaskScript $Message
+	Insert-MonitoringTaskLogs -TaskType EXCEPTION -ServiceType $ServiceFlag -jnUTCMonitored $jnUTCMonitored -DomainName $DomainName -TaskScript $Message
 	throw $Message; exit;
 }
 
@@ -188,7 +188,7 @@ Catch {
 	$Message = "$($jnUTCMonitored): ERROR: $($Error[0])"
 
 	# Log the END time as GMT.
-	Insert-MonitoringTaskLogs -TaskType END -ServiceType $ServiceFlag -jnUTCMonitored $jnUTCMonitored -DomainName $DomainName -TaskScript $Message
+	Insert-MonitoringTaskLogs -TaskType EXCEPTION -ServiceType $ServiceFlag -jnUTCMonitored $jnUTCMonitored -DomainName $DomainName -TaskScript $Message
 }
 Finally {
 		
@@ -460,7 +460,7 @@ Catch {
 	$Message = "$($jnUTCMonitored): ERROR: $($Error[0])"
 
 	# Log the END time as GMT.
-	Insert-MonitoringTaskLogs -TaskType END -ServiceType $ServiceFlag -jnUTCMonitored $jnUTCMonitored -DomainName $DomainName -TaskScript $Message
+	Insert-MonitoringTaskLogs -TaskType EXCEPTION -ServiceType $ServiceFlag -jnUTCMonitored $jnUTCMonitored -DomainName $DomainName -TaskScript $Message
 }
 Finally {
 		
@@ -584,7 +584,7 @@ Catch {
 	$Message = "$($jnUTCMonitored): ERROR: $($Error[0])"
 
 	# Log the END time as GMT.
-	Insert-MonitoringTaskLogs -TaskType END -ServiceType $ServiceFlag -jnUTCMonitored $jnUTCMonitored -DomainName $DomainName -TaskScript $Message
+	Insert-MonitoringTaskLogs -TaskType EXCEPTION -ServiceType $ServiceFlag -jnUTCMonitored $jnUTCMonitored -DomainName $DomainName -TaskScript $Message
 }
 Finally {
 		
@@ -840,7 +840,7 @@ Catch {
 	$Message = "$($jnUTCMonitored): ERROR: $($Error[0])"
 
 	# Log the END time as GMT.
-	Insert-MonitoringTaskLogs -TaskType END -ServiceType $ServiceFlag -jnUTCMonitored $jnUTCMonitored -DomainName $DomainName -TaskScript $Message
+	Insert-MonitoringTaskLogs -TaskType EXCEPTION -ServiceType $ServiceFlag -jnUTCMonitored $jnUTCMonitored -DomainName $DomainName -TaskScript $Message
 }
 
 finally {
@@ -1021,7 +1021,7 @@ Catch {
 	$Message = "$($jnUTCMonitored): ERROR: $($Error[0])"
 
 	# Log the END time as GMT.
-	Insert-MonitoringTaskLogs -TaskType END -ServiceType $ServiceFlag -jnUTCMonitored $jnUTCMonitored -DomainName $DomainName -TaskScript $Message
+	Insert-MonitoringTaskLogs -TaskType EXCEPTION -ServiceType $ServiceFlag -jnUTCMonitored $jnUTCMonitored -DomainName $DomainName -TaskScript $Message
 }
 Finally {
 		
@@ -1218,7 +1218,7 @@ Catch {
 	$Message = "$($jnUTCMonitored): ERROR: $($Error[0])"
 
 	# Log the END time as GMT.
-	Insert-MonitoringTaskLogs -TaskType END -ServiceType $ServiceFlag -jnUTCMonitored $jnUTCMonitored -DomainName $DomainName -TaskScript $Message
+	Insert-MonitoringTaskLogs -TaskType EXCEPTION -ServiceType $ServiceFlag -jnUTCMonitored $jnUTCMonitored -DomainName $DomainName -TaskScript $Message
 }
 
 finally {
@@ -1340,7 +1340,7 @@ Catch {
 	$Message = "$($jnUTCMonitored): ERROR: $($Error[0])"
 
 	# Log the END time as GMT.
-	Insert-MonitoringTaskLogs -TaskType END -ServiceType $ServiceFlag -jnUTCMonitored $jnUTCMonitored -DomainName $DomainName -TaskScript $Message
+	Insert-MonitoringTaskLogs -TaskType EXCEPTION -ServiceType $ServiceFlag -jnUTCMonitored $jnUTCMonitored -DomainName $DomainName -TaskScript $Message
 }
 Finally {
 		
@@ -1669,7 +1669,7 @@ Catch {
 	$Message = "$($jnUTCMonitored): ERROR: $($Error[0])"
 
 	# Log the END time as GMT.
-	Insert-MonitoringTaskLogs -TaskType END -ServiceType $ServiceFlag -jnUTCMonitored $jnUTCMonitored -DomainName $DomainName -TaskScript $Message
+	Insert-MonitoringTaskLogs -TaskType EXCEPTION -ServiceType $ServiceFlag -jnUTCMonitored $jnUTCMonitored -DomainName $DomainName -TaskScript $Message
 }
 finally {
 		
