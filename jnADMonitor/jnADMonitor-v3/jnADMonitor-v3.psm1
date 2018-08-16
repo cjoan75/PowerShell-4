@@ -1,6 +1,6 @@
 # jnADMonitor-v3.psm1
 
-Write-Host "Welcome to jnADMonitor-v3.`n"
+#$FilePath = "C:\Users\jinop\Source\Repos\PowerShell\jnADMonitor\jnADMonitor-v3\jnADMonitor-v3.psm1"; copy $FilePath -Destination $home\documents\WindowsPowershell\Modules\jnADMonitor-v3
 #$Servers = Get-ADComputer -Filter "Enabled -eq 'True' -AND OperatingSystem -like '*server*'" -Properties OperatingSystem | select *, @{Name='ComputerName'; Expression={$_.DNSHostName}}; $Servers.count
 
 function New-SQLConnection {
