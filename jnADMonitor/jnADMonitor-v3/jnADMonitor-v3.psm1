@@ -310,7 +310,7 @@ param (
 	[Parameter(Mandatory=$True)][ValidateNotNullOrEmpty()]
 	[string]$jnUTCMonitored
 	
-	, [Parameter(Mandatory=$True)][ValidateSet("BEGIN", "END")]
+	, [Parameter(Mandatory=$True)][ValidateSet("BEGIN", "END", "EXCEPTION")]
 	[string]$TaskType
 	
 	, [Parameter(Mandatory=$True)][ValidateSet("SERVERS", "CONNECT", "ADDS", "ADCS", "DNS", "DHCP", "RADIUS", "HEALTH")]
