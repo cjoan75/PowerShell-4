@@ -343,7 +343,13 @@ param (
 					$description = $data[$i].Message.Split("`n")[0].Trim()
 					$userName = (($data[$i].Message.Split("`n"))[10].Split(":"))[1].Trim()
 					$groupName = (($data[$i].Message.Split("`n"))[14].Split(":"))[1].Trim()
-					$ProbScrp = "EventID($($data[$i].ID)); GroupName: $($groupName), Member: $($userName), Desc: $($description)"
+					if ($groupName -eq "Administrators" -or $groupName -eq "Domain Admins" -or $groupName -eq "Enterprise Admins")
+					{
+						Write-Debug -Message "Audit group membership changes: $($GroupName)"
+						$ProbScrp = "EventID($($data[$i].ID)); GroupName: $($groupName), Member: $($userName), Desc: $($description)"
+					} else {
+						continue
+					}
 				} else {
 					$ProbScrp = "EventID($($data[$i].ID)); $($data[$i].LevelDisplayName); $($data[$i].message)"
 				}

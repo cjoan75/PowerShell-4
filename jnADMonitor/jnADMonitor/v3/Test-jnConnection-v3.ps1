@@ -332,7 +332,7 @@ param (
 
 				#>
 				if ($data[$i].CanPing -eq $False)
-					{$ProbScrp = "Failed to ping: " + $data[$i].ComputerName + "."}
+					{$ProbScrp = "Failed to ping: " + $data[$i].ComputerName + ". "}
 				if ($data[$i].CanPort5985 -eq $False)
 					{$ProbScrp = "Failed to query WinRM: " + $data[$i].ComputerName + "."}
 
