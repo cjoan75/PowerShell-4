@@ -1269,6 +1269,8 @@ try {
 
 								$uri = "http://files.thecybershadow.net/dhcptest/dhcptest-0.7-win64.exe"
 								$FilePath = "$env:USERPROFILE\Downloads\" + $uri.Substring($uri.LastIndexOf("/")+1)
+
+								# Make sure if the dhcp tool is available.
 								if (! (Test-Path $FilePath))
 								{
 									if (! (Test-Path "\\$($DomainName)\netlogon\$($FilePath.SubString($FilePath.LastIndexOf("\")+1))"))
@@ -1286,7 +1288,7 @@ try {
 								if (Test-Path $FilePath)
 								{
 									$hash.ClientExists = $True
-									$buf = & $FilePath --Query --Quiet --tries 1
+									$buf = & $FilePath --Query --Quiet --timeout 30 --tries 1
 									if ($buf) {$hash.IsAvailableByClient = $True}
 									else {
 										# Determines the service availability for DHCP Lease.
@@ -1301,8 +1303,9 @@ try {
 										{
 											$hash.HasErrorEvents = $True
 											$hash.ErrorEvents = $buf
+
+											$hash.IsError = $True
 										}
-										$hash.IsError = $True
 									}
 								}
 								if ($hash.Count -gt 0)
