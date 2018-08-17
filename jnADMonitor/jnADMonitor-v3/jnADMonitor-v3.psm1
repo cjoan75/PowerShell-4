@@ -338,6 +338,7 @@ values('$($jnUTCMonitored)', '$($TaskType)', '$($DomainName)', '$($ServiceType)'
 	Write-Debug -Message "TaskScript: $($TaskScript)"
 	Write-Debug -Message "TaskType: $($TaskType)"
 	Write-Debug -Message "ServiceType: $($ServiceType)"
+	Write-Debug -Message "TaskScript: $($TaskScript)"
 	Write-Debug -Message "CommandText: $($cmd.CommandText)"
 
 	$cmd.ExecuteNonQuery() | out-Null

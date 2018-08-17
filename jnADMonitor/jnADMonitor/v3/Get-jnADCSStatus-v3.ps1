@@ -1241,7 +1241,6 @@ try {
 								$hash.OperatingSystemServicePack = $OS.ServicePackMajorVersion.ToString()
 								$hash.PSVersion = $PSVersionTable.PSVersion.Major
 								$hash.jnUTCMonitored = (Get-Date).ToUniversalTime()
-
 								$hash.IsError = $False
 
 								<# CERTUTIL -CAINFO Name: Display CA name
@@ -1253,7 +1252,9 @@ try {
 
 								#>
 								$buf = certutil -CAInfo name
-								if (! $buf)
+								$buf_error = $False
+								$buf | % {if ($_ -match "ERROR" -or $_ -match "FAIL") {$buf_error = $True}}
+								if ($buf_error)
 								{
 									$hash.IsError = $True
 									$hash.CAName = $null
@@ -1272,7 +1273,9 @@ try {
 
 								#>
 								$buf = certutil -CAInfo dns
-								if (! $buf)
+								$buf_error = $False
+								$buf | % {if ($_ -match "ERROR" -or $_ -match "FAIL") {$buf_error = $True}}
+								if ($buf_error)
 								{
 									$hash.IsError = $True
 									$hash.DNSName = $null
@@ -1293,14 +1296,14 @@ try {
 
 								#>
 								$buf = certutil -CAInfo type
-								if (! $buf)
+								$buf_error = $False
+								$buf | % {if ($_ -match "ERROR" -or $_ -match "FAIL") {$buf_error = $True}}
+								if ($buf_error)
 								{
 									$hash.IsError = $True
 									$hash.CAType = $null
 								} else {
-									$buf | % {
-										$hash.CAType = $buf[1].Trim()
-									}
+									$buf | % {$hash.CAType = $buf[1].Trim()}
 								}
 								Write-Debug -Message "`$buf: $($buf)"
 								Write-Debug -Message "`$hash.CAType: $($hash.CAType)"
@@ -1769,10 +1772,11 @@ param (
 
 				if ($data[$i].IsCACertExpiringInDays)
 				{
-					$ProbScrp = "CACertExpiringIn($($data[$i].CACertificate.NotAfter.ToString("yyyy-MM-dd HH:mm:ss"))): $($data[$i].CACertificate.Subject)"
+					$ProbScrp = "CACertExpiringIn: $($data[$i].CACertificate.NotAfter.ToString("yyyy-MM-dd HH:mm:ss")) ($($data[$i].CACertificate.Subject))"
 				} else {
 					#$ProbScrp = "CAName(" + $data[$i].CAName + "); DNSName(" + $data[$i].DNSName + "); CAType(" + $data[$i].CAType + "); PingAdmin(" + $PingAdmin + "); Ping(" + $Ping + "); CrlPublishStatus(" + $CrlPublishStatus + "); DeltaCrlPublishStatus(" + $DeltaCrlPublishStatus + ")"
-					$ProbScrp = "CAName($($data[$i].CAName)); DNSName($($data[$i].DNSName)); CAType($($data[$i].CAType)); PingAdmin($($PingAdmin)); Ping($($Ping)); CrlPublishStatus($($CrlPublishStatus)); DeltaCrlPublishStatus($($DeltaCrlPublishStatus))"
+					#$ProbScrp = "CAName($($data[$i].CAName)); DNSName($($data[$i].DNSName)); CAType($($data[$i].CAType)); PingAdmin($($PingAdmin)); Ping($($Ping)); CrlPublishStatus($($CrlPublishStatus)); DeltaCrlPublishStatus($($DeltaCrlPublishStatus))"
+					$ProbScrp = "CAName: $($data[$i].CAName)<br/>DNSName: $($data[$i].DNSName)<br/>CAType: $($data[$i].CAType)<br/>Ping: $($Ping)<br/>PingAdmin: $($PingAdmin)<br/>CrlPublishStatus: $($CrlPublishStatus)<br/>DeltaCrlPublishStatus: $($DeltaCrlPublishStatus)"
 				}
 				$SQLParameter1 = New-Object System.Data.SqlClient.SqlParameter("@MonitoredTime", $Data[$i].jnUTCMonitored)
 				$SQLParameter2 = New-Object System.Data.SqlClient.SqlParameter("@Company", $DomainName)
@@ -2034,7 +2038,9 @@ try {
 
 								#>
 								$buf = certutil -CAInfo name
-								if (! $buf)
+								$buf_error = $False
+								$buf | % {if ($_ -match "ERROR" -or $_ -match "FAIL") {$buf_error = $True}}
+								if ($buf_error)
 								{
 									$hash.IsError = $True
 									$hash.CAName = $null
@@ -2053,7 +2059,9 @@ try {
 
 								#>
 								$buf = certutil -CAInfo dns
-								if (! $buf)
+								$buf_error = $False
+								$buf | % {if ($_ -match "ERROR" -or $_ -match "FAIL") {$buf_error = $True}}
+								if ($buf_error)
 								{
 									$hash.IsError = $True
 									$hash.DNSName = $null
@@ -2074,21 +2082,21 @@ try {
 
 								#>
 								$buf = certutil -CAInfo type
-								if (! $buf)
+								$buf_error = $False
+								$buf | % {if ($_ -match "ERROR" -or $_ -match "FAIL") {$buf_error = $True}}
+								if ($buf_error)
 								{
 									$hash.IsError = $True
 									$hash.CAType = $null
 								} else {
-									$buf | % {
-										$hash.CAType = $buf[1].Trim()
-									}
+									$buf | % {$hash.CAType = $buf[1].Trim()}
 								}
 								Write-Debug -Message "`$buf: $($buf)"
 								Write-Debug -Message "`$hash.CAType: $($hash.CAType)"
 
 								<# CERTUTIL –TEMPLATE: Display Certificate Enrollment Policy templates.
 								
-								Certutil –Template | ? {$_ -match "TemplatePropCommonName = "}
+								(Certutil –Template | ? {$_ -match "TemplatePropCommonName = "}).Trim()
 
 TemplatePropCommonName = Administrator
 TemplatePropCommonName = ClientAuth
@@ -2143,18 +2151,17 @@ TemplatePropCommonName = Wireless
 TemplatePropCommonName = Workstation
 								
 								#>
-								$buf_error = $False
 								$buf = Certutil –Template
+								$buf_error = $False
 								$buf | % {if ($_ -match "ERROR" -or $_ -match "FAIL") {$buf_error = $True}}
 								if ($buf_error)
 								{
 									$hash.IsError = $True
-									$buf | % {$hash.CertEnrollPolicyTemplates += @($_.TrimStart(" "))}
+									$hash.CertEnrollPolicyTemplates = $buf[0]
 								} else {
 									$buf01 = @()
-									$buf | ? {$_ -match "TemplatePropCommonName = "} | % {$buf01 += @($_.Substring($_.IndexOf("TemplatePropCommonName = ")+25))}
-									$hash.CertEnrollPolicyTemplates = $buf01 | sort
-								
+									$buf | ? {$_ -match "TemplatePropCommonName = "} | % {$buf01 += ($_.Split("=")[1].Trim())}
+									$hash.CertEnrollPolicyTemplates = $buf01
 								}
 								Write-Debug -Message "`$buf_error: $($buf_error)"
 								Write-Debug -Message "`$hash.CertEnrollPolicyTemplates: $($hash.CertEnrollPolicyTemplates)"
@@ -2183,13 +2190,13 @@ SubCA
 User
 WebServer
 								#>
-								$buf_error = $False
 								$buf = certutil -catemplates
+								$buf_error = $False
 								$buf | % {if ($_ -match "ERROR" -or $_ -match "FAIL") {$buf_error = $True}}
 								if ($buf_error)
 								{
 									$hash.IsError = $True
-									$buf | % {$hash.CATemplates += @($_.TrimStart(" "))}
+									$hash.CATemplates = $buf[0]
 								} else {
 									$buf | % {$_.Substring(0, $_.IndexOf(":"))} | % {$hash.CATemplates += @($_)}
 								}
@@ -2391,10 +2398,11 @@ param (
 				$cmd.Connection = New-SQLConnection
 				$cmd.CommandText = $procName
 		
-				for($j = 0;$j -lt $data[$i].CertEnrollPolicyTemplates.count;$j++) {$CertEnroll += $data[$i].CertEnrollPolicyTemplates[$j] + "<br/>"}
-				for($l = 0;$l -lt $data[$i].CATemplates.count;$l++) {$CATemplate += $data[$i].CATemplates[$l] + "<br/>"}
-
-				$ProbScrp = "CAName(" + $data[$i].CAName + "); DNSName(" + $data[$i].DNSName + "); CAType(" + $data[$i].CAType + "); CertEnrollPolicyTemplates(" + $CertEnroll + "); CATemplates(" + $CATemplates + ")"
+				for($j = 0;$j -lt $data[$i].CertEnrollPolicyTemplates.count;$j++) {$CertEnroll += $data[$i].CertEnrollPolicyTemplates[$j] + "; "}
+				for($l = 0;$l -lt $data[$i].CATemplates.count;$l++) {$CATemplate += $data[$i].CATemplates[$l] + "; "}
+				
+				#$ProbScrp = "CAName(" + $data[$i].CAName + "); DNSName(" + $data[$i].DNSName + "); CAType(" + $data[$i].CAType + "); CertEnrollPolicyTemplates(" + $CertEnroll + "); CATemplates(" + $CATemplates + ")"
+				$ProbScrp = "CAName: $($data[$i].CAName)<br/>DNSName: $($data[$i].DNSName)<br/>CAType: $($data[$i].CAType)<br/>CertEnrollPolicyTemplates: $($CertEnroll)<br/>CATemplates: $($CATemplates)"
 		
 				$SQLParameter1 = New-Object System.Data.SqlClient.SqlParameter("@MonitoredTime", $Data[$i].jnUTCMonitored)
 				$SQLParameter2 = New-Object System.Data.SqlClient.SqlParameter("@Company", $DomainName)
