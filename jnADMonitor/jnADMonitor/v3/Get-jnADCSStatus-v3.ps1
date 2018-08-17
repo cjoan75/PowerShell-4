@@ -2159,9 +2159,9 @@ TemplatePropCommonName = Workstation
 									$hash.IsError = $True
 									$hash.CertEnrollPolicyTemplates = $buf[0]
 								} else {
-									$buf01 = @()
-									$buf | ? {$_ -match "TemplatePropCommonName = "} | % {$buf01 += ($_.Split("=")[1].Trim())}
-									$hash.CertEnrollPolicyTemplates = $buf01
+									$buf_outer = @()
+									$buf | ? {$_ -match "TemplatePropCommonName = "} | % {$buf_outer += ($_.Split("=")[1].Trim())}
+									$hash.CertEnrollPolicyTemplates = $buf_outer
 								}
 								Write-Debug -Message "`$buf_error: $($buf_error)"
 								Write-Debug -Message "`$hash.CertEnrollPolicyTemplates: $($hash.CertEnrollPolicyTemplates)"
@@ -2198,7 +2198,9 @@ WebServer
 									$hash.IsError = $True
 									$hash.CATemplates = $buf[0]
 								} else {
-									$buf | % {$_.Substring(0, $_.IndexOf(":"))} | % {$hash.CATemplates += @($_)}
+									$buf_outer = @()
+									$buf[0..($buf.count-1-1)] | % {$buf_outer += $_.Split(":")[0].Trim()}
+									$hash.CATemplates = $buf_outer
 								}
 								Write-Debug -Message "`$buf_error: $($buf_error)"
 								Write-Debug -Message "`$hash.CATemplates: $($hash.CATemplates)"
@@ -2398,8 +2400,18 @@ param (
 				$cmd.Connection = New-SQLConnection
 				$cmd.CommandText = $procName
 		
-				for($j = 0;$j -lt $data[$i].CertEnrollPolicyTemplates.count;$j++) {$CertEnroll += $data[$i].CertEnrollPolicyTemplates[$j] + "; "}
-				for($l = 0;$l -lt $data[$i].CATemplates.count;$l++) {$CATemplates += $data[$i].CATemplates[$l] + "; "}
+				if ($data[$i].CATemplates.count -gt 1)
+				{
+					for($j = 0; $j -lt $data[$i].CertEnrollPolicyTemplates.count; $j++) {$CertEnroll += $data[$i].CertEnrollPolicyTemplates[$j] + "; "}
+				} else {
+					$CertEnroll = $data[$i].CertEnrollPolicyTemplates
+				}
+				if ($data[$i].CATemplates.count -gt 1)
+				{
+					for($l = 0; $l -lt $data[$i].CATemplates.count; $l++) {$CATemplates += $data[$i].CATemplates[$l] + "; "}
+				} else {
+					$CATemplates = $data[$i].CATemplates
+				}
 				
 				#$ProbScrp = "CAName(" + $data[$i].CAName + "); DNSName(" + $data[$i].DNSName + "); CAType(" + $data[$i].CAType + "); CertEnrollPolicyTemplates(" + $CertEnroll + "); CATemplates(" + $CATemplates + ")"
 				$ProbScrp = "CAName: $($data[$i].CAName)<br/>DNSName: $($data[$i].DNSName)<br/>CAType: $($data[$i].CAType)<br/>CertEnrollPolicyTemplates: $($CertEnroll)<br/>CATemplates: $($CATemplates)"
@@ -2481,19 +2493,30 @@ try {
 				{$SQLParameter6 = New-Object System.Data.SqlClient.SqlParameter("@CAType", "Null")}
 			else {$SQLParameter6 = New-Object System.Data.SqlClient.SqlParameter("@CAType", $data[$i].CAtype)}
 		
-			if ($data[$i].CertEnrollPolicyTemplates.count -eq 0) {$SQLParameter7 = New-Object System.Data.SqlClient.SqlParameter("@CertEnrollPolicyTemplates", "Null")}
-			else {
-			for($j = 0;$j -lt $data[$i].CertEnrollPolicyTemplates.count;$j++) {
-			$CertEnroll += $data[$i].CertEnrollPolicyTemplates[$j] + "<br/>"
+			if ($data[$i].CertEnrollPolicyTemplates.count -eq 0)
+			{
+				$SQLParameter7 = New-Object System.Data.SqlClient.SqlParameter("@CertEnrollPolicyTemplates", "Null")
+			} else {
+				#
+				$buf_outer = $null
+				foreach ($buf in $data[$i].CertEnrollPolicyTemplates)
+				{
+					$buf_outer += $buf + "; "
+				}
+				$SQLParameter7 = New-Object System.Data.SqlClient.SqlParameter("@CertEnrollPolicyTemplates", $buf_outer)
 			}
-			$SQLParameter7 = New-Object System.Data.SqlClient.SqlParameter("@CertEnrollPolicyTemplates", $CertEnroll)}
 		
-			if ($data[$i].CATemplates.count -eq 0) {$SQLParameter8 = New-Object System.Data.SqlClient.SqlParameter("@CATemplates", "Null")}
-			else {
-			for($l = 0;$l -lt $data[$i].CATemplates.count;$l++) {
-			$CATemplate += $data[$i].CATemplates[$l] + "<br/>"
+			if ($data[$i].CATemplates.count -eq 0)
+			{
+				$SQLParameter8 = New-Object System.Data.SqlClient.SqlParameter("@CATemplates", "Null")
+			} else {
+				$buf_outer = $null
+				foreach ($buf in $data[$i].CATemplates)
+				{
+					$buf_outer += $buf + "; "
+				}
+				$SQLParameter8 = New-Object System.Data.SqlClient.SqlParameter("@CATemplates", $buf_outer)
 			}
-			$SQLParameter8 = New-Object System.Data.SqlClient.SqlParameter("@CATemplates", $CATemplate)}
 		
 			$SQLParameter9 = New-Object System.Data.SqlClient.SqlParameter("@UTCMonitored", $data[$i].jnUTCMonitored)
 		
@@ -2520,7 +2543,6 @@ try {
 		Write-Host "[Services] inserted: $($Data.Count)" -Fore yellow
 	}
 }
-
 Catch {
 	$jnUTCMonitored = (Get-Date).ToUniversalTime().ToString("yyyyMMddTHHmmss")
 	$Message = "$($jnUTCMonitored): ERROR: $($Error[0])"
