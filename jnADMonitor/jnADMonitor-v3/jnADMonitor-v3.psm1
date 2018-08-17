@@ -335,14 +335,14 @@ Insert into TB_MonitoringTaskLogs ([TaskDate], [TaskType], [Company], [ADService
 values('$($jnUTCMonitored)', '$($TaskType)', '$($DomainName)', '$($ServiceType)', '$($TaskScript)') `
 "
 	Write-Debug -Message "jnUTCMonitored: $($jnUTCMonitored)"
-	Write-Debug -Message "TaskScript: $($TaskScript)"
 	Write-Debug -Message "TaskType: $($TaskType)"
+	Write-Debug -Message "DomainName: $($DomainName)"
 	Write-Debug -Message "ServiceType: $($ServiceType)"
 	Write-Debug -Message "TaskScript: $($TaskScript)"
 	Write-Debug -Message "CommandText: $($cmd.CommandText)"
 
 	$cmd.ExecuteNonQuery() | out-Null
-	Write-Host "`n[TaskLogs] $($ServiceType): $($TaskType). ($($TaskScript))`n"
+	Write-Host "`n[TaskLog($($jnUTCMonitored))] $($TaskType); $($ServiceType); $($DomainName); ($($TaskScript))`n"
 
 	$cmd.Connection.Close()
 

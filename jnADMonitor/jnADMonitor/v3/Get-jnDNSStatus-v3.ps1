@@ -166,7 +166,7 @@ try {
 		$myResult = GetDNSEventResult -Credential $Credential -Servers $Servers -DebugPreference $DebugPreference -EventIdExclusionString $EventIdExclusionString -ServiceFlag $ServiceFlag
 
 		# Unlike Level, LevelDisplayName can be null on Windows Server 2008 or earlier versions.
-		foreach ($buf in ($myResult | ? LevelDisplayName -eq $null))
+		foreach ($buf in ($myResult | ? {$_.LevelDisplayName -eq $null}))
 		{
 			switch ($buf.Level)
 			{
