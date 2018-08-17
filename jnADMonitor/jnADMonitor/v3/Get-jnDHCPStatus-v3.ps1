@@ -1297,7 +1297,7 @@ try {
 										$jnServiceFlag = @{Name="jnServiceFlag"; Expression={$ServiceFlag}}
 										$begindate = (Get-Date).AddHours(-1*1)
 
-										$command = "Get-WinEvent -FilterHashTable @{ProviderName = 'Microsoft-Windows-DHCP-Server'; StartTime = `$begindate; ID = 1011, 1012, 1063, 1338 } -ea 0 | select LogName, TimeCreated, Id, ProviderName, Level, LevelDisplayName, Message, `$jnComputerName, `$jnUTCMonitored, `$jnServiceFlag"
+										$command = "Get-WinEvent -FilterHashTable @{ProviderName = 'Microsoft-Windows-DHCP-Server'; StartTime = `$begindate; ID = 1011, 1012, 1338 } -ea 0 | select LogName, TimeCreated, Id, ProviderName, Level, LevelDisplayName, Message, `$jnComputerName, `$jnUTCMonitored, `$jnServiceFlag"
 										[array]$buf = invoke-expression $command
 										if ($buf)
 										{
