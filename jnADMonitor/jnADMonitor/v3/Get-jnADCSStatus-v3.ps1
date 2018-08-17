@@ -2399,7 +2399,7 @@ param (
 				$cmd.CommandText = $procName
 		
 				for($j = 0;$j -lt $data[$i].CertEnrollPolicyTemplates.count;$j++) {$CertEnroll += $data[$i].CertEnrollPolicyTemplates[$j] + "; "}
-				for($l = 0;$l -lt $data[$i].CATemplates.count;$l++) {$CATemplate += $data[$i].CATemplates[$l] + "; "}
+				for($l = 0;$l -lt $data[$i].CATemplates.count;$l++) {$CATemplates += $data[$i].CATemplates[$l] + "; "}
 				
 				#$ProbScrp = "CAName(" + $data[$i].CAName + "); DNSName(" + $data[$i].DNSName + "); CAType(" + $data[$i].CAType + "); CertEnrollPolicyTemplates(" + $CertEnroll + "); CATemplates(" + $CATemplates + ")"
 				$ProbScrp = "CAName: $($data[$i].CAName)<br/>DNSName: $($data[$i].DNSName)<br/>CAType: $($data[$i].CAType)<br/>CertEnrollPolicyTemplates: $($CertEnroll)<br/>CATemplates: $($CATemplates)"
