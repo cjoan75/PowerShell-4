@@ -2195,7 +2195,7 @@ WebServer
 								$buf | % {if ($_ -match "ERROR" -or $_ -match "FAIL") {$buf_error = $True}}
 								if ($buf_error)
 								{
-									$hash.IsError = $True
+									#$hash.IsError = $True	# Do not set it error even if the command generates error or fail
 									$hash.CATemplates = $buf[0]
 								} else {
 									$buf_outer = @()
