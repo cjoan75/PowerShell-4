@@ -1,4 +1,4 @@
-﻿USE ADSysMon
+﻿USE ADMon
 GO
 
 SET ANSI_NULLS ON
@@ -7,6 +7,7 @@ GO
 SET QUOTED_IDENTIFIER ON
 GO
 
+if object_id('[dbo].[TB_SERVERS]') is not null
 DROP TABLE [dbo].[TB_SERVERS]
 GO
 
@@ -49,6 +50,7 @@ END
 
 GO
 
+if object_id('[dbo].[TB_MonitoringTaskLogs]') is not null
 DROP TABLE [dbo].[TB_MonitoringTaskLogs]
 
 GO
@@ -66,6 +68,7 @@ CREATE TABLE [dbo].[TB_MonitoringTaskLogs](
 
 GO
 
+if object_id('[dbo].[TB_ProblemManagement]') is not null
 DROP TABLE [dbo].[TB_ProblemManagement]
 GO
 
@@ -162,3 +165,35 @@ values (
 )
 GO
 
+IF OBJECT_ID('[dbo].[TB_DOTNETSOFT_CO_KR_CONNECTIVITY]') IS NOT NULL 
+DROP TABLE [dbo].[TB_DOTNETSOFT_CO_KR_CONNECTIVITY]
+GO
+CREATE TABLE [dbo].[TB_DOTNETSOFT_CO_KR_CONNECTIVITY]
+(	
+[ComputerName] [nvarchar](100) NOT NULL, 
+[CanPing] [nvarchar](5) NOT NULL, 
+[CanPort135] [nvarchar](5) NOT NULL, 
+[CanPort5985] [nvarchar](5) NOT NULL, 
+[UTCMonitored] [datetime] NOT NULL, 
+PRIMARY KEY (ComputerName, UTCMonitored) 
+)
+
+IF OBJECT_ID('[dbo].[TB_DOTNETSOFT_CO_KR_EVENT]') IS NOT NULL 
+DROP TABLE [dbo].[TB_DOTNETSOFT_CO_KR_EVENT]
+GO
+CREATE TABLE [dbo].[TB_DOTNETSOFT_CO_KR_EVENT]
+(	
+[LogName] [nvarchar](30) NOT NULL,
+[TimeCreated] [datetime] NOT NULL,
+[Id] [nvarchar](30) NOT NULL,
+[ProviderName] [nvarchar](100) NOT NULL,
+[LevelDisplayName] [nvarchar](30) NOT NULL,
+[Message] [nvarchar](max) NOT NULL,
+[ComputerName] [nvarchar](100) NOT NULL,
+[UTCMonitored] [datetime] NOT NULL,
+[ServiceFlag] [nvarchar](10) NOT NULL,
+[ManageStatus] [nvarchar](2) NULL,
+[Manager] [nvarchar](20) NULL,
+[ManageScript] [nvarchar](max) NULL,
+[ManageDate] [datetime] NULL
+)
