@@ -55,7 +55,8 @@ DROP TABLE [dbo].[TB_MonitoringTaskLogs]
 
 GO
 
-CREATE TABLE [dbo].[TB_MonitoringTaskLogs](
+CREATE TABLE [dbo].[TB_MonitoringTaskLogs]
+(
 	[TaskDate] [smalldatetime] NOT NULL,
 	[TaskType] [nvarchar](10) NOT NULL,
 	[Company] [nvarchar](50) NOT NULL,

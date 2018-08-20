@@ -1261,16 +1261,24 @@ try {
 								Write-Debug -Message "Now connected to $($env:COMPUTERNAME).$($env:USERDNSDOMAIN) logged on as $(whoami).`n"
 
 								$hash = @{}
-								if (! (Get-Module ActiveDirectory)) {Import-Module ActiveDirectory}
-								$mydc = Get-ADDomainController
+
+								# Active Directory module for Windows PowerShell is only available on Windows 7 (as part of RSAT) and Windows Server 2008 R2 and later verions of Windows.
+								$OSVersion = [System.Environment]::OSVersion.Version
+								if ($OSVersion.Major -eq 6 -and $OSVersion.Minor -ge 1)
+								{
+									if (! (Get-Module ActiveDirectory)) {Import-Module ActiveDirectory}
+									$mydc = Get-ADDomainController
+								}
 								if ($mydc) {$hash.ComputerName = $mydc.HostName} else {$hash.ComputerName = "$($env:COMPUTERNAME).$($env:USERDNSDOMAIN)"}
 								if ($mydc) {$hash.OperatingSystem = $mydc.OperatingSystem} else {$hash.OperatingSystem = (Get-WmiObject Win32_OperatingSystem).caption}
 								if ($mydc) {$hash.OperatingSystemServicePack = $mydc.OperatingSystemServicePack} else {(Get-WmiObject Win32_OperatingSystem).ServicePackMajorVersion.ToString()}
-								$hash.IsGlobalCatalog = $mydc.IsGlobalCatalog
-								$hash.IsRODC = $mydc.IsReadOnly
-								$hash.OperationMasterRoles = $mydc.OperationMasterRoles
+								if ($mydc)
+								{
+									$hash.IsGlobalCatalog = $mydc.IsGlobalCatalog
+									$hash.IsRODC = $mydc.IsReadOnly
+									$hash.OperationMasterRoles = $mydc.OperationMasterRoles
+								}
 								$hash.jnUTCMonitored = (Get-Date).ToUniversalTime()
-
 
 								# REPADMIN /REPLSUMMARY: Display the replication status for all domain controllers in the forest to Identify domain controllers that are failing inbound replication or outbound replication, and summarizes the results in a report.
 								# NOTE: /bysrc /bydest: displays the /bysrc parameter table first and the /bydest parameter table next. 
@@ -1650,14 +1658,23 @@ try {
 								Write-Debug -Message "Now connected to $($env:COMPUTERNAME).$($env:USERDNSDOMAIN) logged on as $(whoami).`n"
 
 								$hash = @{}
-								if (! (Get-Module ActiveDirectory)) {Import-Module ActiveDirectory}
-								$mydc = Get-ADDomainController
+
+								# Active Directory module for Windows PowerShell is only available on Windows 7 (as part of RSAT) and Windows Server 2008 R2 and later verions of Windows.
+								$OSVersion = [System.Environment]::OSVersion.Version
+								if ($OSVersion.Major -eq 6 -and $OSVersion.Minor -ge 1)
+								{
+									if (! (Get-Module ActiveDirectory)) {Import-Module ActiveDirectory}
+									$mydc = Get-ADDomainController
+								}
 								if ($mydc) {$hash.ComputerName = $mydc.HostName} else {$hash.ComputerName = "$($env:COMPUTERNAME).$($env:USERDNSDOMAIN)"}
 								if ($mydc) {$hash.OperatingSystem = $mydc.OperatingSystem} else {$hash.OperatingSystem = (get-wmiobject win32_OperatingSystem).caption}
 								if ($mydc) {$hash.OperatingSystemServicePack = $mydc.OperatingSystemServicePack} else {(Get-WmiObject Win32_OperatingSystem).ServicePackMajorVersion.ToString()}
-								$hash.IsGlobalCatalog = $mydc.IsGlobalCatalog
-								$hash.IsRODC = $mydc.IsReadOnly
-								$hash.OperationMasterRoles = $mydc.OperationMasterRoles
+								if ($mydc)
+								{
+									$hash.IsGlobalCatalog = $mydc.IsGlobalCatalog
+									$hash.IsRODC = $mydc.IsReadOnly
+									$hash.OperationMasterRoles = $mydc.OperationMasterRoles
+								}
 								$hash.jnUTCMonitored = (Get-Date).ToUniversalTime()
 
 								# Checks that the file replication system (FRS) system volume (SYSVOL) is ready.
@@ -2027,14 +2044,23 @@ try {
 								Write-Debug -Message "Now connected to $($env:COMPUTERNAME).$($env:USERDNSDOMAIN) logged on as $(whoami).`n"
 
 								$hash = @{}
-								if (! (Get-Module ActiveDirectory)) {Import-Module ActiveDirectory}
-								$mydc = Get-ADDomainController
+
+								# Active Directory module for Windows PowerShell is only available on Windows 7 (as part of RSAT) and Windows Server 2008 R2 and later verions of Windows.
+								$OSVersion = [System.Environment]::OSVersion.Version
+								if ($OSVersion.Major -eq 6 -and $OSVersion.Minor -ge 1)
+								{
+									if (! (Get-Module ActiveDirectory)) {Import-Module ActiveDirectory}
+									$mydc = Get-ADDomainController
+								}
 								if ($mydc) {$hash.ComputerName = $mydc.HostName} else {$hash.ComputerName = "$($env:COMPUTERNAME).$($env:USERDNSDOMAIN)"}
 								if ($mydc) {$hash.OperatingSystem = $mydc.OperatingSystem} else {$hash.OperatingSystem = (get-wmiobject win32_OperatingSystem).caption}
 								if ($mydc) {$hash.OperatingSystemServicePack = $mydc.OperatingSystemServicePack} else {(Get-WmiObject Win32_OperatingSystem).ServicePackMajorVersion.ToString()}
-								$hash.IsGlobalCatalog = $mydc.IsGlobalCatalog
-								$hash.IsRODC = $mydc.IsReadOnly
-								$hash.OperationMasterRoles = $mydc.OperationMasterRoles
+								if ($mydc)
+								{
+									$hash.IsGlobalCatalog = $mydc.IsGlobalCatalog
+									$hash.IsRODC = $mydc.IsReadOnly
+									$hash.OperationMasterRoles = $mydc.OperationMasterRoles
+								}
 								$hash.jnUTCMonitored = (Get-Date).ToUniversalTime()
 
 								# Topology: Checks that the KCC has generated a fully connected topology for all domain controllers.
@@ -2406,13 +2432,23 @@ try {
 								Write-Debug -Message "Now connected to $($env:COMPUTERNAME).$($env:USERDNSDOMAIN) logged on as $(whoami).`n"
 
 								$hash = @{}
-								if (! (Get-Module ActiveDirectory)) {Import-Module ActiveDirectory}
-								$mydc = Get-ADDomainController
+
+								# Active Directory module for Windows PowerShell is only available on Windows 7 (as part of RSAT) and Windows Server 2008 R2 and later verions of Windows.
+								$OSVersion = [System.Environment]::OSVersion.Version
+								if ($OSVersion.Major -eq 6 -and $OSVersion.Minor -ge 1)
+								{
+									if (! (Get-Module ActiveDirectory)) {Import-Module ActiveDirectory}
+									$mydc = Get-ADDomainController
+								}
 								if ($mydc) {$hash.ComputerName = $mydc.HostName} else {$hash.ComputerName = "$($env:COMPUTERNAME).$($env:USERDNSDOMAIN)"}
 								if ($mydc) {$hash.OperatingSystem = $mydc.OperatingSystem} else {$hash.OperatingSystem = (get-wmiobject win32_OperatingSystem).caption}
 								if ($mydc) {$hash.OperatingSystemServicePack = $mydc.OperatingSystemServicePack} else {(Get-WmiObject Win32_OperatingSystem).ServicePackMajorVersion.ToString()}
-								$hash.IsGlobalCatalog = $mydc.IsGlobalCatalog
-								$hash.IsRODC = $mydc.IsReadOnly
+								if ($mydc)
+								{
+									$hash.IsGlobalCatalog = $mydc.IsGlobalCatalog
+									$hash.IsRODC = $mydc.IsReadOnly
+									$hash.OperationMasterRoles = $mydc.OperationMasterRoles
+								}
 								$hash.jnUTCMonitored = (Get-Date).ToUniversalTime()
 
 								$path = "registry::HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\services\NTDS\Parameters"
@@ -2821,14 +2857,23 @@ try {
 								Write-Debug -Message "Now connected to $($env:COMPUTERNAME).$($env:USERDNSDOMAIN) logged on as $(whoami).`n"
 
 								$hash = @{}
-								if (! (Get-Module ActiveDirectory)) {Import-Module ActiveDirectory}
-								$mydc = Get-ADDomainController
+
+								# Active Directory module for Windows PowerShell is only available on Windows 7 (as part of RSAT) and Windows Server 2008 R2 and later verions of Windows.
+								$OSVersion = [System.Environment]::OSVersion.Version
+								if ($OSVersion.Major -eq 6 -and $OSVersion.Minor -ge 1)
+								{
+									if (! (Get-Module ActiveDirectory)) {Import-Module ActiveDirectory}
+									$mydc = Get-ADDomainController
+								}
 								if ($mydc) {$hash.ComputerName = $mydc.HostName} else {$hash.ComputerName = "$($env:COMPUTERNAME).$($env:USERDNSDOMAIN)"}
 								if ($mydc) {$hash.OperatingSystem = $mydc.OperatingSystem} else {$hash.OperatingSystem = (get-wmiobject win32_OperatingSystem).caption}
 								if ($mydc) {$hash.OperatingSystemServicePack = $mydc.OperatingSystemServicePack} else {(Get-WmiObject Win32_OperatingSystem).ServicePackMajorVersion.ToString()}
-								$hash.IsGlobalCatalog = $mydc.IsGlobalCatalog
-								$hash.IsRODC = $mydc.IsReadOnly
-								$hash.OperationMasterRoles = $mydc.OperationMasterRoles
+								if ($mydc)
+								{
+									$hash.IsGlobalCatalog = $mydc.IsGlobalCatalog
+									$hash.IsRODC = $mydc.IsReadOnly
+									$hash.OperationMasterRoles = $mydc.OperationMasterRoles
+								}
 								$hash.jnUTCMonitored = (Get-Date).ToUniversalTime()
 
 								# DC Advertisement: Checks whether each domain controller advertises itself in the roles that it should be capable of performing. This test fails if the Netlogon Service has stopped or failed to start.
@@ -3202,14 +3247,23 @@ try {
 								Write-Debug -Message "Now connected to $($env:COMPUTERNAME).$($env:USERDNSDOMAIN) logged on as $(whoami).`n"
 
 								$hash = @{}
-								if (! (Get-Module ActiveDirectory)) {Import-Module ActiveDirectory}
-								$mydc = Get-ADDomainController
+
+								# Active Directory module for Windows PowerShell is only available on Windows 7 (as part of RSAT) and Windows Server 2008 R2 and later verions of Windows.
+								$OSVersion = [System.Environment]::OSVersion.Version
+								if ($OSVersion.Major -eq 6 -and $OSVersion.Minor -ge 1)
+								{
+									if (! (Get-Module ActiveDirectory)) {Import-Module ActiveDirectory}
+									$mydc = Get-ADDomainController
+								}
 								if ($mydc) {$hash.ComputerName = $mydc.HostName} else {$hash.ComputerName = "$($env:COMPUTERNAME).$($env:USERDNSDOMAIN)"}
 								if ($mydc) {$hash.OperatingSystem = $mydc.OperatingSystem} else {$hash.OperatingSystem = (get-wmiobject win32_OperatingSystem).caption}
 								if ($mydc) {$hash.OperatingSystemServicePack = $mydc.OperatingSystemServicePack} else {(Get-WmiObject Win32_OperatingSystem).ServicePackMajorVersion.ToString()}
-								$hash.IsGlobalCatalog = $mydc.IsGlobalCatalog
-								$hash.IsRODC = $mydc.IsReadOnly
-								$hash.OperationMasterRoles = $mydc.OperationMasterRoles
+								if ($mydc)
+								{
+									$hash.IsGlobalCatalog = $mydc.IsGlobalCatalog
+									$hash.IsRODC = $mydc.IsReadOnly
+									$hash.OperationMasterRoles = $mydc.OperationMasterRoles
+								}
 								$hash.jnUTCMonitored = (Get-Date).ToUniversalTime()
 
 								# w32tm /query: Display a computer's windows time service information.
