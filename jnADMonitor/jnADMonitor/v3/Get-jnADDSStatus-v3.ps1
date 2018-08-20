@@ -1271,7 +1271,12 @@ try {
 								}
 								if ($mydc) {$hash.ComputerName = $mydc.HostName} else {$hash.ComputerName = "$($env:COMPUTERNAME).$($env:USERDNSDOMAIN)"}
 								if ($mydc) {$hash.OperatingSystem = $mydc.OperatingSystem} else {$hash.OperatingSystem = (Get-WmiObject Win32_OperatingSystem).caption}
-								if ($mydc) {$hash.OperatingSystemServicePack = $mydc.OperatingSystemServicePack} else {(Get-WmiObject Win32_OperatingSystem).ServicePackMajorVersion.ToString()}
+								if ($mydc) {$hash.OperatingSystemServicePack = $mydc.OperatingSystemServicePack}
+								else {
+									if ((Get-WmiObject Win32_OperatingSystem).ServicePackMajorVersion -eq 0)
+									{$hash.OperatingSystemServicePack = $null}
+									else {$hash.OperatingSystemServicePack = (Get-WmiObject Win32_OperatingSystem).ServicePackMajorVersion.ToString()}
+								}
 								if ($mydc)
 								{
 									$hash.IsGlobalCatalog = $mydc.IsGlobalCatalog
@@ -1285,16 +1290,15 @@ try {
 								$buf_command = @(REPADMIN /REPLSUMMARY $env:COMPUTERNAME /BYSRC /BYDEST /sort:delta | ? {$_})
 
 								$hash.IsError = $False
-								if (gv buf_str -ea 0) {rv buf_str}
-								for ($I = 4; $I -lt $buf_command.count -2; $I++) {
-									$buf_str = $buf_command[$I].TrimStart(" ")
-									$buf_str = $buf_str.SubString($buf_str.IndexOf(":")+4)
-									$buf_str = $buf_str.TrimStart(" ")
-									$buf_str = $buf_str.Substring(0, $buf_str.IndexOf("/")-1)
-									[INT32]$a = $buf_str
-									if ($a -gt 0) {$hash.IsError = $True}
+								for ($I = 4; $I -lt $buf_command.count -2; $I++)
+								{
+									if ($buf_command[$I] -match ":")
+									{
+										[string]$buf_str = $buf_command[$I].Split("/")[0].Trim()
+										[int]$buf_str = $buf_str.Split(" ")[-1].Trim()
+										if ($buf_str -gt 0) {$hash.IsError = $True}
 									}
-
+								}
 								$hash.repadmin = $buf_command
 						
 								if ($hash.Count -gt 0)
@@ -1668,7 +1672,12 @@ try {
 								}
 								if ($mydc) {$hash.ComputerName = $mydc.HostName} else {$hash.ComputerName = "$($env:COMPUTERNAME).$($env:USERDNSDOMAIN)"}
 								if ($mydc) {$hash.OperatingSystem = $mydc.OperatingSystem} else {$hash.OperatingSystem = (get-wmiobject win32_OperatingSystem).caption}
-								if ($mydc) {$hash.OperatingSystemServicePack = $mydc.OperatingSystemServicePack} else {(Get-WmiObject Win32_OperatingSystem).ServicePackMajorVersion.ToString()}
+								if ($mydc) {$hash.OperatingSystemServicePack = $mydc.OperatingSystemServicePack}
+								else {
+									if ((Get-WmiObject Win32_OperatingSystem).ServicePackMajorVersion -eq 0)
+									{$hash.OperatingSystemServicePack = $null}
+									else {$hash.OperatingSystemServicePack = (Get-WmiObject Win32_OperatingSystem).ServicePackMajorVersion.ToString()}
+								}
 								if ($mydc)
 								{
 									$hash.IsGlobalCatalog = $mydc.IsGlobalCatalog
@@ -2054,7 +2063,12 @@ try {
 								}
 								if ($mydc) {$hash.ComputerName = $mydc.HostName} else {$hash.ComputerName = "$($env:COMPUTERNAME).$($env:USERDNSDOMAIN)"}
 								if ($mydc) {$hash.OperatingSystem = $mydc.OperatingSystem} else {$hash.OperatingSystem = (get-wmiobject win32_OperatingSystem).caption}
-								if ($mydc) {$hash.OperatingSystemServicePack = $mydc.OperatingSystemServicePack} else {(Get-WmiObject Win32_OperatingSystem).ServicePackMajorVersion.ToString()}
+								if ($mydc) {$hash.OperatingSystemServicePack = $mydc.OperatingSystemServicePack}
+								else {
+									if ((Get-WmiObject Win32_OperatingSystem).ServicePackMajorVersion -eq 0)
+									{$hash.OperatingSystemServicePack = $null}
+									else {$hash.OperatingSystemServicePack = (Get-WmiObject Win32_OperatingSystem).ServicePackMajorVersion.ToString()}
+								}
 								if ($mydc)
 								{
 									$hash.IsGlobalCatalog = $mydc.IsGlobalCatalog
@@ -2442,7 +2456,12 @@ try {
 								}
 								if ($mydc) {$hash.ComputerName = $mydc.HostName} else {$hash.ComputerName = "$($env:COMPUTERNAME).$($env:USERDNSDOMAIN)"}
 								if ($mydc) {$hash.OperatingSystem = $mydc.OperatingSystem} else {$hash.OperatingSystem = (get-wmiobject win32_OperatingSystem).caption}
-								if ($mydc) {$hash.OperatingSystemServicePack = $mydc.OperatingSystemServicePack} else {(Get-WmiObject Win32_OperatingSystem).ServicePackMajorVersion.ToString()}
+								if ($mydc) {$hash.OperatingSystemServicePack = $mydc.OperatingSystemServicePack}
+								else {
+									if ((Get-WmiObject Win32_OperatingSystem).ServicePackMajorVersion -eq 0)
+									{$hash.OperatingSystemServicePack = $null}
+									else {$hash.OperatingSystemServicePack = (Get-WmiObject Win32_OperatingSystem).ServicePackMajorVersion.ToString()}
+								}
 								if ($mydc)
 								{
 									$hash.IsGlobalCatalog = $mydc.IsGlobalCatalog
@@ -2867,7 +2886,12 @@ try {
 								}
 								if ($mydc) {$hash.ComputerName = $mydc.HostName} else {$hash.ComputerName = "$($env:COMPUTERNAME).$($env:USERDNSDOMAIN)"}
 								if ($mydc) {$hash.OperatingSystem = $mydc.OperatingSystem} else {$hash.OperatingSystem = (get-wmiobject win32_OperatingSystem).caption}
-								if ($mydc) {$hash.OperatingSystemServicePack = $mydc.OperatingSystemServicePack} else {(Get-WmiObject Win32_OperatingSystem).ServicePackMajorVersion.ToString()}
+								if ($mydc) {$hash.OperatingSystemServicePack = $mydc.OperatingSystemServicePack}
+								else {
+									if ((Get-WmiObject Win32_OperatingSystem).ServicePackMajorVersion -eq 0)
+									{$hash.OperatingSystemServicePack = $null}
+									else {$hash.OperatingSystemServicePack = (Get-WmiObject Win32_OperatingSystem).ServicePackMajorVersion.ToString()}
+								}
 								if ($mydc)
 								{
 									$hash.IsGlobalCatalog = $mydc.IsGlobalCatalog
@@ -3257,7 +3281,12 @@ try {
 								}
 								if ($mydc) {$hash.ComputerName = $mydc.HostName} else {$hash.ComputerName = "$($env:COMPUTERNAME).$($env:USERDNSDOMAIN)"}
 								if ($mydc) {$hash.OperatingSystem = $mydc.OperatingSystem} else {$hash.OperatingSystem = (get-wmiobject win32_OperatingSystem).caption}
-								if ($mydc) {$hash.OperatingSystemServicePack = $mydc.OperatingSystemServicePack} else {(Get-WmiObject Win32_OperatingSystem).ServicePackMajorVersion.ToString()}
+								if ($mydc) {$hash.OperatingSystemServicePack = $mydc.OperatingSystemServicePack}
+								else {
+									if ((Get-WmiObject Win32_OperatingSystem).ServicePackMajorVersion -eq 0)
+									{$hash.OperatingSystemServicePack = $null}
+									else {$hash.OperatingSystemServicePack = (Get-WmiObject Win32_OperatingSystem).ServicePackMajorVersion.ToString()}
+								}
 								if ($mydc)
 								{
 									$hash.IsGlobalCatalog = $mydc.IsGlobalCatalog
