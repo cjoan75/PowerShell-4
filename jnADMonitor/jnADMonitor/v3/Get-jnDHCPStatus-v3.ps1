@@ -13,8 +13,7 @@ if (Test-Path $FilePath)
 	$credential = Import-Clixml -Path $FilePath
 } else {
 	$jnUTCMonitored = (Get-Date).ToUniversalTime()
-	$Message = "$($jnUTCMonitored): ERROR: The credential file NOT found: $FilePath"
-	 
+	$Message = "$($ServiceFlag)_CRED: ERROR: The credential file NOT found: $FilePath"
 	Insert-MonitoringTaskLogs -TaskType EXCEPTION -ServiceType $ServiceFlag -jnUTCMonitored $jnUTCMonitored -DomainName $DomainName -TaskScript $Message
 	throw $Message; exit;
 }
@@ -27,8 +26,7 @@ if ($Servers)
 	Write-Host "Servers Retrieved: $($Servers.Count)"
 } else {
 	$jnUTCMonitored = (Get-Date).ToUniversalTime()
-	$Message = "$($jnUTCMonitored): ERROR: No Servers Retrieved."
-
+	$Message = "$($ServiceFlag)_SVR: ERROR: No Servers Retrieved."
 	Insert-MonitoringTaskLogs -TaskType EXCEPTION -ServiceType $ServiceFlag -jnUTCMonitored $jnUTCMonitored -DomainName $DomainName -TaskScript $Message
 	throw $Message; exit;
 }
@@ -185,9 +183,7 @@ try {
 }
 Catch {
 	$jnUTCMonitored = (Get-Date).ToUniversalTime()
-	$Message = "$($jnUTCMonitored): ERROR: $($Error[0])"
-
-	# Log the END time as GMT.
+	$Message = "$($ServiceFlag)_EVT: ERROR: $($Error[0])"
 	Insert-MonitoringTaskLogs -TaskType EXCEPTION -ServiceType $ServiceFlag -jnUTCMonitored $jnUTCMonitored -DomainName $DomainName -TaskScript $Message
 }
 Finally {
@@ -451,9 +447,7 @@ try {
   
 Catch {
 	$jnUTCMonitored = (Get-Date).ToUniversalTime()
-	$Message = "$($jnUTCMonitored): ERROR: $($Error[0])"
-
-	# Log the END time as GMT.
+	$Message = "$($ServiceFlag)_EVT_SQL: ERROR: $($Error[0])"
 	Insert-MonitoringTaskLogs -TaskType EXCEPTION -ServiceType $ServiceFlag -jnUTCMonitored $jnUTCMonitored -DomainName $DomainName -TaskScript $Message
 }
 Finally {
@@ -566,9 +560,7 @@ try {
 }
 Catch {
 	$jnUTCMonitored = (Get-Date).ToUniversalTime()
-	$Message = "$($jnUTCMonitored): ERROR: $($Error[0])"
-
-	# Log the END time as GMT.
+	$Message = "$($ServiceFlag)_SVC: ERROR: $($Error[0])"
 	Insert-MonitoringTaskLogs -TaskType EXCEPTION -ServiceType $ServiceFlag -jnUTCMonitored $jnUTCMonitored -DomainName $DomainName -TaskScript $Message
 }
 Finally {
@@ -813,9 +805,7 @@ try {
 
 Catch {
 	$jnUTCMonitored = (Get-Date).ToUniversalTime()
-	$Message = "$($jnUTCMonitored): ERROR: $($Error[0])"
-
-	# Log the END time as GMT.
+	$Message = "$($ServiceFlag)_SVC_SQL: ERROR: $($Error[0])"
 	Insert-MonitoringTaskLogs -TaskType EXCEPTION -ServiceType $ServiceFlag -jnUTCMonitored $jnUTCMonitored -DomainName $DomainName -TaskScript $Message
 }
 finally {
@@ -985,9 +975,7 @@ try {
 }
 Catch {
 	$jnUTCMonitored = (Get-Date).ToUniversalTime()
-	$Message = "$($jnUTCMonitored): ERROR: $($Error[0])"
-
-	# Log the END time as GMT.
+	$Message = "$($ServiceFlag)_PERF: ERROR: $($Error[0])"
 	Insert-MonitoringTaskLogs -TaskType EXCEPTION -ServiceType $ServiceFlag -jnUTCMonitored $jnUTCMonitored -DomainName $DomainName -TaskScript $Message
 }
 Finally {
@@ -1175,9 +1163,7 @@ try {
 }
 Catch {
 	$jnUTCMonitored = (Get-Date).ToUniversalTime()
-	$Message = "$($jnUTCMonitored): ERROR: $($Error[0])"
-
-	# Log the END time as GMT.
+	$Message = "$($ServiceFlag)_PERF_SQL: ERROR: $($Error[0])"
 	Insert-MonitoringTaskLogs -TaskType EXCEPTION -ServiceType $ServiceFlag -jnUTCMonitored $jnUTCMonitored -DomainName $DomainName -TaskScript $Message
 }
 finally {
@@ -1356,9 +1342,7 @@ try {
 }
 Catch {
 	$jnUTCMonitored = (Get-Date).ToUniversalTime()
-	$Message = "$($jnUTCMonitored): ERROR: $($Error[0])"
-
-	# Log the END time as GMT.
+	$Message = "$($ServiceFlag)_SA: ERROR: $($Error[0])"
 	Insert-MonitoringTaskLogs -TaskType EXCEPTION -ServiceType $ServiceFlag -jnUTCMonitored $jnUTCMonitored -DomainName $DomainName -TaskScript $Message
 }
 Finally {
@@ -1666,9 +1650,7 @@ try {
 
 Catch {
 	$jnUTCMonitored = (Get-Date).ToUniversalTime()
-	$Message = "$($jnUTCMonitored): ERROR: $($Error[0])"
-
-	# Log the END time as GMT.
+	$Message = "DHCP_SA: ERROR: $($Error[0])"
 	Insert-MonitoringTaskLogs -TaskType EXCEPTION -ServiceType $ServiceFlag -jnUTCMonitored $jnUTCMonitored -DomainName $DomainName -TaskScript $Message
 }
 

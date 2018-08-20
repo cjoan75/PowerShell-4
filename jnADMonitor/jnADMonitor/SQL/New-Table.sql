@@ -1,4 +1,4 @@
-﻿USE ADMon
+﻿USE ADSysMon
 GO
 
 SET ANSI_NULLS ON
