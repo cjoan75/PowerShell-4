@@ -12,7 +12,7 @@ if (Test-Path $FilePath)
 {
 	$credential = Import-Clixml -Path $FilePath
 } else {
-	$jnUTCMonitored = (Get-Date).ToUniversalTime().ToString("yyyyMMddTHHmmss")
+	$jnUTCMonitored = (Get-Date).ToUniversalTime()
 	$Message = "$($jnUTCMonitored): ERROR: The credential file not found: $FilePath"
 
 	Insert-MonitoringTaskLogs -TaskType EXCEPTION -ServiceType $ServiceFlag -jnUTCMonitored $jnUTCMonitored -DomainName $DomainName -TaskScript $Message
@@ -26,7 +26,7 @@ if ($Servers)
 {
 	Write-Host "Servers Retrieved: $($Servers.Count)"
 } else {
-	$jnUTCMonitored = (Get-Date).ToUniversalTime().ToString("yyyyMMddTHHmmss")
+	$jnUTCMonitored = (Get-Date).ToUniversalTime()
 	$Message = "$($jnUTCMonitored): ERROR: No servers returned."
 
 	Insert-MonitoringTaskLogs -TaskType EXCEPTION -ServiceType $ServiceFlag -jnUTCMonitored $jnUTCMonitored -DomainName $DomainName -TaskScript $Message
@@ -194,7 +194,7 @@ param
 
 }
 Catch {
-	$jnUTCMonitored = (Get-Date).ToUniversalTime().ToString("yyyyMMddTHHmmss")
+	$jnUTCMonitored = (Get-Date).ToUniversalTime()
 	$Message = "$($jnUTCMonitored): ERROR: $($Error[0])"
 
 	# Log the END time as GMT.
@@ -434,7 +434,7 @@ try {
 	}
 }
 Catch {
-	$jnUTCMonitored = (Get-Date).ToUniversalTime().ToString("yyyyMMddTHHmmss")
+	$jnUTCMonitored = (Get-Date).ToUniversalTime()
 	$Message = "$($jnUTCMonitored): ERROR: $($Error[0])"
 
 	# Log the END time as GMT.

@@ -12,7 +12,7 @@ if (Test-Path $FilePath)
 {
 	$credential = Import-Clixml -Path $FilePath
 } else {
-	$jnUTCMonitored = (Get-Date).ToUniversalTime().ToString("yyyyMMddTHHmmss")
+	$jnUTCMonitored = (Get-Date).ToUniversalTime()
 	$Message = "$($jnUTCMonitored): ERROR: The credential file NOT found: $FilePath"
 	 
 	Insert-MonitoringTaskLogs -TaskType EXCEPTION -ServiceType $ServiceFlag -jnUTCMonitored $jnUTCMonitored -DomainName $DomainName -TaskScript $Message
@@ -26,7 +26,7 @@ if ($Servers)
 {
 	Write-Host "Servers Retrieved: $($Servers.Count)"
 } else {
-	$jnUTCMonitored = (Get-Date).ToUniversalTime().ToString("yyyyMMddTHHmmss")
+	$jnUTCMonitored = (Get-Date).ToUniversalTime()
 	$Message = "$($jnUTCMonitored): ERROR: No Servers Retrieved."
 
 	Insert-MonitoringTaskLogs -TaskType EXCEPTION -ServiceType $ServiceFlag -jnUTCMonitored $jnUTCMonitored -DomainName $DomainName -TaskScript $Message
@@ -134,7 +134,7 @@ try {
 							}
 						}
 						Catch {
-							$jnUTCMonitored = (Get-Date).ToUniversalTime().ToString("yyyyMMddTHHmmss")
+							$jnUTCMonitored = (Get-Date).ToUniversalTime()
 							$Message = "$($jnUTCMonitored): ERROR: $($Error[0])"
 
 							if ($PSVersionTable.PSVersion.Major -ge 3)
@@ -184,7 +184,7 @@ try {
 	
 }
 Catch {
-	$jnUTCMonitored = (Get-Date).ToUniversalTime().ToString("yyyyMMddTHHmmss")
+	$jnUTCMonitored = (Get-Date).ToUniversalTime()
 	$Message = "$($jnUTCMonitored): ERROR: $($Error[0])"
 
 	# Log the END time as GMT.
@@ -450,7 +450,7 @@ try {
 }
   
 Catch {
-	$jnUTCMonitored = (Get-Date).ToUniversalTime().ToString("yyyyMMddTHHmmss")
+	$jnUTCMonitored = (Get-Date).ToUniversalTime()
 	$Message = "$($jnUTCMonitored): ERROR: $($Error[0])"
 
 	# Log the END time as GMT.
@@ -565,7 +565,7 @@ try {
 	Write-Host "returned: $($myResult.Count), $($session.ComputerName)"
 }
 Catch {
-	$jnUTCMonitored = (Get-Date).ToUniversalTime().ToString("yyyyMMddTHHmmss")
+	$jnUTCMonitored = (Get-Date).ToUniversalTime()
 	$Message = "$($jnUTCMonitored): ERROR: $($Error[0])"
 
 	# Log the END time as GMT.
@@ -812,7 +812,7 @@ try {
 }
 
 Catch {
-	$jnUTCMonitored = (Get-Date).ToUniversalTime().ToString("yyyyMMddTHHmmss")
+	$jnUTCMonitored = (Get-Date).ToUniversalTime()
 	$Message = "$($jnUTCMonitored): ERROR: $($Error[0])"
 
 	# Log the END time as GMT.
@@ -949,7 +949,7 @@ try {
 
 						}
 						Catch {
-							$jnUTCMonitored = (Get-Date).ToUniversalTime().ToString("yyyyMMddTHHmmss")
+							$jnUTCMonitored = (Get-Date).ToUniversalTime()
 							$Message = "$($jnUTCMonitored): ERROR: $($Error[0])"
 
 							if ($PSVersionTable.PSVersion.Major -ge 3)
@@ -984,7 +984,7 @@ try {
 	Write-Host "returned: $($myResult.Count), $($session.ComputerName)"
 }
 Catch {
-	$jnUTCMonitored = (Get-Date).ToUniversalTime().ToString("yyyyMMddTHHmmss")
+	$jnUTCMonitored = (Get-Date).ToUniversalTime()
 	$Message = "$($jnUTCMonitored): ERROR: $($Error[0])"
 
 	# Log the END time as GMT.
@@ -1174,7 +1174,7 @@ try {
 	}
 }
 Catch {
-	$jnUTCMonitored = (Get-Date).ToUniversalTime().ToString("yyyyMMddTHHmmss")
+	$jnUTCMonitored = (Get-Date).ToUniversalTime()
 	$Message = "$($jnUTCMonitored): ERROR: $($Error[0])"
 
 	# Log the END time as GMT.
@@ -1320,7 +1320,7 @@ try {
 							}
 						}
 						Catch {
-							$jnUTCMonitored = (Get-Date).ToUniversalTime().ToString("yyyyMMddTHHmmss")
+							$jnUTCMonitored = (Get-Date).ToUniversalTime()
 							$Message = "$($jnUTCMonitored): ERROR: $($Error[0])"
 
 							if ($PSVersionTable.PSVersion.Major -ge 3)
@@ -1355,7 +1355,7 @@ try {
 	Write-Host "returned: $($myResult.Count), $($session.ComputerName)"
 }
 Catch {
-	$jnUTCMonitored = (Get-Date).ToUniversalTime().ToString("yyyyMMddTHHmmss")
+	$jnUTCMonitored = (Get-Date).ToUniversalTime()
 	$Message = "$($jnUTCMonitored): ERROR: $($Error[0])"
 
 	# Log the END time as GMT.
@@ -1665,7 +1665,7 @@ try {
 } 
 
 Catch {
-	$jnUTCMonitored = (Get-Date).ToUniversalTime().ToString("yyyyMMddTHHmmss")
+	$jnUTCMonitored = (Get-Date).ToUniversalTime()
 	$Message = "$($jnUTCMonitored): ERROR: $($Error[0])"
 
 	# Log the END time as GMT.
