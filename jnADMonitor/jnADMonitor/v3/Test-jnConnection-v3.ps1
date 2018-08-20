@@ -7,7 +7,7 @@
 
 $ServiceFlag = "CONNECT"
 $DomainName = $ManagedServerFQDN.SubString($ManagedServerFQDN.IndexOf(".")+1)
-$FilePath = "$env:USERPROFILE\Documents\ADMON\v3\$($userPrincipalName).cred"
+$FilePath = "c:\Users\AdmonAdm\Documents\ADMON\v3\$($userPrincipalName).cred"
 if (Test-Path $FilePath)
 {
 	$credential = Import-Clixml -Path $FilePath

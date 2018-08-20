@@ -7,7 +7,7 @@
 
 $ServiceFlag = "DNS"
 $DomainName = $ManagedServerFQDN.SubString($ManagedServerFQDN.IndexOf(".")+1)
-$FilePath = "$env:USERPROFILE\Documents\ADMON\v3\$($userPrincipalName).cred"
+$FilePath = "c:\Users\AdmonAdm\Documents\ADMON\v3\$($userPrincipalName).cred"
 if (Test-Path $FilePath)
 {
 	$credential = Import-Clixml -Path $FilePath
@@ -97,7 +97,7 @@ try {
 							$session = New-PSSession -cn $server.ComputerName -Credential $credential
 							Write-Debug -Message "session established: $($session.ComputerName), InstanceId: $($session.InstanceId)."
 
-							[array]$buf = Invoke-Command -Session $session -script {
+							[array]$buf = Invoke-Command -Session $session -ea 0 -ArgumentList ($EventIdExclusionString, $ServiceFlag) -script {
 								param ($EventIdExclusionString, $ServiceFlag)
 
 								Write-Debug -Message "Now connected to $($env:COMPUTERNAME).$($env:USERDNSDOMAIN) logged on as $(whoami).`n"
@@ -125,7 +125,7 @@ try {
 									return $buf
 								}
 
-							} -ArgumentList ($EventIdExclusionString, $ServiceFlag) 
+							}
                         
 							if ($buf)
 							{
@@ -921,7 +921,7 @@ try {
 							$cntrs += @(“\DNS\Total Response Sent/sec”)
 
 							# Sample: (Get-Counter "\PhysicalDisk(*)\Avg. Disk Queue Length").countersamples | select *
-							[array]$buf = Invoke-Command -Session $session -Script {
+							[array]$buf = Invoke-Command -Session $session -ea 0 -ArgumentList (, $cntrs) -Script {
 
 								Write-Debug -Message "Now connected to $($env:COMPUTERNAME).$($env:USERDNSDOMAIN) logged on as $(whoami).`n"
 
@@ -937,7 +937,7 @@ try {
 									Write-Debug -Message "$($env:COMPUTERNAME).$($env:USERDNSDOMAIN): $($buf.GetType()), $($buf.count)."
 									return $buf
 								}
-							} -ArgumentList (, $cntrs)
+							}
 
 							if ($buf)
 							{
