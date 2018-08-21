@@ -106,7 +106,7 @@ try {
 								$jnComputerName = @{Name='ComputerName'; Expression={$_.MachineName}}
 								$jnUTCMonitored = @{Name="jnUTCMonitored"; EXPRESSION={(Get-Date).ToUniversalTime()}}
 								$jnServiceFlag = @{Name="jnServiceFlag"; Expression={$ServiceFlag}}
-								$begindate = (Get-Date).AddHours(-1*1)
+								$begindate = (Get-Date).AddHours(-1/2)
 
 								# For debug purpose, you can look up the log that saved at the workflow target computers.
 								# invoke-command -cn $Servers.ComputerName -Credential $credential -Authentication Kerberos -script {type "$env:temp\$($env:computername)_admon.log"}
