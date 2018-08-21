@@ -1254,6 +1254,7 @@ try {
 								Write-Debug -Message "Now connected to $($env:COMPUTERNAME).$($env:USERDNSDOMAIN) logged on as $(whoami).`n"
 
 								$hash = @{}
+								$hash.IsError = $False
 
 								# Active Directory module for Windows PowerShell is only available on Windows 7 (as part of RSAT) and Windows Server 2008 R2 and later verions of Windows.
 								$OSVersion = [System.Environment]::OSVersion.Version
@@ -1280,9 +1281,8 @@ try {
 
 								# REPADMIN /REPLSUMMARY: Display the replication status for all domain controllers in the forest to Identify domain controllers that are failing inbound replication or outbound replication, and summarizes the results in a report.
 								# NOTE: /bysrc /bydest: displays the /bysrc parameter table first and the /bydest parameter table next. 
-								$buf_command = @(REPADMIN /REPLSUMMARY $env:COMPUTERNAME /BYSRC /BYDEST /sort:delta | ? {$_})
+								$buf_command = REPADMIN /REPLSUMMARY $env:COMPUTERNAME /BYSRC /BYDEST /sort:delta | ? {$_}
 
-								$hash.IsError = $False
 								for ($I = 4; $I -lt $buf_command.count -2; $I++)
 								{
 									if ($buf_command[$I] -match ":")
@@ -1292,7 +1292,7 @@ try {
 										if ($buf_str -gt 0) {$hash.IsError = $True}
 									}
 								}
-								$hash.repadmin = $buf_command[3..($buf_command.count-1-2)]
+								$hash.repadmin = $buf_command[3..($buf_command.count-1-2)].Trim()
 						
 								if ($hash.Count -gt 0)
 									{return $hash}
@@ -1655,6 +1655,7 @@ try {
 								Write-Debug -Message "Now connected to $($env:COMPUTERNAME).$($env:USERDNSDOMAIN) logged on as $(whoami).`n"
 
 								$hash = @{}
+								$hash.IsError = $False
 
 								# Active Directory module for Windows PowerShell is only available on Windows 7 (as part of RSAT) and Windows Server 2008 R2 and later verions of Windows.
 								$OSVersion = [System.Environment]::OSVersion.Version
@@ -1681,10 +1682,9 @@ try {
 
 								# Checks that the file replication system (FRS) system volume (SYSVOL) is ready.
 								# NOTE: VerifyReferences checks that certain system references are intact for the FRS and replication infrastructure.
-								$buf_command = @(dcdiag /test:frssysvol /test:VerifyReferences | ? {$_-ne $null -and $_ -ne ""})
-								$hash.IsError = $False
+								$buf_command = dcdiag /test:frssysvol /test:VerifyReferences | ? {$_}
 								$buf_command | % {if (($_ -match "ERROR" -or $_ -match "FAIL") -and $_ -notmatch "NO ERROR") {$hash.IsError = $True} }
-								$hash.frssysvol = $buf_command
+								$hash.frssysvol = $buf_command[14..($buf_command.count-1-13)].Trim()
 
 								if ($hash.Count -gt 0)
 									{return $hash}
@@ -2046,6 +2046,7 @@ try {
 								Write-Debug -Message "Now connected to $($env:COMPUTERNAME).$($env:USERDNSDOMAIN) logged on as $(whoami).`n"
 
 								$hash = @{}
+								$hash.IsError = $False
 
 								# Active Directory module for Windows PowerShell is only available on Windows 7 (as part of RSAT) and Windows Server 2008 R2 and later verions of Windows.
 								$OSVersion = [System.Environment]::OSVersion.Version
@@ -2072,10 +2073,9 @@ try {
 
 								# Topology: Checks that the KCC has generated a fully connected topology for all domain controllers.
 								# Intersite Messaging: Checks for failures that would prevent or temporarily hold up intersite replication and predicts how long it would take for the Knowledge Consistency Checker (KCC) to recover.
-								$buf_command = @(dcdiag /test:Topology /test:Intersite | ? {$_-ne $null -and $_ -ne ""})
-								$hash.IsError = $False
+								$buf_command = dcdiag /test:Topology | ? {$_}
 								$buf_command | % {if (($_ -match "ERROR" -or $_ -match "FAIL") -and $_ -notmatch "NO ERROR") {$hash.IsError = $True} }
-								$hash.adtopology = $buf_command
+								$hash.adtopology = $buf_command[14..($buf_command.count-1-13)].Trim()
 
 								if ($hash.Count -gt 0)
 									{return $hash}
@@ -2439,6 +2439,7 @@ try {
 								Write-Debug -Message "Now connected to $($env:COMPUTERNAME).$($env:USERDNSDOMAIN) logged on as $(whoami).`n"
 
 								$hash = @{}
+								$hash.IsError = $False
 
 								# Active Directory module for Windows PowerShell is only available on Windows 7 (as part of RSAT) and Windows Server 2008 R2 and later verions of Windows.
 								$OSVersion = [System.Environment]::OSVersion.Version
@@ -2472,7 +2473,7 @@ try {
                    
 								$DBDriveFreeSpace = Get-WmiObject Win32_LogicalDisk | ? {$_.DeviceID -eq $DBPath.SubString(0, 2)} | select -expand freespace
 								$DBDriveFreeSpaceGB = [math]::Round($DBDriveFreeSpace / 1GB, 2)
-								if ($DBDriveFreeSpaceGB -le 1) {$hash.IsError = $True} else {$hash.IsError = $False}
+								if ($DBDriveFreeSpaceGB -le 1) {$hash.IsError = $True}
 								$hash.DatabaseDriveFreeSpace = $DBDriveFreeSpaceGB.tostring() + "GB"
 
 								$name = "Database log files path"
@@ -2869,6 +2870,7 @@ try {
 								Write-Debug -Message "Now connected to $($env:COMPUTERNAME).$($env:USERDNSDOMAIN) logged on as $(whoami).`n"
 
 								$hash = @{}
+								$hash.IsError = $False
 
 								# Active Directory module for Windows PowerShell is only available on Windows 7 (as part of RSAT) and Windows Server 2008 R2 and later verions of Windows.
 								$OSVersion = [System.Environment]::OSVersion.Version
@@ -2894,10 +2896,9 @@ try {
 								$hash.jnUTCMonitored = (Get-Date).ToUniversalTime()
 
 								# DC Advertisement: Checks whether each domain controller advertises itself in the roles that it should be capable of performing. This test fails if the Netlogon Service has stopped or failed to start.
-								$buf_command = @(dcdiag /test:Advertising | ? {$_-ne $null -and $_ -ne ""})
-								$hash.IsError = $False
+								$buf_command = dcdiag /test:Advertising | ? {$_}
 								$buf_command | % {if (($_ -match "ERROR" -or $_ -match "FAIL") -and $_ -notmatch "NO ERROR") {$hash.IsError = $True} }
-								$hash.dcdiag_advertising = $buf_command
+								$hash.dcdiag_advertising = $buf_command[14..($buf_command.count-1-13)].Trim()
 
 								if ($hash.Count -gt 0)
 									{return $hash}
@@ -3264,6 +3265,7 @@ try {
 								Write-Debug -Message "Now connected to $($env:COMPUTERNAME).$($env:USERDNSDOMAIN) logged on as $(whoami).`n"
 
 								$hash = @{}
+								$hash.IsError = $False
 
 								# Active Directory module for Windows PowerShell is only available on Windows 7 (as part of RSAT) and Windows Server 2008 R2 and later verions of Windows.
 								$OSVersion = [System.Environment]::OSVersion.Version
@@ -3289,18 +3291,16 @@ try {
 								$hash.jnUTCMonitored = (Get-Date).ToUniversalTime()
 
 								# w32tm /query: Display a computer's windows time service information.
-								$buf = w32tm /query /status
-								$buf_LastSuccessfulSyncedTime = $buf[6].SubString($buf[6].IndexOf(":")+2)
-								$buf_TimeSource = $buf[7].Split(":")[1].Trim();
-								if ($buf_LastSuccessfulSyncedTime)
+								$buf_command = w32tm /query /status | ? {$_}
+								$buf_LastSuccessfulSyncedTime = $buf_command[6].SubString($buf_command[6].IndexOf(":")+2)
+								$buf_TimeSource = $buf_command[7].Split(":")[1].Trim();
+
+								if (! $buf_LastSuccessfulSyncedTime)
 								{
+									$hash.IsError = $True
+								} else {
 									$hash.LastSuccessfulSyncedTime = $buf_LastSuccessfulSyncedTime
 									$hash.TimeSource = $buf_TimeSource
-									$hash.IsError = $False
-								} else {
-									$hash.LastSuccessfulSyncedTime = $null
-									$hash.TimeSource = $null
-									$hash.IsError = $True
 								}
 			
 								if ($hash.Count -gt 0) 
