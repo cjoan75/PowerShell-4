@@ -1292,7 +1292,7 @@ try {
 										if ($buf_str -gt 0) {$hash.IsError = $True}
 									}
 								}
-								$hash.repadmin = $buf_command
+								$hash.repadmin = $buf_command[3..($buf_command.count-1-2)]
 						
 								if ($hash.Count -gt 0)
 									{return $hash}
