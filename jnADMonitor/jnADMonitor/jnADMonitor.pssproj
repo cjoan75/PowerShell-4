@@ -26,6 +26,8 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Compile Include="UnitTest\CRLCopy.ps1" />
+    <Compile Include="UnitTest\CRLFreshChecks.psm1" />
     <Compile Include="UnitTest\Get-CRL.ps1" />
     <Compile Include="v3\Get-jnADCSStatus-v3.ps1" />
     <Compile Include="v3\Get-jnADDSStatus-v3.ps1" />
