@@ -32,8 +32,9 @@ if ($Servers)
 }
 
 # Log the BEGIN time as GMT.
+$Message = [guid]::NewGuid().tostring()
 $jnUTCMonitored = (Get-Date).ToUniversalTime()
-Insert-MonitoringTaskLogs -TaskType BEGIN -ServiceType $ServiceFlag -jnUTCMonitored $jnUTCMonitored -DomainName $DomainName
+Insert-MonitoringTaskLogs -TaskType BEGIN -ServiceType $ServiceFlag -jnUTCMonitored $jnUTCMonitored -DomainName $DomainName -TaskScript $Message
 
 # Get events.
 
@@ -3632,5 +3633,5 @@ if ($myResult) {Insert-ADDSW32TimeSync -Data $myResult}
 
 # Log the END time as GMT.
 $jnUTCMonitored = (Get-Date).ToUniversalTime()
-Insert-MonitoringTaskLogs -TaskType END -ServiceType $ServiceFlag -jnUTCMonitored $jnUTCMonitored -DomainName $DomainName
+Insert-MonitoringTaskLogs -TaskType END -ServiceType $ServiceFlag -jnUTCMonitored $jnUTCMonitored -DomainName $DomainName -TaskScript $Message
 
