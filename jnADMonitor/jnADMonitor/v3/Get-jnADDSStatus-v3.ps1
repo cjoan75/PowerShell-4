@@ -124,8 +124,9 @@ try {
 								# ADD: Audits AD Group membership changes
 								$command = "Get-WinEvent -FilterHashtable @{LogName = 'Security'; StartTime = `$begindate; ID = 4756, 4757, 4732, 4733, 4728, 4729} -ea 0 | sort TimeCreated | select LogName, TimeCreated, Id, ProviderName, Level, LevelDisplayName, Message, `$jnComputerName, `$jnUTCMonitored, `$jnServiceFlag"
 								[array]$buf_01 = invoke-expression $command
+
+								if ($buf_01) {$buf = $buf + $buf_01}
 								
-								$buf = $buf + $buf_01
 								if ($buf)
 								{
 									Write-Debug -Message "$($env:COMPUTERNAME).$($env:USERDNSDOMAIN): $($buf.GetType()), $($buf.count)."
@@ -134,12 +135,8 @@ try {
 
 							}
                         
-							if ($buf)
-							{
-								Write-Debug -Message "returned: $($buf.Count), $($session.ComputerName)"
-								return $buf
-							}
-
+							Write-Debug -Message "returned: $($buf.Count), $($session.ComputerName)"
+							return $buf
 						}
 						Catch {
 							$jnUTCMonitored = (Get-Date).ToUniversalTime()
@@ -519,7 +516,6 @@ try {
 						$DebugPreference = $using:DebugPreference
 
 						try {
-				
 							# to create powershell remote session
 							$session = New-PSSession -cn $server.ComputerName -Credential $credential
 							Write-Debug -Message "session established: $($session.ComputerName), InstanceId: $($session.InstanceId)."
@@ -569,11 +565,8 @@ try {
 
 							}
 
-							if ($buf)
-							{
-								Write-Debug -Message "returned: $($buf.Count), $($session.ComputerName)"
-								return $buf
-							}
+							Write-Debug -Message "returned: $($buf.Count), $($session.ComputerName)"
+							return $buf
 						}
 						Catch {
 							$jnUTCMonitored = (Get-Date).ToUniversalTime()
@@ -970,12 +963,8 @@ try {
 								}
 							}
 
-							if ($buf)
-							{
-								Write-Debug -Message "returned: $($buf.Count), $($session.ComputerName)"
-								return $buf
-							}
-
+							Write-Debug -Message "returned: $($buf.Count), $($session.ComputerName)"
+							return $buf
 						}
 						Catch {
 							$jnUTCMonitored = (Get-Date).ToUniversalTime()

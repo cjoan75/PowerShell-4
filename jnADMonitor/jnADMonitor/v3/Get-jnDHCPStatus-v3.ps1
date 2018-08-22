@@ -128,11 +128,8 @@ try {
 
 							}
 
-							if ($buf)
-							{
-								Write-Debug -Message "returned: $($buf.Count), $($session.ComputerName)"
-								return $buf
-							}
+							Write-Debug -Message "returned: $($buf.Count), $($session.ComputerName)"
+							return $buf
 						}
 						Catch {
 							$jnUTCMonitored = (Get-Date).ToUniversalTime()
@@ -492,7 +489,6 @@ try {
 						$DebugPreference = $using:DebugPreference
 
 						try {
-				
 							# to create powershell remote session
 							$session = New-PSSession -cn $server.ComputerName -Credential $credential
 							Write-Debug -Message "session established: $($session.ComputerName), InstanceId: $($session.InstanceId)."
@@ -528,12 +524,8 @@ try {
 
 							}
 
-							if ($buf)
-							{
-								Write-Debug -Message "returned: $($buf.Count), $($session.ComputerName)"
-								return $buf
-							}
-
+							Write-Debug -Message "returned: $($buf.Count), $($session.ComputerName)"
+							return $buf
 						}
 						Catch {
 						}
@@ -931,12 +923,8 @@ try {
 								}
 							}
 
-							if ($buf)
-							{
-								Write-Debug -Message "returned: $($buf.Count), $($session.ComputerName)"
-								return $buf
-							}
-
+							Write-Debug -Message "returned: $($buf.Count), $($session.ComputerName)"
+							return $buf
 						}
 						Catch {
 							$jnUTCMonitored = (Get-Date).ToUniversalTime()
