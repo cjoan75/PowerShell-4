@@ -164,15 +164,18 @@ try {
 
 		$myResult = GetRADIUSEventResult -Credential $Credential -Servers $Servers -DebugPreference $DebugPreference -EventIdExclusionString $EventIdExclusionString -ServiceFlag $ServiceFlag
 
-		# Unlike Level, LevelDisplayName can be null on Windows Server 2008 or earlier versions.
+		# MSDN: StandardEventLevel Enum, https://docs.microsoft.com/en-us/dotnet/api/system.diagnostics.eventing.reader.standardeventlevel?view=netframework-4.7.2
+		# Unlike Level, LevelDisplayName can be null on Windows Server 2008 or its earlier versions.
 		foreach ($buf in ($myResult | ? {$_.LevelDisplayName -eq $null}))
 		{
 			switch ($buf.Level)
 			{
-				0 {$buf.LevelDisplayName = "Information"}
+				0 {$buf.LevelDisplayName = "LogAlways"}
 				1 {$buf.LevelDisplayName = "Critical"}
 				2 {$buf.LevelDisplayName = "Error"}
 				3 {$buf.LevelDisplayName = "Warning"}
+				4 {$buf.LevelDisplayName = "Information"}
+				5 {$buf.LevelDisplayName = "Verbose"}
 				Default {$LevelDisplayName = $null}
 			}
 		}
