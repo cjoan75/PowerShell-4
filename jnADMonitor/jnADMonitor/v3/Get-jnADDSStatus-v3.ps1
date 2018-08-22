@@ -388,7 +388,7 @@ param (
 
 		}
 
-		if ($rowcount) {Write-Host "[ProblemManagement] inserted: $($rowcount)" -fore yellow}
+		if ($rowcount) {Write-Host "[PROBLEM MANAGEMENT] inserted: $($rowcount)" -fore yellow}
 	}
 
 }
@@ -465,7 +465,7 @@ try {
 			$cmd.Connection.Close()
 
 		}
-		Write-Host "[Services] inserted: $($Data.Count)" -Fore yellow
+		Write-Host "[$($ServiceFlag) EVENT] inserted: $($Data.Count)" -Fore yellow
 
 	}
 }
@@ -778,7 +778,7 @@ param (
 			}
 		}
 
-		if ($rowcount) {Write-Host "[ProblemManagement] inserted: $($rowcount)" -fore yellow}
+		if ($rowcount) {Write-Host "[PROBLEM MANAGEMENT] inserted: $($rowcount)" -fore yellow}
 	}
 
 }
@@ -837,7 +837,7 @@ try {
 			$cmd.Connection.Close()
 
 		}
-		Write-Host "[Services] inserted: $($Data.Count)" -Fore yellow
+		Write-Host "[$($ServiceFlag) SERVICE] inserted: $($Data.Count)" -Fore yellow
 
 	}
 }
@@ -1185,7 +1185,7 @@ try {
 			$cmd.Connection.Close()
 
 		}
-		Write-Host "[Services] inserted: $($Data.Count)" -Fore yellow
+		Write-Host "[$($ServiceFlag) PERFORMANCE] inserted: $($Data.Count)" -Fore yellow
 
 	}
 }
@@ -1503,7 +1503,7 @@ param (
 			}
 		}
 
-		if ($rowcount) {Write-Host "[ProblemManagement] inserted: $($rowcount)" -fore yellow}
+		if ($rowcount) {Write-Host "[PROBLEM MANAGEMENT] inserted: $($rowcount)" -fore yellow}
 	}
 
 }
@@ -1587,7 +1587,7 @@ try {
 			$cmd.Connection.Close()
 
 		}
-		Write-Host "[Services] inserted: $($Data.Count)" -Fore yellow
+		Write-Host "[$($ServiceFlag) REPLICATION] inserted: $($Data.Count)" -Fore yellow
 
 	}
 }
@@ -1897,7 +1897,7 @@ param (
 			}
 		}
 
-		if ($rowcount) {Write-Host "[ProblemManagement] inserted: $($rowcount)" -fore yellow}
+		if ($rowcount) {Write-Host "[PROBLEM MANAGEMENT] inserted: $($rowcount)" -fore yellow}
 	}
 
 }
@@ -1977,7 +1977,7 @@ try {
 			$cmd.Connection.Close()
 			
 		}
-		Write-Host "[Services] inserted: $($Data.Count)" -Fore yellow
+		Write-Host "[$($ServiceFlag) SYSVOL SHARE] inserted: $($Data.Count)" -Fore yellow
 
 	}
 }
@@ -2287,7 +2287,7 @@ param (
 			}
 		}
 
-		if ($rowcount) {Write-Host "[ProblemManagement] inserted: $($rowcount)" -fore yellow}
+		if ($rowcount) {Write-Host "[PROBLEM MANAGEMENT] inserted: $($rowcount)" -fore yellow}
 	}
 
 }
@@ -2370,7 +2370,7 @@ try {
 			$cmd.Connection.Close()
 			
 		}
-		Write-Host "[Services] inserted: $($Data.Count)" -Fore yellow
+		Write-Host "[$($ServiceFlag) TOPOLOGY] inserted: $($Data.Count)" -Fore yellow
 
 	}
 }
@@ -2711,7 +2711,7 @@ param (
 			}
 		}
 
-		if ($rowcount) {Write-Host "[ProblemManagement] inserted: $($rowcount)" -fore yellow}
+		if ($rowcount) {Write-Host "[PROBLEM MANAGEMENT] inserted: $($rowcount)" -fore yellow}
 	}
 
 }
@@ -2800,7 +2800,7 @@ try {
 			$cmd.Connection.Close()
 
 		}
-		Write-Host "[Services] inserted: $($Data.Count)" -Fore yellow
+		Write-Host "[$($ServiceFlag) REPOSITORY] inserted: $($Data.Count)" -Fore yellow
 
 	}
 }
@@ -3112,7 +3112,7 @@ param (
 			}
 		}
 
-		if ($rowcount) {Write-Host "[ProblemManagement] inserted: $($rowcount)" -fore yellow}
+		if ($rowcount) {Write-Host "[PROBLEM MANAGEMENT] inserted: $($rowcount)" -fore yellow}
 	}
 
 }
@@ -3197,7 +3197,7 @@ try {
 			$cmd.Connection.Close()
 
 		}
-		Write-Host "[Services] inserted: $($Data.Count)" -Fore yellow
+		Write-Host "[$($ServiceFlag) ADVERTISEMENT] inserted: $($Data.Count)" -Fore yellow
 
 	}
 }
@@ -3516,7 +3516,7 @@ param (
 			}
 		}
 
-		if ($rowcount) {Write-Host "[ProblemManagement] inserted: $($rowcount)" -fore yellow}
+		if ($rowcount) {Write-Host "[PROBLEM MANAGEMENT] inserted: $($rowcount)" -fore yellow}
 	}
 
 }
@@ -3603,7 +3603,7 @@ try {
 			$cmd.Connection.Close()
 
 		}
-		Write-Host "[Services] inserted: $($Data.Count)" -Fore yellow
+		Write-Host "[$($ServiceFlag) W32TIME] inserted: $($Data.Count)" -Fore yellow
 
 	}
 }

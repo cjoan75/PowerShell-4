@@ -361,9 +361,8 @@ param (
 			}
 		}
 
-		if ($rowcount) {Write-Host "[ProblemManagement] inserted: $($rowcount)" -fore yellow}
+		if ($rowcount) {Write-Host "[PROBLEM MANAGEMENT] inserted: $($rowcount)" -fore yellow}
 	}
-
 }
 
 try {
@@ -435,8 +434,7 @@ try {
 			$rowcount += 1
 
 		}
-		Write-Host "[Services] inserted: $($Data.Count)" -Fore yellow
-
+		Write-Host "[$($ServiceFlag) EVENT] inserted: $($Data.Count)" -Fore yellow
 	}
 }
 Catch {
@@ -730,7 +728,7 @@ param (
 			}
 		}
 
-		if ($rowcount) {Write-Host "[ProblemManagement] inserted: $($rowcount)" -fore yellow}
+		if ($rowcount) {Write-Host "[PROBLEM MANAGEMENT] inserted: $($rowcount)" -fore yellow}
 	}
 
 }
@@ -792,7 +790,7 @@ try {
 			$cmd.Connection.Close()
 			$rowcount +=  1
 		}
-		Write-Host "[Services] inserted: $($Data.Count)" -Fore yellow
+		Write-Host "[$($ServiceFlag) SERVICE] inserted: $($Data.Count)" -Fore yellow
 	}	
 }
 
@@ -1143,7 +1141,7 @@ try {
 			$cmd.Connection.Close()
 			$rowcount +=  1
 		}
-		Write-Host "[Services] inserted: $($Data.Count)" -Fore yellow
+		Write-Host "[$($ServiceFlag) PERFORMANCE] inserted: $($Data.Count)" -Fore yellow
 	}
 }
 
@@ -1769,7 +1767,7 @@ param (
 
 		} # End of for.
 
-		if ($rowcount) {Write-Host "[ProblemManagement] inserted: $($rowcount)" -fore yellow}
+		if ($rowcount) {Write-Host "[PROBLEM MANAGEMENT] inserted: $($rowcount)" -fore yellow}
 
 	} # End of function.
 
@@ -1925,7 +1923,7 @@ try {
 			$cmd.Connection.Close()
 			$rowcount +=  1
 		}
-		Write-Host "[Services] inserted: $($Data.Count)" -Fore yellow
+		Write-Host "[$($ServiceFlag) SERVICE AVAILABILITY] inserted: $($Data.Count)" -Fore yellow
 
 	}
 }
@@ -2401,7 +2399,7 @@ param (
 			}
 		}
 
-		if ($rowcount) {Write-Host "[ProblemManagement] inserted: $($rowcount)" -fore yellow}
+		if ($rowcount) {Write-Host "[PROBLEM MANAGEMENT] inserted: $($rowcount)" -fore yellow}
 	}
 
 }
@@ -2502,7 +2500,7 @@ try {
 
 			$cmd.Connection.Close()
 		}
-		Write-Host "[Services] inserted: $($Data.Count)" -Fore yellow
+		Write-Host "[$($ServiceFlag) ENROLLMENT POLICY TEMPLATE] inserted: $($Data.Count)" -Fore yellow
 	}
 }
 Catch {

@@ -375,7 +375,7 @@ param (
 
 		}
 
-		if ($rowcount) {Write-Host "[ProblemManagement] inserted: $($rowcount)" -fore yellow}
+		if ($rowcount) {Write-Host "[PROBLEM MANAGEMENT] inserted: $($rowcount)" -fore yellow}
 
 	}
 }
@@ -431,7 +431,7 @@ try {
 
 			$cmd.Connection.Close()
 		}
-		Write-Host "[Services] inserted: $($Data.Count)" -Fore yellow
+		Write-Host "[$($ServiceFlag) STATUS] inserted: $($Data.Count)" -Fore yellow
 	}
 }
 Catch {

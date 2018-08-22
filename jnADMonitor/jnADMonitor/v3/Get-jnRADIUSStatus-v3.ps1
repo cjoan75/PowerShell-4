@@ -368,7 +368,7 @@ param (
 
 		} # End of For.
 
-		if ($rowcount) {Write-Host "[ProblemManagement] inserted: $($rowcount)" -fore yellow}
+		if ($rowcount) {Write-Host "[PROBLEM MANAGEMENT] inserted: $($rowcount)" -fore yellow}
 
 	} # End of If it contains data.
 
@@ -443,7 +443,7 @@ try {
 			$cmd.Connection.Close()
 
 		}
-		Write-Host "[Services] inserted: $($Data.Count)" -Fore yellow
+		Write-Host "[$($ServiceFlag) EVENT] inserted: $($Data.Count)" -Fore yellow
 
 	}
 }
@@ -745,7 +745,7 @@ param (
 			}
 		}
 
-		if ($rowcount) {Write-Host "[ProblemManagement] inserted: $($rowcount)" -fore yellow}
+		if ($rowcount) {Write-Host "[PROBLEM MANAGEMENT] inserted: $($rowcount)" -fore yellow}
 	}
 
 }
@@ -810,7 +810,7 @@ try {
 			$cmd.Connection.Close()
 
 		} # End of For.
-		Write-Host "[Services] inserted: $($Data.Count)" -Fore yellow
+		Write-Host "[$($ServiceFlag) SERVICE] inserted: $($Data.Count)" -Fore yellow
 
 	}
 }
@@ -1176,8 +1176,8 @@ try {
 
 			$cmd.Connection.Close()
 
-		} # End of For.
-		Write-Host "[Services] inserted: $($Data.Count)" -Fore yellow
+		}
+		Write-Host "[$($ServiceFlag) PERFORMANCE] inserted: $($Data.Count)" -Fore yellow
 
 	}
 }
@@ -1510,7 +1510,7 @@ https://documentation.meraki.com/MR/Encryption_and_Authentication/Common_Wireles
 
 		} # End of For.
 
-		if ($rowcount) {Write-Host "[ProblemManagement] inserted: $($rowcount)" -fore yellow}
+		if ($rowcount) {Write-Host "[PROBLEM MANAGEMENT] inserted: $($rowcount)" -fore yellow}
 
 	} # End of If it contains data.
 
@@ -1617,7 +1617,7 @@ https://documentation.meraki.com/MR/Encryption_and_Authentication/Common_Wireles
 			$cmd.Connection.Close()
 
 		}
-		Write-Host "[Services] inserted: $($Data.Count)" -Fore yellow
+		Write-Host "[$($ServiceFlag) SERVICE AVAILABILITY] inserted: $($Data.Count)" -Fore yellow
 
 	}
 }
