@@ -1256,7 +1256,7 @@ try {
 									$mydc = Get-ADDomainController
 								}
 								if ($mydc) {$hash.ComputerName = $mydc.HostName} else {$hash.ComputerName = "$($env:COMPUTERNAME).$($env:USERDNSDOMAIN)"}
-								if ($mydc) {$hash.OperatingSystem = $mydc.OperatingSystem} else {$hash.OperatingSystem = (((get-wmiobject win32_OperatingSystem).caption).Split("®") -Join("")).Trim("Microsoft ")}
+								if ($mydc) {$hash.OperatingSystem = $mydc.OperatingSystem} else {$hash.OperatingSystem = (((Get-WmiObject Win32_OperatingSystem).caption).Split("®") -Join("")).Trim("Microsoft ")}
 								if ($mydc) {$hash.OperatingSystemServicePack = $mydc.OperatingSystemServicePack}
 								else {
 									if ((Get-WmiObject Win32_OperatingSystem).ServicePackMajorVersion -eq 0)
@@ -1657,7 +1657,7 @@ try {
 									$mydc = Get-ADDomainController
 								}
 								if ($mydc) {$hash.ComputerName = $mydc.HostName} else {$hash.ComputerName = "$($env:COMPUTERNAME).$($env:USERDNSDOMAIN)"}
-								if ($mydc) {$hash.OperatingSystem = $mydc.OperatingSystem} else {$hash.OperatingSystem = (((get-wmiobject win32_OperatingSystem).caption).Split("®") -Join("")).Trim("Microsoft ")}
+								if ($mydc) {$hash.OperatingSystem = $mydc.OperatingSystem} else {$hash.OperatingSystem = (((Get-WmiObject Win32_OperatingSystem).caption).Split("®") -Join("")).Trim("Microsoft ")}
 								if ($mydc) {$hash.OperatingSystemServicePack = $mydc.OperatingSystemServicePack}
 								else {
 									if ((Get-WmiObject Win32_OperatingSystem).ServicePackMajorVersion -eq 0)
@@ -2048,7 +2048,7 @@ try {
 									$mydc = Get-ADDomainController
 								}
 								if ($mydc) {$hash.ComputerName = $mydc.HostName} else {$hash.ComputerName = "$($env:COMPUTERNAME).$($env:USERDNSDOMAIN)"}
-								if ($mydc) {$hash.OperatingSystem = $mydc.OperatingSystem} else {$hash.OperatingSystem = (((get-wmiobject win32_OperatingSystem).caption).Split("®") -Join("")).Trim("Microsoft ")}
+								if ($mydc) {$hash.OperatingSystem = $mydc.OperatingSystem} else {$hash.OperatingSystem = (((Get-WmiObject Win32_OperatingSystem).caption).Split("®") -Join("")).Trim("Microsoft ")}
 								if ($mydc) {$hash.OperatingSystemServicePack = $mydc.OperatingSystemServicePack}
 								else {
 									if ((Get-WmiObject Win32_OperatingSystem).ServicePackMajorVersion -eq 0)
@@ -2441,7 +2441,7 @@ try {
 									$mydc = Get-ADDomainController
 								}
 								if ($mydc) {$hash.ComputerName = $mydc.HostName} else {$hash.ComputerName = "$($env:COMPUTERNAME).$($env:USERDNSDOMAIN)"}
-								if ($mydc) {$hash.OperatingSystem = $mydc.OperatingSystem} else {$hash.OperatingSystem = (((get-wmiobject win32_OperatingSystem).caption).Split("®") -Join("")).Trim("Microsoft ")}
+								if ($mydc) {$hash.OperatingSystem = $mydc.OperatingSystem} else {$hash.OperatingSystem = (((Get-WmiObject Win32_OperatingSystem).caption).Split("®") -Join("")).Trim("Microsoft ")}
 								if ($mydc) {$hash.OperatingSystemServicePack = $mydc.OperatingSystemServicePack}
 								else {
 									if ((Get-WmiObject Win32_OperatingSystem).ServicePackMajorVersion -eq 0)
@@ -2872,7 +2872,7 @@ try {
 									$mydc = Get-ADDomainController
 								}
 								if ($mydc) {$hash.ComputerName = $mydc.HostName} else {$hash.ComputerName = "$($env:COMPUTERNAME).$($env:USERDNSDOMAIN)"}
-								if ($mydc) {$hash.OperatingSystem = $mydc.OperatingSystem} else {$hash.OperatingSystem = (((get-wmiobject win32_OperatingSystem).caption).Split("®") -Join("")).Trim("Microsoft ")}
+								if ($mydc) {$hash.OperatingSystem = $mydc.OperatingSystem} else {$hash.OperatingSystem = (((Get-WmiObject Win32_OperatingSystem).caption).Split("®") -Join("")).Trim("Microsoft ")}
 								if ($mydc) {$hash.OperatingSystemServicePack = $mydc.OperatingSystemServicePack}
 								else {
 									if ((Get-WmiObject Win32_OperatingSystem).ServicePackMajorVersion -eq 0)
@@ -3267,7 +3267,7 @@ try {
 									$mydc = Get-ADDomainController
 								}
 								if ($mydc) {$hash.ComputerName = $mydc.HostName} else {$hash.ComputerName = "$($env:COMPUTERNAME).$($env:USERDNSDOMAIN)"}
-								if ($mydc) {$hash.OperatingSystem = $mydc.OperatingSystem} else {$hash.OperatingSystem = (((get-wmiobject win32_OperatingSystem).caption).Split("®") -Join("")).Trim("Microsoft ")}
+								if ($mydc) {$hash.OperatingSystem = $mydc.OperatingSystem} else {$hash.OperatingSystem = (((Get-WmiObject Win32_OperatingSystem).caption).Split("®") -Join("")).Trim("Microsoft ")}
 								if ($mydc) {$hash.OperatingSystemServicePack = $mydc.OperatingSystemServicePack}
 								else {
 									if ((Get-WmiObject Win32_OperatingSystem).ServicePackMajorVersion -eq 0)

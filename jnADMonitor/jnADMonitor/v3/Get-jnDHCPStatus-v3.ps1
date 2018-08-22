@@ -1206,9 +1206,8 @@ try {
 								$hash = @{}
 								$hash.ComputerName = "$($env:COMPUTERNAME).$($env:USERDNSDOMAIN)"
 								$hash.DomainName = $env:USERDNSDOMAIN
-								$OS = Get-WmiObject Win32_OperatingSystem
-								$hash.OperatingSystem = $OS.Caption
-								$hash.OperatingSystemServicePack = $OS.ServicePackMajorVersion.ToString()
+								$hash.OperatingSystem = (((Get-WmiObject Win32_OperatingSystem).caption).Split("®") -Join("")).Trim("Microsoft ")
+								$hash.OperatingSystemServicePack = (Get-WmiObject Win32_OperatingSystem).ServicePackMajorVersion.ToString()
 								$hash.PSVersion = $PSVersionTable.PSVersion.Major
 								$hash.jnUTCMonitored = (Get-Date).ToUniversalTime()
 								$hash.IsError = $False

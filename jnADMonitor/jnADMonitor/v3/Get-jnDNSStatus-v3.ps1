@@ -1199,9 +1199,8 @@ try {
 							$hash = @{}
 							$hash.IsError = $False
 							$hash.ComputerName = $server.ComputerName
-							$OS = Get-WmiObject Win32_OperatingSystem
-							$hash.OperatingSystem = $OS.Caption
-							$hash.OperatingSystemServicePack = $OS.ServicePackMajorVersion.ToString()
+							$hash.OperatingSystem = (((Get-WmiObject win32_OperatingSystem).caption).Split("®") -Join("")).Trim("Microsoft ")
+							$hash.OperatingSystemServicePack = (Get-WmiObject Win32_OperatingSystem).ServicePackMajorVersion.ToString()
 							$hash.PSVersion = $PSVersionTable.PSVersion.Major
 							$hash.jnUTCMonitored = (Get-Date).ToUniversalTime()
 
