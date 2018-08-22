@@ -1284,7 +1284,7 @@ try {
 										if ($buf_str -gt 0) {$hash.IsError = $True}
 									}
 								}
-								$hash.repadmin = $buf_command[3..($buf_command.count-1-2)].Trim()
+								$hash.repadmin = $buf_command[3..($buf_command.count-1-2)] | % {$_.Trim()}
 						
 								if ($hash.Count -gt 0)
 									{return $hash}
@@ -1676,7 +1676,7 @@ try {
 								# NOTE: VerifyReferences checks that certain system references are intact for the FRS and replication infrastructure.
 								$buf_command = dcdiag /test:frssysvol /test:VerifyReferences | ? {$_}
 								$buf_command | % {if (($_ -match "ERROR" -or $_ -match "FAIL") -and $_ -notmatch "NO ERROR") {$hash.IsError = $True} }
-								$hash.frssysvol = $buf_command[14..($buf_command.count-1-13)].Trim()
+								$hash.frssysvol = $buf_command[14..($buf_command.count-1-13)] | % {$_.Trim()}
 
 								if ($hash.Count -gt 0)
 									{return $hash}
@@ -2067,7 +2067,7 @@ try {
 								# Intersite Messaging: Checks for failures that would prevent or temporarily hold up intersite replication and predicts how long it would take for the Knowledge Consistency Checker (KCC) to recover.
 								$buf_command = dcdiag /test:Topology | ? {$_}
 								$buf_command | % {if (($_ -match "ERROR" -or $_ -match "FAIL") -and $_ -notmatch "NO ERROR") {$hash.IsError = $True} }
-								$hash.adtopology = $buf_command[14..($buf_command.count-1-13)].Trim()
+								$hash.adtopology = $buf_command[14..($buf_command.count-1-13)] | % {$_.Trim()}
 
 								if ($hash.Count -gt 0)
 									{return $hash}
@@ -2890,7 +2890,7 @@ try {
 								# DC Advertisement: Checks whether each domain controller advertises itself in the roles that it should be capable of performing. This test fails if the Netlogon Service has stopped or failed to start.
 								$buf_command = dcdiag /test:Advertising | ? {$_}
 								$buf_command | % {if (($_ -match "ERROR" -or $_ -match "FAIL") -and $_ -notmatch "NO ERROR") {$hash.IsError = $True} }
-								$hash.dcdiag_advertising = $buf_command[14..($buf_command.count-1-13)].Trim()
+								$hash.dcdiag_advertising = $buf_command[14..($buf_command.count-1-13)] | % {$_.Trim()}
 
 								if ($hash.Count -gt 0)
 									{return $hash}
