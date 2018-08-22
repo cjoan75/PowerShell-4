@@ -64,8 +64,7 @@ try {
 	$session = New-PSSession -cn $ManagedServerFQDN -credential $credential
 	Write-Host "session established: $($session.ComputerName), InstanceId: $($session.InstanceId)"
 
-	[array]$myResult = Invoke-Command -Session $session -script {
-		
+	[array]$myResult = Invoke-Command -Session $session -ArgumentList ($credential, $Servers, $DebugPreference, $EventIdExclusionString, $ServiceFlag) -script {
 		param ($Credential, $Servers, $myDebugPreference, $EventIdExclusionString, $ServiceFlag)
 
 		$DebugPreference = $myDebugPreference
@@ -184,7 +183,7 @@ try {
 		}
 		$myResult
 
-	} -ArgumentList ($credential, $Servers, $DebugPreference, $EventIdExclusionString, $ServiceFlag)
+	}
 	$myResult | group ComputerName | sort Count
 	Write-Host "returned: $($myResult.Count), $($session.ComputerName)"
 
@@ -492,7 +491,7 @@ try {
 	$session = New-PSSession -cn $ManagedServerFQDN -credential $credential
 	Write-Host "session established: $($session.ComputerName), InstanceId: $($session.InstanceId)"
 
-	[array]$myResult = Invoke-Command -Session $session -script {
+	[array]$myResult = Invoke-Command -Session $session -ArgumentList ($credential, $Servers, $DebugPreference) -script {
 		param ($Credential, $Servers, $myDebugPreference)
 
 		$DebugPreference = $myDebugPreference
@@ -598,7 +597,7 @@ try {
 		$myResult = GetADDSServiceResult -Credential $Credential -Servers $Servers -DebugPreference $DebugPreference
 		$myResult
 		
-	} -ArgumentList ($credential, $Servers, $DebugPreference)
+	}
 	Write-Host "returned: $($myResult.Count), $($session.ComputerName)"
 
 }
@@ -864,7 +863,7 @@ try {
 	$session = New-PSSession -cn $ManagedServerFQDN -credential $credential
 	Write-Host "session established: $($session.ComputerName), InstanceId: $($session.InstanceId)"
 
-	[array]$myResult = Invoke-Command -Session $session -script {
+	[array]$myResult = Invoke-Command -Session $session -ArgumentList ($credential, $Servers, $DebugPreference) -script {
 		param ($Credential, $Servers, $myDebugPreference)
 
 		$DebugPreference = $myDebugPreference
@@ -997,7 +996,7 @@ try {
 		$myResult = GetADDSPerformanceDataResult -Credential $Credential -Servers $Servers -DebugPreference $DebugPreference
 		$myResult
 
-	} -ArgumentList ($credential, $Servers, $DebugPreference)
+	}
 	Write-Host "returned: $($myResult.Count), $($session.ComputerName)"
 
 }
@@ -1212,7 +1211,7 @@ try {
 	$session = New-PSSession -cn $ManagedServerFQDN -credential $credential
 	Write-Host "session established: $($session.ComputerName), InstanceId: $($session.InstanceId)"
 
-	[array]$myResult = Invoke-Command -Session $session -script {
+	[array]$myResult = Invoke-Command -Session $session -ArgumentList ($credential, $Servers, $DebugPreference) -script {
 		param ($Credential, $Servers, $myDebugPreference)
 
 		$DebugPreference = $myDebugPreference
@@ -1329,7 +1328,7 @@ try {
 		$myResult = GetADDSReplicationResult -Credential $Credential -Servers $Servers -DebugPreference $DebugPreference
 		$myResult
 
-	} -ArgumentList ($credential, $Servers, $DebugPreference)
+	}
 
 	$myResult | % {"$($_.jnUTCMonitored)`t$($_.IsError)`t$($_.ComputerName)"}
 	Write-Host "returned: $($myResult.Count), $($session.ComputerName)"
@@ -1613,7 +1612,7 @@ try {
 	$session = New-PSSession -cn $ManagedServerFQDN -credential $credential
 	Write-Host "session established: $($session.ComputerName), InstanceId: $($session.InstanceId)"
 
-	[array]$myResult = Invoke-Command -Session $session -script {
+	[array]$myResult = Invoke-Command -Session $session -ArgumentList ($credential, $Servers, $DebugPreference) -script {
 		param ($Credential, $Servers, $myDebugPreference)
 
 		$DebugPreference = $myDebugPreference
@@ -1720,7 +1719,7 @@ try {
 		$myResult = GetADDSSysvolSharesResult -Credential $Credential -Servers $Servers -DebugPreference $DebugPreference
 		$myResult
 
-	} -ArgumentList ($credential, $Servers, $DebugPreference)
+	}
 
 	$myResult | % {"$($_.jnUTCMonitored)`t$($_.IsError)`t$($_.ComputerName)"}
 	Write-Host "returned: $($myResult.Count), $($session.ComputerName)"
@@ -2004,7 +2003,7 @@ try {
 	$session = New-PSSession -cn $ManagedServerFQDN -credential $credential
 	Write-Host "session established: $($session.ComputerName), InstanceId: $($session.InstanceId)"
 
-	[array]$myResult = Invoke-Command -Session $session -script {
+	[array]$myResult = Invoke-Command -Session $session -ArgumentList ($credential, $Servers, $DebugPreference) -script {
 		param ($Credential, $Servers, $myDebugPreference)
 
 		$DebugPreference = $myDebugPreference
@@ -2112,7 +2111,7 @@ try {
 		$myResult = GetADDSTopologyResult -Credential $Credential -Servers $Servers -DebugPreference $DebugPreference
 		$myResult
 
-	} -ArgumentList ($credential, $Servers, $DebugPreference)
+	}
 
 	$myResult | % {"$($_.jnUTCMonitored)`t$($_.IsError)`t$($_.ComputerName)"}
 	Write-Host "returned: $($myResult.Count), $($session.ComputerName)"
@@ -2397,7 +2396,7 @@ try {
 	$session = New-PSSession -cn $ManagedServerFQDN -credential $credential
 	Write-Host "session established: $($session.ComputerName), InstanceId: $($session.InstanceId)"
 
-	[array]$myResult = Invoke-Command -Session $session -script {
+	[array]$myResult = Invoke-Command -Session $session -ArgumentList ($credential, $Servers, $DebugPreference) -script {
 		param ($Credential, $Servers, $myDebugPreference)
 
 		$DebugPreference = $myDebugPreference
@@ -2520,7 +2519,7 @@ try {
 		$myResult = GetADDSRepositoryResult -Credential $Credential -Servers $Servers -DebugPreference $DebugPreference
 		$myResult
 
-	} -ArgumentList ($credential, $Servers, $DebugPreference)
+	}
 
 	$myResult | % {"$($_.jnUTCMonitored)`t$($_.IsError)`t$($_.ComputerName)"}
 	Write-Host "returned: $($myResult.Count), $($session.ComputerName)"
@@ -2828,7 +2827,7 @@ try {
 	$session = New-PSSession -cn $ManagedServerFQDN -credential $credential
 	Write-Host "session established: $($session.ComputerName), InstanceId: $($session.InstanceId)"
 
-	[array]$myResult = Invoke-Command -Session $session -script {
+	[array]$myResult = Invoke-Command -Session $session -ArgumentList ($credential, $Servers, $DebugPreference) -script {
 		param ($Credential, $Servers, $myDebugPreference)
 
 		$DebugPreference = $myDebugPreference
@@ -2935,7 +2934,7 @@ try {
 		$myResult = GetADDSAdvertisementResult -Credential $Credential -Servers $Servers -DebugPreference $DebugPreference
 		$myResult
 
-	} -ArgumentList ($credential, $Servers, $DebugPreference)
+	}
 
 	$myResult | % {"$($_.jnUTCMonitored)`t$($_.IsError)`t$($_.ComputerName)"}
 	Write-Host "returned: $($myResult.Count), $($session.ComputerName)"
@@ -3223,7 +3222,7 @@ try {
 	$session = New-PSSession -cn $ManagedServerFQDN -credential $credential
 	Write-Host "session established: $($session.ComputerName), InstanceId: $($session.InstanceId)"
 
-	[array]$myResult = Invoke-Command -Session $session -script {
+	[array]$myResult = Invoke-Command -Session $session -ArgumentList ($credential, $Servers, $DebugPreference) -script {
 		param ($Credential, $Servers, $myDebugPreference)
 
 		$DebugPreference = $myDebugPreference
@@ -3338,7 +3337,7 @@ try {
 		$myResult = GetADDSW32TimeSyncResult -Credential $Credential -Servers $Servers -DebugPreference $DebugPreference
 		$myResult
 
-	} -ArgumentList ($credential, $Servers, $DebugPreference)
+	}
 
 	$myResult | % {"$($_.jnUTCMonitored)`t$($_.IsError)`t$($_.ComputerName)"}
 	Write-Host "returned: $($myResult.Count), $($session.ComputerName)"

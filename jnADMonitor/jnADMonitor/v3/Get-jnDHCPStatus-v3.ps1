@@ -64,7 +64,7 @@ try {
 	$session = New-PSSession -cn $ManagedServerFQDN -credential $credential
 	Write-Host "session established: $($session.ComputerName), InstanceId: $($session.InstanceId)"
 
-	[array]$myResult = Invoke-Command -Session $session -script {
+	[array]$myResult = Invoke-Command -Session $session -ArgumentList ($credential, $Servers, $DebugPreference, $EventIdExclusionString, $ServiceFlag) -script {
 		param ($Credential, $Servers, $myDebugPreference, $EventIdExclusionString, $ServiceFlag)
 
 		$DebugPreference = $myDebugPreference
@@ -179,7 +179,7 @@ try {
 		}
 		$myResult
 
-	} -ArgumentList ($credential, $Servers, $DebugPreference, $EventIdExclusionString, $ServiceFlag)
+	}
 	$myResult | group ComputerName | sort Count
 	Write-Host "returned: $($myResult.Count), $($session.ComputerName)"
 	
@@ -465,8 +465,8 @@ try {
 	$session = New-PSSession -cn $ManagedServerFQDN -credential $credential
 	Write-Host "session established: $($session.ComputerName), InstanceId: $($session.InstanceId)"
 
-	[array]$myResult = Invoke-Command -Session $session -script {
-	param ($Credential, $Servers, $myDebugPreference)
+	[array]$myResult = Invoke-Command -Session $session -ArgumentList ($credential, $Servers, $DebugPreference) -script {
+		param ($Credential, $Servers, $myDebugPreference)
 
 		$DebugPreference = $myDebugPreference
 
@@ -549,7 +549,7 @@ try {
 		$myResult = GetDHCPServiceResult -Credential $Credential -Servers $Servers -DebugPreference $DebugPreference
 		$myResult
 
-	} -ArgumentList ($credential, $Servers, $DebugPreference)
+	}
 	$myResult | group computername | sort Count
 	Write-Host "returned: $($myResult.Count), $($session.ComputerName)"
 }
@@ -815,8 +815,8 @@ try {
 	$session = New-PSSession -cn $ManagedServerFQDN -credential $credential
 	Write-Host "session established: $($session.ComputerName), InstanceId: $($session.InstanceId)"
 
-	[array]$myResult = Invoke-Command -Session $session -script {
-	param ($Credential, $Servers, $myDebugPreference)
+	[array]$myResult = Invoke-Command -Session $session -ArgumentList ($credential, $Servers, $DebugPreference) -script {
+		param ($Credential, $Servers, $myDebugPreference)
 
 		$DebugPreference = $myDebugPreference
 
@@ -957,7 +957,7 @@ try {
 		$myResult = GetDHCPPerformanceDataResult -Credential $Credential -Servers $Servers -DebugPreference $DebugPreference
 		$myResult
 
-	} -ArgumentList ($credential, $Servers, $DebugPreference)
+	}
 	$myResult | group computername | sort Count
 	Write-Host "returned: $($myResult.Count), $($session.ComputerName)"
 }
@@ -1167,8 +1167,8 @@ try {
 	$session = New-PSSession -cn $ManagedServerFQDN -credential $credential
 	Write-Host "session established: $($session.ComputerName), InstanceId: $($session.InstanceId)"
 
-	[array]$myResult = Invoke-Command -Session $session -script {
-	param ($Credential, $Servers, $myDebugPreference, $DomainName)
+	[array]$myResult = Invoke-Command -Session $session -ArgumentList ($credential, $Servers, $DebugPreference, $DomainName) -script {
+		param ($Credential, $Servers, $myDebugPreference, $DomainName)
 
 		$DebugPreference = $myDebugPreference
 
@@ -1320,7 +1320,7 @@ try {
 		$myResult = GetDHCPServiceAvailabilityResult -Credential $Credential -Servers $Servers -DebugPreference $DebugPreference -Domain $DomainName
 		$myResult
 
-	} -ArgumentList ($credential, $Servers, $DebugPreference, $DomainName)
+	}
 	$myResult | % {"$($_.jnUTCMonitored)`t$($_.IsError)`t$($_.ComputerName)`t$($_.IsAvailableByClient)`t$($_.ClientExists)`t$($_.HasErrorEvents)"}
 	Write-Host "returned: $($myResult.Count), $($session.ComputerName)"
 }
