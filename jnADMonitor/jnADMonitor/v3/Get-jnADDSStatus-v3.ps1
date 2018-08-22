@@ -121,11 +121,11 @@ try {
 								$command = "Get-WinEvent -FilterHashTable @{ProviderName = 'Active Directory Web Services', 'Microsoft-Windows-Directory-Services-SAM', 'Microsoft-Windows-ActiveDirectory_DomainService', 'Microsoft-Windows-DirectoryServices-DSROLE-Server', 'Microsoft-Windows-DirectoryServices-LSADB', 'Microsoft-Windows-DirectoryServices-Deployment', 'Microsoft-Windows-GroupPolicy', 'DSReplicationProvider', 'DFS Replication', 'File Replication Service', 'Netlogon', 'LSA', 'LsaSrv'; StartTime = `$begindate; Level = 1, 2, 3 } -ea 0 | ? { $EventIdExclusionString } | sort TimeCreated | select LogName, TimeCreated, Id, ProviderName, Level, LevelDisplayName, Message, `$jnComputerName, `$jnUTCMonitored, `$jnServiceFlag"
 								[array]$buf = invoke-expression $command
 
-								# ADDED: Audits AD Group membership changes
+								# ADD: Audits AD Group membership changes
 								$command = "Get-WinEvent -FilterHashtable @{LogName = 'Security'; StartTime = `$begindate; ID = 4756, 4757, 4732, 4733, 4728, 4729} -ea 0 | sort TimeCreated | select LogName, TimeCreated, Id, ProviderName, Level, LevelDisplayName, Message, `$jnComputerName, `$jnUTCMonitored, `$jnServiceFlag"
-								[array]$buf += invoke-expression $command
+								[array]$buf_01 = invoke-expression $command
 								
-								$buf = $buf | sort TimeCreated
+								$buf = $buf + $buf_01
 								if ($buf)
 								{
 									Write-Debug -Message "$($env:COMPUTERNAME).$($env:USERDNSDOMAIN): $($buf.GetType()), $($buf.count)."
@@ -329,12 +329,12 @@ param (
 		{
 			if ($Data[$i].count -eq 0) {continue}
 
-			if ($data[$i].LevelDisplayName -ne "Warning")
+			if ($data[$i].Level -ne 3)
 			{
 				$cmd.Connection = New-SQLConnection
 				$cmd.CommandText = $procName
 		
-				if ($data[$i].LevelDisplayName -eq "Information")
+				if ($data[$i].Level -eq 0)
 				{
 					# Adds AD Group Membership changes
 					$description = $data[$i].Message.Split("`n")[0].Trim()

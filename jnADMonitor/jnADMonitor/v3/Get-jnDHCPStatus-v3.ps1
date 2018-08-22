@@ -323,7 +323,7 @@ param (
 		{
 			if ($Data[$i].count -eq 0) {continue}
 
-			if ($data[$i].LevelDisplayName -ne "warning")
+			if ($data[$i].Level -ne 3)
 			{
 				$cmd.Connection = New-SQLConnection
 				$cmd.CommandText = $procName
