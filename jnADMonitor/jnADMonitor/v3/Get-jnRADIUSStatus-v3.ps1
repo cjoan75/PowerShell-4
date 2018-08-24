@@ -41,23 +41,21 @@ Insert-MonitoringTaskLogs -TaskType BEGIN -ServiceType $ServiceFlag -jnUTCMonito
 try {
 	# Generates a string for Where-object in order to exclude these event ids.
 	# Initialize the variable like this, to not write additional Invoke-Command script block.
-	$EventIdExclusionString = "`$_.ID -ne 0" 
 	$TableName_EventID = "TB_EVENTID"
-    $myEventIDResult = Get-SQLData -TableName $TableName_EventID -ServiceFlag $ServiceFlag -GetEventID | Sort ID
+	[array]$myEventIDResult = Get-SQLData -TableName $TableName_EventID -ServiceFlag $ServiceFlag -GetEventID | Sort ID
 	if ($myEventIDResult)
 	{
-		$Id = $myEventIDResult.ID
-		for ($j=0; $j -lt $Id.count; $j++)
+		$EventIdExclusionString = $null
+		foreach ($id in $myEventIDResult.ID)
 		{
-			if ($j -eq 0)
-			{
-				$EventIdExclusionString = "`$_.ID -ne " + $Id["$j"]
-			} else {
-				$EventIdExclusionString += " -AND `$_.ID -ne " + $Id["$j"]
-			}
+			$delimiter = ""
+			if ($EventIdExclusionString) {$delimiter = " -AND "}
+			$EventIdExclusionString += $delimiter + "`$_.ID -ne $($Id)"
 		}
+	} else {
+		$EventIdExclusionString = "`$_.ID -ne 0"
 	}
-    Write-Debug -Message "Event IDs to exclude: $($EventIdExclusionString)" 
+	Write-Host "Event IDs to exclude: $($EventIdExclusionString)" 
 
 
 	# to create powershell remote session
