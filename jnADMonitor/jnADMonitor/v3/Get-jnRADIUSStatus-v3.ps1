@@ -102,7 +102,14 @@ try {
 								$jnComputerName = @{Name='ComputerName'; Expression={$_.MachineName}}
 								$jnUTCMonitored = @{Name="jnUTCMonitored"; EXPRESSION={(Get-Date).ToUniversalTime()}}
 								$jnServiceFlag = @{Name="jnServiceFlag"; Expression={$ServiceFlag}}
-								$begindate = (Get-Date).AddHours(-1/2)
+<#
+ADDS      : 30?
+ADCS      : 5?
+DNS        : 5?
+DHCP     : 30?
+RADIUS   : 10?
+#>
+								$begindate = (Get-Date).AddHours(-1/60*10)
 
 								# For debug purpose, you can look up the log that saved at the workflow target computers.
 								# invoke-command -cn $Servers.ComputerName -Credential $credential -Authentication Kerberos -script {type "$env:temp\$($env:computername)_admon.log"}
@@ -1235,7 +1242,14 @@ try {
 								$jnComputerName = @{Name='ComputerName'; Expression={$_.MachineName}}
 								$jnUTCMonitored = @{Name="jnUTCMonitored"; EXPRESSION={(Get-Date).ToUniversalTime()}}
 								$jnServiceFlag = @{Name="jnServiceFlag"; Expression={"RADIUS"}}
-								$begindate = (Get-Date).AddHours(-1/2)
+<#
+ADDS      : 30?
+ADCS      : 5?
+DNS        : 5?
+DHCP     : 30?
+RADIUS   : 10?
+#>
+								$begindate = (Get-Date).AddHours(-1/60*10)
 
 								# For debug purpose, you can look up the log that saved at the workflow target computers.
 								$Message = "[$($jnUTCMonitored)] EventIDExclusionString: $($EventIdExclusionString)"
