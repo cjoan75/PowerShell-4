@@ -1498,8 +1498,8 @@ param (
 		
 				if ($data[$i].serverstatus -match "FALSE")
 				{
-					for($j = 0;$j -lt $data[$i].serverstatus.count;$j++) {$serverstatus += $data[$i].serverstatus[$j] + "<br/>"}
-					$ProbScrp = "DHCP Server Status: " + $serverstatus
+					$stringResult = ConvertTo-StringFromArray -Object $data[$i].serverstatus -Delimiter "<br/>"
+					$ProbScrp = "DHCP Server Status: " + $stringResult
 				}
 				if ((! $data[$i].IsAvailableByClient) -and ($data[$i].ClientExists))
 				{
@@ -1586,8 +1586,9 @@ try {
 			if ($Data[$i].serverstatus.count -eq 0)
 				{$SQLParameter4 = New-Object System.Data.SqlClient.SqlParameter("@serverstatus", "Null")}
 			else {
-			for($j = 0;$j -lt $data[$i].serverstatus.count;$j++) {$serverstatus += $data[$i].serverstatus[$J] + "<br/>"}
-			$SQLParameter4 = New-Object System.Data.SqlClient.SqlParameter("@serverstatus", $serverstatus)}
+				$stringResult = ConvertTo-StringFromArray -Object $data[$i].serverstatus -Delimiter "<br/>"
+				$SQLParameter4 = New-Object System.Data.SqlClient.SqlParameter("@serverstatus", $stringResult)
+			}
 
 			$SQLParameter5 = New-Object System.Data.SqlClient.SqlParameter("@UTCMonitored", $data[$i].jnUTCMonitored)
 			if (! $data[$i].DatabaseName)

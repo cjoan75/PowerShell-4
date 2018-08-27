@@ -361,6 +361,14 @@ Finally {
 }
 } 
 
-function Get-Function {
-
+function ConvertTo-StringFromArray {
+param ([Parameter(Mandatory=$True)][string[]]$Object, [string]$Delimiter) 
+	$stringResult = $null
+	Write-Debug -Message "count of the object: $($Object.count)"
+	foreach ($element in $Object)
+	{
+		if ($stringResult) {$myDelimiter = $Delimiter} else {$myDelimiter = ""}
+		$stringResult += $myDelimiter + $element.ToString()
+	}
+	if ($stringResult) {return $stringResult}
 }

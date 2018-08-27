@@ -1381,9 +1381,8 @@ param (
 				$cmd.Connection = New-SQLConnection
 				$cmd.CommandText = $procName
 		
-				for($j = 0;$j -lt $data[$i].dnsstatus.count;$j++) {$dnsstatus += $data[$i].dnsstatus[$j] + "<br/>"}
-		
-				$ProbScrp = "DNS Status: " + $dnsstatus
+				$stringResult = ConvertTo-StringFromArray -Object $data[$i].dnsstatus -Delimiter "<br/>"
+				$ProbScrp = "DNS Status: " + $stringResult
 		
 				$SQLParameter1 = New-Object System.Data.SqlClient.SqlParameter("@MonitoredTime", $Data[$i].jnUTCMonitored)
 				$SQLParameter2 = New-Object System.Data.SqlClient.SqlParameter("@Company", $DomainName)
@@ -1455,9 +1454,8 @@ try {
 			if ($Data[$i].dnsstatus.count -eq 0)
 				{$SQLParameter4 = New-Object System.Data.SqlClient.SqlParameter("@dnsstatus", "Null")}
 			else {
-				for ($j = 0;$j -lt $data[$i].dnsstatus.count;$j++)
-					{$dnsstatus += $data[$i].dnsstatus[$j] + "<br/>"}
-				$SQLParameter4 = New-Object System.Data.SqlClient.SqlParameter("@dnsstatus", $dnsstatus)
+				$stringResult = ConvertTo-StringFromArray -Object $data[$i].dnsstatus -Delimiter "<br/>"
+				$SQLParameter4 = New-Object System.Data.SqlClient.SqlParameter("@dnsstatus", $stringResult)
 			}
         
 			$SQLParameter5 = New-Object System.Data.SqlClient.SqlParameter("@UTCMonitored", $data[$i].jnUTCMonitored)

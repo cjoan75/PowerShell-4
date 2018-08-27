@@ -1478,16 +1478,9 @@ param (
 			{
 				$cmd.Connection = New-SQLConnection
 				$cmd.CommandText = $procName
-<#
-				for($k = 0;$k -lt $data[$i].repadmin.count;$k++) {$repadmin += $data[$i].repadmin[$k] + "<br/>"}
-#>		
-				$repadmin = $null
-				foreach ($str in $data[$i].repadmin)
-				{
-					if ($repadmin) {$delimiter = "<br/>"} else {$delimiter = ""}
-					$repadmin += $delimiter + $str
-				}
-				$ProbScrp = "AD Replication: " + $repadmin
+
+				$stringResult = ConvertTo-StringFromArray -Object $data[$i].repadmin -Delimiter "<br/>"
+				$ProbScrp = "AD Replication: " + $stringResult
 		
 				$SQLParameter1 = New-Object System.Data.SqlClient.SqlParameter("@MonitoredTime", $Data[$i].jnUTCMonitored)
 				$SQLParameter2 = New-Object System.Data.SqlClient.SqlParameter("@Company", $DomainName)
@@ -1550,8 +1543,8 @@ try {
 			if ($data[$i].repadmin.count -eq 0)
 				{$SQLParameter2 = New-Object System.Data.SqlClient.SqlParameter("@repadmin", "Null")}
 			else {
-				for($k = 0;$k -lt $data[$i].repadmin.count;$k++) {$repadmin += $data[$i].repadmin[$k] + "<br/>"}
-				$SQLParameter2 = New-Object System.Data.SqlClient.SqlParameter("@repadmin", $repadmin)
+				$stringResult = ConvertTo-StringFromArray -Object $data[$i].repadmin -Delimiter "<br/>"
+				$SQLParameter2 = New-Object System.Data.SqlClient.SqlParameter("@repadmin", $stringResult)
 			}
         
 			if (! $data[$i].OperatingSystem)
@@ -1573,8 +1566,10 @@ try {
 			if ($data[$i].OperationMasterRoles.count -eq 0)
 				{$SQLParameter7 = New-Object System.Data.SqlClient.SqlParameter("@OperationMasterRoles", "Null")}	
 			else
-			{for($j = 0;$j -lt $data[$i].OperationMasterRoles.count; $j++) {$OPRoles +=  $data[$i].OperationMasterRoles[$j].ToString() + "<br/>"}	
-			$SQLParameter7 = New-Object System.Data.SqlClient.SqlParameter("@OperationMasterRoles", $OPRoles)}
+			{
+				$stringResult = ConvertTo-StringFromArray -Object $data[$i].OperationMasterRoles -Delimiter "<br/>"
+				$SQLParameter7 = New-Object System.Data.SqlClient.SqlParameter("@OperationMasterRoles", $stringResult)
+			}
 				
 			$SQLParameter8 = New-Object System.Data.SqlClient.SqlParameter("@UTCMonitored", $data[$i].jnUTCMonitored)
 			$SQLParameter9 = New-Object System.Data.SqlClient.SqlParameter("@IsError", $data[$i].IsError.ToString());
@@ -1879,9 +1874,8 @@ param (
 				$cmd.Connection = New-SQLConnection
 				$cmd.CommandText = $procName
 		
-				for($j = 0;$j -lt $Data[$i].frssysvol.count;$j++) {$frssysvol += $Data[$i].frssysvol[$j] + "<br/>"}
-			
-				$ProbScrp = "SYSVOL share: " + $frssysvol
+				$stringResult = ConvertTo-StringFromArray -Object $data[$i].frssysvol -Delimiter "<br/>"
+				$ProbScrp = "SYSVOL share: " + $stringResult
 		
 				$SQLParameter1 = New-Object System.Data.SqlClient.SqlParameter("@MonitoredTime", $Data[$i].jnUTCMonitored)
 				$SQLParameter2 = New-Object System.Data.SqlClient.SqlParameter("@Company", $DomainName)
@@ -1942,8 +1936,11 @@ try {
 		
 			if ($Data[$i].frssysvol.count -eq 0)
 			{$SQLParameter2 = New-Object System.Data.SqlClient.SqlParameter("@frssysvol", "Null")}
-			else {for($j = 0;$j -lt $Data[$i].frssysvol.count;$j++) {$frssysvol += $Data[$i].frssysvol[$j] + "<br/>"}
-			$SQLParameter2 = New-Object System.Data.SqlClient.SqlParameter("@frssysvol", $frssysvol)}
+			else
+			{
+				$stringResult = ConvertTo-StringFromArray -Object $data[$i].frssysvol -Delimiter "<br/>"
+				$SQLParameter2 = New-Object System.Data.SqlClient.SqlParameter("@frssysvol", $stringResult)
+			}
 
 			if (! $Data[$i].OperatingSystem)
 				{$SQLParameter3 = New-Object System.Data.SqlClient.SqlParameter("@OperatingSystem", "Null")}	
@@ -1963,8 +1960,9 @@ try {
 			if ($data[$i].OperationMasterRoles.count -eq 0)
 				{$SQLParameter7 = New-Object System.Data.SqlClient.SqlParameter("@OperationMasterRoles", "Null")}
 			else {
-			for($k = 0;$k -lt $Data[$i].OperationMasterRoles.count;$k++) {$OPRoles += $Data[$i].OperationMasterRoles[$k].ToString() + "<br/>"}	
-			$SQLParameter7 = New-Object System.Data.SqlClient.SqlParameter("@OperationMasterRoles", $OPRoles)}
+				$stringResult = ConvertTo-StringFromArray -Object $data[$i].OperationMasterRoles -Delimiter "<br/>"
+				$SQLParameter7 = New-Object System.Data.SqlClient.SqlParameter("@OperationMasterRoles", $stringResult)
+			}
 		
 			$SQLParameter8 = New-Object System.Data.SqlClient.SqlParameter("@UTCMonitored", $data[$i].jnUTCMonitored)
 			$SQLParameter9 = New-Object System.Data.SqlClient.SqlParameter("@IsError", $data[$i].IsError.ToString());
@@ -2270,9 +2268,8 @@ param (
 				$cmd.Connection = New-SQLConnection
 				$cmd.CommandText = $procName
 		
-				for($j = 0;$j -lt $data[$i].adtopology.count;$j++) {$adtopology += $data[$i].adtopology[$j] + "<br/>"}	
-		
-				$ProbScrp = "ADDS Topology: " + $adtopology
+				$stringResult = ConvertTo-StringFromArray -Object $data[$i].adtopology -Delimiter "<br/>"
+				$ProbScrp = "ADDS Topology: " + $stringResult
 		
 				$SQLParameter1 = New-Object System.Data.SqlClient.SqlParameter("@MonitoredTime", $Data[$i].jnUTCMonitored)
 				$SQLParameter2 = New-Object System.Data.SqlClient.SqlParameter("@Company", $DomainName)
@@ -2333,8 +2330,9 @@ try {
 
 			if ($data[$i].adtopology.count -eq 0) {$SQLParameter2 = New-Object System.Data.SqlClient.SqlParameter("@adtopology", "Null")}
 			else {
-			for($j = 0;$j -lt $data[$i].adtopology.count;$j++) {$adtopology += $data[$i].adtopology[$j] + "<br/>"}
-			$SQLParameter2 = New-Object System.Data.SqlClient.SqlParameter("@adtopology", $adtopology)}
+				$stringResult = ConvertTo-StringFromArray -Object $data[$i].adtopology -Delimiter "<br/>"
+				$SQLParameter2 = New-Object System.Data.SqlClient.SqlParameter("@adtopology", $stringResult)
+			}
 		
 			if (! $Data[$i].OperatingSystem)
 				{$SQLParameter3 = New-Object System.Data.SqlClient.SqlParameter("@OperatingSystem", "Null")}	
@@ -2354,9 +2352,9 @@ try {
 		
 			if ($data[$i].OperationMasterRoles.count -eq 0) {$SQLParameter7 = New-Object System.Data.SqlClient.SqlParameter("@OperationMasterRoles", "Null")}
 			else {
-			for($j = 0;$j -lt $data[$i].OperationMasterRoles.count;$j++) {
-				$OperationMasterRoles += $data[$i].OperationMasterRoles[$j].ToString() + "<br/>"}
-			$SQLParameter7 = New-Object System.Data.SqlClient.SqlParameter("@OperationMasterRoles", $OperationMasterRoles)}
+				$stringResult = ConvertTo-StringFromArray -Object $data[$i].OperationMasterRoles -Delimiter "<br/>"
+				$SQLParameter7 = New-Object System.Data.SqlClient.SqlParameter("@OperationMasterRoles", $stringResult)
+			}
 		
 			$SQLParameter8 = New-Object System.Data.SqlClient.SqlParameter("@UTCMonitored", $data[$i].jnUTCMonitored)
 			$SQLParameter9 = New-Object System.Data.SqlClient.SqlParameter("@IsError", $data[$i].IsError.ToString());
@@ -3093,10 +3091,9 @@ param (
 			{
 				$cmd.Connection = New-SQLConnection
 				$cmd.CommandText = $procName
-		
-				for($j = 0;$j -lt $Data[$i].dcdiag_advertising.count; $j++) {$advertising += $Data[$i].dcdiag_advertising[$j] + "<br/>"}
 
-				$ProbScrp = "ADDS Advertisement: " + $advertising
+				$stringResult = ConvertTo-StringFromArray -Object $data[$i].dcdiag_advertising -Delimiter "<br/>"
+				$ProbScrp = "ADDS Advertisement: " + $stringResult
 		
 				$SQLParameter1 = New-Object System.Data.SqlClient.SqlParameter("@MonitoredTime", $Data[$i].jnUTCMonitored)
 				$SQLParameter2 = New-Object System.Data.SqlClient.SqlParameter("@Company", $DomainName)
@@ -3167,9 +3164,9 @@ try {
 			If ($Data[$i].OperationMasterRoles.count -eq 0)
 				{$SQLParameter4 = New-Object System.Data.SqlClient.SqlParameter("@OperationMasterRoles", "Null")}
 			else {
-			for($k = 0;$k -lt $Data[$i].OperationMasterRoles.count; $k++) {
-				$OPRoles +=  $Data[$i].OperationMasterRoles[$k].Tostring() + "<br/>"}	
-			$SQLParameter4 = New-Object System.Data.SqlClient.SqlParameter("@OperationMasterRoles", $OPRoles)}
+				$stringResult = ConvertTo-StringFromArray -Object $data[$i].OperationMasterRoles -Delimiter "<br/>"
+				$SQLParameter4 = New-Object System.Data.SqlClient.SqlParameter("@OperationMasterRoles", $stringResult)
+			}
 		
 			if (! $Data[$i].OperatingSystemServicePack)
 				{$SQLParameter5 = New-Object System.Data.SqlClient.SqlParameter("@OperatingSystemServicePack", "0")}
@@ -3184,9 +3181,9 @@ try {
 			if ($Data[$i].dcdiag_advertising.count -eq 0)
 				{$SQLParameter8 = New-Object System.Data.SqlClient.SqlParameter("@dcdiag_advertising", "Null")}
 			else {
-			for($j = 0;$j -lt $Data[$i].dcdiag_advertising.count; $j++) {   
-			$advertising += $Data[$i].dcdiag_advertising[$j] + "<br/>"}
-			$SQLParameter8 = New-Object System.Data.SqlClient.SqlParameter("@dcdiag_advertising", $advertising)}
+				$stringResult = ConvertTo-StringFromArray -Object $data[$i].dcdiag_advertising -Delimiter "<br/>"
+				$SQLParameter8 = New-Object System.Data.SqlClient.SqlParameter("@dcdiag_advertising", $stringResult)
+			}
 		
 			$SQLParameter9 = New-Object System.Data.SqlClient.SqlParameter("@IsError", $Data[$i].IsError.ToString());
                 
@@ -3576,10 +3573,8 @@ try {
 			if ($data[$i].OperationMasterRoles.count -eq 0)
 				{$SQLParameter6 = New-Object System.Data.SqlClient.SqlParameter("@OperationMasterRoles", "Null")}
 			else {
-				for($j = 0;$j -lt $data[$i].OperationMasterRoles.count;$j++) {
-					$OPRoles += $Data[$i].OperationMasterRoles[$j].Tostring() + "<br/>"
-				}
-				$SQLParameter6 = New-Object System.Data.SqlClient.SqlParameter("@OperationMasterRoles", $OPRoles)	
+				$stringResult = ConvertTo-StringFromArray -Object $data[$i].OperationMasterRoles -Delimiter "<br/>"
+				$SQLParameter6 = New-Object System.Data.SqlClient.SqlParameter("@OperationMasterRoles", $stringResult)
 			}
 	
 			if (! $data[$i].OperatingSystemServicePack)				

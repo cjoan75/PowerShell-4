@@ -1724,16 +1724,8 @@ param (
 				$cmd.Connection = New-SQLConnection
 				$cmd.CommandText = $procName
 		
-				<#
-				for($k = 0;$k -lt $data[$i].PingAdmin.count;$k++) {$PingAdmin += $data[$i].PingAdmin[$k] + "<br/>"}
-				for($j = 0;$j -lt $data[$i].Ping.count;$j++) {$Ping += $data[$i].Ping[$j] + "<br/>"}
-				#>
 				$PingAdmin = $data[$i].PingAdmin
 				$Ping = $data[$i].Ping
-				<#
-				for($l = 0;$l -lt $data[$i].CrlPublishStatus.count;$l++) {$CrlPublishStatus += $data[$i].CrlPublishStatus[$l] + "<br/>"}
-				for($m = 0;$m -lt $data[$i].DeltaCrlPublishStatus.count;$m++) {$DeltaCrlPublishStatus += $data[$i].DeltaCrlPublishStatus[$m] + "<br/>"}
-				#>
 				$CrlPublishStatus = $data[$i].CrlPublishStatus
 				$DeltaCrlPublishStatus = $data[$i].DeltaCrlPublishStatus
 
@@ -1741,8 +1733,6 @@ param (
 				{
 					$ProbScrp = "CACertExpiringIn: $($data[$i].CACertificate.NotAfter.ToString("yyyy-MM-dd HH:mm:ss")) ($($data[$i].CACertificate.Subject))"
 				} else {
-					#$ProbScrp = "CAName(" + $data[$i].CAName + "); DNSName(" + $data[$i].DNSName + "); CAType(" + $data[$i].CAType + "); PingAdmin(" + $PingAdmin + "); Ping(" + $Ping + "); CrlPublishStatus(" + $CrlPublishStatus + "); DeltaCrlPublishStatus(" + $DeltaCrlPublishStatus + ")"
-					#$ProbScrp = "CAName($($data[$i].CAName)); DNSName($($data[$i].DNSName)); CAType($($data[$i].CAType)); PingAdmin($($PingAdmin)); Ping($($Ping)); CrlPublishStatus($($CrlPublishStatus)); DeltaCrlPublishStatus($($DeltaCrlPublishStatus))"
 					$ProbScrp = "CAName: $($data[$i].CAName)<br/>DNSName: $($data[$i].DNSName)<br/>CAType: $($data[$i].CAType)<br/>Ping: $($Ping)<br/>PingAdmin: $($PingAdmin)<br/>CrlPublishStatus: $($CrlPublishStatus)<br/>DeltaCrlPublishStatus: $($DeltaCrlPublishStatus)"
 				}
 				$SQLParameter1 = New-Object System.Data.SqlClient.SqlParameter("@MonitoredTime", $Data[$i].jnUTCMonitored)
@@ -1831,8 +1821,6 @@ try {
 			{
 				$SQLParameter7 = New-Object System.Data.SqlClient.SqlParameter("@PingAdmin", "Null")
 			} else {
-				#for ($k = 0; $k -lt $data[$i].PingAdmin.count; $k++) {$PingAdmin += $data[$i].PingAdmin[$k] + "<br/>"}
-				#$SQLParameter7 = New-Object System.Data.SqlClient.SqlParameter("@PingAdmin", $PingAdmin)
 				$SQLParameter7 = New-Object System.Data.SqlClient.SqlParameter("@PingAdmin", $data[$i].PingAdmin)
 			}
 		
@@ -1840,8 +1828,6 @@ try {
 			{
 				$SQLParameter8 = New-Object System.Data.SqlClient.SqlParameter("@Ping", "Null")
 			} else {
-				#for($j = 0;$j -lt $data[$i].Ping.count;$j++) {$Ping += $data[$i].Ping[$j] + "<br/>"}
-				#$SQLParameter8 = New-Object System.Data.SqlClient.SqlParameter("@Ping", $Ping)
 				$SQLParameter8 = New-Object System.Data.SqlClient.SqlParameter("@Ping", $data[$i].Ping)
 			}
 		
@@ -1851,11 +1837,6 @@ try {
 			{
 				$SQLParameter10 = New-Object System.Data.SqlClient.SqlParameter("@CrlPublishStatus", "Null")
 			} else {
-				<#
-				for($l = 0;$l -lt $data[$i].CrlPublishStatus.count;$l++) 
-					{$CrlPublishStatus += $data[$i].CrlPublishStatus[$l] + "<br/>"}
-				$SQLParameter10 = New-Object System.Data.SqlClient.SqlParameter("@CrlPublishStatus", $CrlPublishStatus)
-				#>
 				$SQLParameter10 = New-Object System.Data.SqlClient.SqlParameter("@CrlPublishStatus", $data[$i].CrlPublishStatus)
 			}
 		
@@ -1863,11 +1844,6 @@ try {
 			{
 				$SQLParameter11 = New-Object System.Data.SqlClient.SqlParameter("@DeltaCrlPublishStatus", "Null")
 			} else {
-				<#
-				for($m = 0;$m -lt $data[$i].DeltaCrlPublishStatus.count;$m++) 
-					{$DeltaCrlPublishStatus += $data[$i].DeltaCrlPublishStatus[$m] + "<br/>"}
-				$SQLParameter11 = New-Object System.Data.SqlClient.SqlParameter("@DeltaCrlPublishStatus", $DeltaCrlPublishStatus)
-				#>
 				$SQLParameter11 = New-Object System.Data.SqlClient.SqlParameter("@DeltaCrlPublishStatus", $data[$i].DeltaCrlPublishStatus)
 			}
 		
@@ -2375,7 +2351,6 @@ param (
 					$CATemplates = $data[$i].CATemplates
 				}
 				
-				#$ProbScrp = "CAName(" + $data[$i].CAName + "); DNSName(" + $data[$i].DNSName + "); CAType(" + $data[$i].CAType + "); CertEnrollPolicyTemplates(" + $CertEnroll + "); CATemplates(" + $CATemplates + ")"
 				$ProbScrp = "CAName: $($data[$i].CAName)<br/>DNSName: $($data[$i].DNSName)<br/>CAType: $($data[$i].CAType)<br/>CertEnrollPolicyTemplates: $($CertEnroll)<br/>CATemplates: $($CATemplates)"
 		
 				$SQLParameter1 = New-Object System.Data.SqlClient.SqlParameter("@MonitoredTime", $Data[$i].jnUTCMonitored)
