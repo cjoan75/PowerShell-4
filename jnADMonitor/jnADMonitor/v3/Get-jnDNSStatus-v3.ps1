@@ -49,8 +49,7 @@ try {
 		$EventIdExclusionString = $null
 		foreach ($id in $myEventIDResult.ID)
 		{
-			$delimiter = ""
-			if ($EventIdExclusionString) {$delimiter = " -AND "}
+			if ($EventIdExclusionString) {$delimiter = " -AND "} else {$delimiter = ""}
 			$EventIdExclusionString += $delimiter + "`$_.ID -ne $($Id)"
 		}
 	} else {

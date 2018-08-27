@@ -48,8 +48,7 @@ try {
 		$EventIdExclusionString = $null
 		foreach ($id in $myEventIDResult.ID)
 		{
-			$delimiter = ""
-			if ($EventIdExclusionString) {$delimiter = " -AND "}
+			if ($EventIdExclusionString) {$delimiter = " -AND "} else {$delimiter = ""}
 			$EventIdExclusionString += $delimiter + "`$_.ID -ne $($Id)"
 		}
 	} else {
@@ -1479,9 +1478,15 @@ param (
 			{
 				$cmd.Connection = New-SQLConnection
 				$cmd.CommandText = $procName
-		
-				for($k = 3;$k -lt $data[$i].repadmin.count;$k++) {$repadmin += $data[$i].repadmin[$k] + "<br/>"}
-	
+<#
+				for($k = 0;$k -lt $data[$i].repadmin.count;$k++) {$repadmin += $data[$i].repadmin[$k] + "<br/>"}
+#>		
+				$repadmin = $null
+				foreach ($str in $data[$i].repadmin)
+				{
+					if ($repadmin) {$delimiter = "<br/>"} else {$delimiter = ""}
+					$repadmin += $delimiter + $str
+				}
 				$ProbScrp = "AD Replication: " + $repadmin
 		
 				$SQLParameter1 = New-Object System.Data.SqlClient.SqlParameter("@MonitoredTime", $Data[$i].jnUTCMonitored)
