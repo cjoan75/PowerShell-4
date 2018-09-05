@@ -75,7 +75,7 @@
     <Folder Include="TaskScheduler\" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="LGE_NET\PSConfig.xml" />
+    <Content Include="LGE_NET\Credential.xml" />
     <Content Include="LGE_NET\Serverlist_LGE_NET_ADCS.txt" />
     <Content Include="LGE_NET\Serverlist_LGE_NET_DHCP.txt" />
     <Content Include="LGE_NET\Serverlist_LGE_NET_DNS.txt" />

@@ -346,17 +346,16 @@ values('$($jnUTCMonitored)', '$($TaskType)', '$($DomainName)', '$($ServiceType)'
 	Write-Host "`n[TaskLog($($jnUTCMonitored))] $($TaskType); $($ServiceType); $($DomainName); ($($TaskScript))`n"
 
 }
-
 Catch {
 }
-
 Finally {
 		
 	# To free resources used by a script.
-	if (gv jnUTCMonitored) {rv jnUTCMonitored}
-	if (gv TaskType) {rv TaskType}
-	if (gv ServiceType) {rv ServiceType}
-	if (gv TaskScript) {rv TaskScript}
+	if ($jnUTCMonitored) {rv jnUTCMonitored}
+	if ($TaskType) {rv TaskType}
+	if ($ServiceType) {rv ServiceType}
+	if ($DomainName) {rv DomainName}
+	if ($TaskScript) {rv TaskScript}
 
 }
 } 
