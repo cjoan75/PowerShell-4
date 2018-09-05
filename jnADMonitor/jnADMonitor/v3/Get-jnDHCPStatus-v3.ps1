@@ -1235,19 +1235,19 @@ try {
 
 								# Displays the current version of the Server.
 								$serverversion = netsh dhcp server show version | ? {$_}
-								$hash.version = $serverversion.Substring($serverversion.IndexOf(" is ")+4).TrimEnd(".")
+								$hash.Version = $serverversion.Split(" ")[-1].Trim(".")
 
 								# Displays the availability by using DHCP client tool.								
 								$hash.IsAvailableByClient = $False
 								$hash.ClientExists = $False
 
 								$uri = "http://files.thecybershadow.net/dhcptest/dhcptest-0.7-win64.exe"
-								$FilePath = "$env:USERPROFILE\Downloads\" + $uri.Substring($uri.LastIndexOf("/")+1)
+								$FilePath = "$env:USERPROFILE\Downloads\" + $uri.Split("/")[-1]
 
 								# Make sure if the dhcp tool is available.
 								if (! (Test-Path $FilePath))
 								{
-									if (! (Test-Path "\\$($DomainName)\netlogon\$($FilePath.SubString($FilePath.LastIndexOf("\")+1))"))
+									if (! (Test-Path "\\$($DomainName)\netlogon\$($FilePath.Split("\")[-1])"))
 									{
 										if ($PSVersionTable.PSVersion.Major -ge 3 `
 											-and ($response = Invoke-RestMethod -URI $uri -OutFile $FilePath)
@@ -1256,7 +1256,7 @@ try {
 											Copy-Item $FilePath -Destination "\\$($DomainName)\netlogon"
 										}
 									} else {
-										Copy-Item "\\$($DomainName)\netlogon\$($FilePath.SubString($FilePath.LastIndexOf("\")+1))" -Destination (Split-Path $FilePath)
+										Copy-Item "\\$($DomainName)\netlogon\$($FilePath.Split("\")[-1])" -Destination (Split-Path $FilePath)
 									}
 								}
 								if (Test-Path $FilePath)
