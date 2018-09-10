@@ -371,3 +371,13 @@ param ([Parameter(Mandatory=$True)][string[]]$Object, [string]$Delimiter)
 	}
 	if ($stringResult) {return $stringResult}
 }
+
+function Set-CredentialFile ([PSCredential]$credential)
+{
+	if ($credential)
+	{
+		$FilePath = "$env:PUBLIC\$($credential.UserName).cred"
+		$credential | Export-CliXml $FilePath
+		Write-Host (ls $FilePath)
+	}
+}
