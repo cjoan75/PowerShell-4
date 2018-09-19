@@ -1217,25 +1217,31 @@ try {
 								$hash.IsError = $False
 
 								# Displays the current status for the DHCP server on which the command runs.
-								$hash.serverstatus = @(netsh dhcp server show serverstatus | 
-									% {if ($_ -like "*Server Attrib*") {$_.SubString($_.IndexOf("- ")+2)}})
-								
+								$dhcpserverstatus = @(netsh dhcp server show serverstatus | % {if ($_ -match "-") {$_.Split("-")[1].Trim()}})
+								if ($dhcpserverstatus) {$hash.serverstatus = $dhcpserverstatus}
+
 								# Displays information about server database configuration for the specified DHCP server.
-								netsh dhcp server show dbproperties | 
-									? {$_} | 
-									% { `
-									if ($_ -match "DatabaseName") {$hash.DatabaseName = $_.SubString($_.IndexOf("= ")+2)}
-									elseif ($_ -match "DatabasePath") {$hash.DatabasePath = $_.SubString($_.IndexOf("= ")+2)}
-									elseif ($_ -match "DatabaseBackupPath") {$hash.DatabaseBackupPath = $_.SubString($_.IndexOf("= ")+2)}
-									elseif ($_ -match "DatabaseBackupInterval") {$hash.DatabaseBackupInterval = $_.SubString($_.IndexOf("= ")+2)}
-									elseif ($_ -match "DatabaseLoggingFlag") {$hash.DatabaseLoggingFlag = $_.SubString($_.IndexOf("= ")+2)}
-									elseif ($_ -match "DatabaseRestoreFlag") {$hash.DatabaseRestoreFlag = $_.SubString($_.IndexOf("= ")+2)}
-									elseif ($_ -match "DatabaseCleanupInterval") {$hash.DatabaseCleanupInterval = $_.SubString($_.IndexOf("= ")+2)}
+								$dhcpdbdbproperties = @(netsh dhcp server show dbproperties | % {if ($_ -match "=") {$_.Split("=")[1].Trim()}})
+								if ($dhcpdbdbproperties)
+								{
+									for ($I = 0; $I -lt $dhcpdbdbproperties.count; $I++)
+									{
+										Switch ($I)
+										{
+											0 {$hash.DatabaseName = $dhcpdbdbproperties[$I]; break}
+											1 {$hash.DatabasePath = $dhcpdbdbproperties[$I]; break}
+											2 {$hash.DatabaseBackupPath = $dhcpdbdbproperties[$I]; break}
+											3 {$hash.DatabaseBackupInterval = $dhcpdbdbproperties[$I]; break}
+											4 {$hash.DatabaseLoggingFlag = $dhcpdbdbproperties[$I]; break}
+											5 {$hash.DatabaseRestoreFlag = $dhcpdbdbproperties[$I]; break}
+											6 {$hash.DatabaseCleanupInterval = $dhcpdbdbproperties[$I]; break}
+										}
 									}
+								}
 
 								# Displays the current version of the Server.
-								$serverversion = netsh dhcp server show version | ? {$_}
-								$hash.Version = $serverversion.Split(" ")[-1].Trim(".")
+								$serverversion = netsh dhcp server show version | ? {$_} | % {$_.Split(" ")[-1].Trim(".")}
+								if ($serverversion) {$hash.Version = $serverversion}
 
 								# Displays the availability by using DHCP client tool.								
 								$hash.IsAvailableByClient = $False
