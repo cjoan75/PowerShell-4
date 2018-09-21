@@ -27,6 +27,7 @@
   </PropertyGroup>
   <ItemGroup />
   <ItemGroup>
+    <Compile Include="Get-ADGroupMemberMemberOfByUser.ps1" />
     <Compile Include="MailboxConfig.ps1" />
   </ItemGroup>
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
