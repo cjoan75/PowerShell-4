@@ -43,6 +43,7 @@ try {
 	# Initialize the variable like this, to not write additional Invoke-Command script block.
 	$TableName_EventID = "TB_EVENTID"
 	[array]$myEventIDResult = Get-SQLData -TableName $TableName_EventID -ServiceFlag $ServiceFlag -GetEventID | Sort ID
+	$EventIdExclusionString = "`$_.ID -ne 0"
 	if ($myEventIDResult)
 	{
 		$EventIdExclusionString = $null
@@ -51,8 +52,6 @@ try {
 			if ($EventIdExclusionString) {$delimiter = " -AND "} else {$delimiter = ""}
 			$EventIdExclusionString += $delimiter + "`$_.ID -ne $($Id)"
 		}
-	} else {
-		$EventIdExclusionString = "`$_.ID -ne 0"
 	}
 	Write-Host "Event IDs to exclude: $($EventIdExclusionString)" 
 
@@ -112,19 +111,8 @@ RADIUS   : 10분
 #>
 								$begindate = (Get-Date).AddHours(-1/60*30)
 
-								# For debug purpose, you can look up the log that saved at the workflow target computers.
-								# invoke-command -cn $Servers.ComputerName -Credential $credential -Authentication Kerberos -script {type "$env:temp\$($env:computername)_admon.log"}
-								$Message = "[$($jnUTCMonitored)] EventIDExclusionString: $($EventIdExclusionString)"
-								if ($PSVersionTable.PSVersion.Major -ge 3)
-								{
-									$Message | Add-Content -Encoding Unicode -Path "$env:USERPROFILE\Documents\$($env:COMPUTERNAME)_ADMON.log"
-								} else {
-									$Message | Add-Content -Path "$env:USERPROFILE\Documents\$($env:COMPUTERNAME)_ADMON.log"
-								}
-
 								$command = "Get-WinEvent -FilterHashTable @{ProviderName = 'Microsoft-Windows-DHCP-Server'; StartTime = `$begindate; Level = 1, 2, 3 } -ea 0 | ? { $EventIdExclusionString } | sort TimeCreated | select LogName, TimeCreated, Id, ProviderName, Level, LevelDisplayName, Message, `$jnComputerName, `$jnUTCMonitored, `$jnServiceFlag"
-								[array]$buf = invoke-expression $command
-								if ($buf)
+								if ([array]$buf = invoke-expression $command)
 								{
 									Write-Debug -Message "$($env:COMPUTERNAME).$($env:USERDNSDOMAIN): $($buf.GetType()), $($buf.count)."
 									return $buf
@@ -145,7 +133,6 @@ RADIUS   : 10분
 							} else {
 								$Message | Add-Content -Path "$env:USERPROFILE\Documents\$($env:COMPUTERNAME)_ADMON.log"
 							}
-
 						}
 						Finally {
 					
@@ -1202,7 +1189,7 @@ try {
 							$session = New-PSSession -cn $server.ComputerName -Credential $credential
 							Write-Debug -Message "session established: $($session.ComputerName), InstanceId: $($session.InstanceId)."
 
-							$hash = Invoke-Command -Session $session -script {
+							$hash = Invoke-Command -Session $session -ArgumentList ($DomainName) -script {
 								param ($DomainName)
 
 								Write-Debug -Message "Now connected to $($env:COMPUTERNAME).$($env:USERDNSDOMAIN) logged on as $(whoami).`n"
@@ -1283,10 +1270,8 @@ DHCP     : 30분
 RADIUS   : 10분
 #>
 										$begindate = (Get-Date).AddHours(-1/60*30)
-
 										$command = "Get-WinEvent -FilterHashTable @{ProviderName = 'Microsoft-Windows-DHCP-Server'; StartTime = `$begindate; ID = 1011, 1012, 1338 } -ea 0 | select LogName, TimeCreated, Id, ProviderName, Level, LevelDisplayName, Message, `$jnComputerName, `$jnUTCMonitored, `$jnServiceFlag"
-										[array]$buf = invoke-expression $command
-										if ($buf)
+										if ([array]$buf = invoke-expression $command)
 										{
 											$hash.HasErrorEvents = $True
 											$hash.ErrorEvents = $buf
@@ -1298,7 +1283,7 @@ RADIUS   : 10분
 								if ($hash.Count -gt 0)
 									{return $hash}
 
-							} -ArgumentList ($DomainName)
+							}
 							if ($hash.Count -gt 0)
 							{
 								Write-Debug -Message "`$hash: $($hash.gettype()): $($hash.count)"
@@ -1327,7 +1312,6 @@ RADIUS   : 10분
 								Write-Debug -Message "session closed: $($session.ComputerName)"
 							}
 						}
-
 					}
 				}
 			}

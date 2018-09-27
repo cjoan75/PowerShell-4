@@ -43,6 +43,7 @@ try {
 	# Initialize the variable like this, to not write additional Invoke-Command script block.
 	$TableName_EventID = "TB_EVENTID"
 	[array]$myEventIDResult = Get-SQLData -TableName $TableName_EventID -ServiceFlag $ServiceFlag -GetEventID | Sort ID
+	$EventIdExclusionString = "`$_.ID -ne 0"
 	if ($myEventIDResult)
 	{
 		$EventIdExclusionString = $null
@@ -51,8 +52,6 @@ try {
 			if ($EventIdExclusionString) {$delimiter = " -AND "} else {$delimiter = ""}
 			$EventIdExclusionString += $delimiter + "`$_.ID -ne $($Id)"
 		}
-	} else {
-		$EventIdExclusionString = "`$_.ID -ne 0"
 	}
 	Write-Host "Event IDs to exclude: $($EventIdExclusionString)" 
 
