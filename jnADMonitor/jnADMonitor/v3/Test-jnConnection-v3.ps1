@@ -261,35 +261,37 @@ param(
 	$cmd.Connection = New-SQLConnection
     
 	$cmd.CommandText = " `
-IF object_id('[dbo].[$($ProcName)]', 'p') IS NULL `
-BEGIN`
-	EXEC('`
-	CREATE PROCEDURE [dbo].[$($ProcName)] `
-			@computername nvarchar(100) `
-			,@CanPing nvarchar(5) `
-			,@CanPort135 nvarchar(5) `
-			,@CanPort5985 nvarchar(5) `
-			,@UTCMonitored datetime`
-	AS`
-	BEGIN`
-	`
-	INSERT INTO [dbo].[$($TableName)] `
-			( [ComputerName] `
-			,[CanPing] `
-			,[CanPort135] `
-			,[CanPort5985] `
-			,[UTCMonitored] `
-			) `
-			VALUES`
-			( @ComputerName` 
-			,@CanPing`
-			,@CanPort135`
-			,@CanPort5985`
-			,@UTCMonitored`
-			) `
-`
-	END'`
-	) `
+IF object_id('[dbo].[$($ProcName)]', 'p') IS NULL
+BEGIN
+EXEC('
+CREATE PROCEDURE [dbo].[$($ProcName)]
+	@computername nvarchar(100)
+	,@CanPing nvarchar(5)
+	,@CanPort135 nvarchar(5)
+	,@CanPort5985 nvarchar(5)
+	,@UTCMonitored datetime
+AS
+BEGIN
+	
+INSERT INTO [dbo].[$($TableName)]
+	(
+		[ComputerName]
+		,[CanPing]
+		,[CanPort135]
+		,[CanPort5985]
+		,[UTCMonitored]
+	)
+	VALUES
+	(
+		@ComputerName
+		,@CanPing
+		,@CanPort135
+		,@CanPort5985
+		,@UTCMonitored
+	)
+
+END'
+)
 END"
 
 	Write-Debug -Message "ConnectionString: $($cmd.Connection.ConnectionString)."
