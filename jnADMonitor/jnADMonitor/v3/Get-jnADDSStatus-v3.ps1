@@ -225,19 +225,19 @@ param (
         
     $cmd.CommandText = " `
 IF OBJECT_ID('[dbo].[$($TableName)]') IS NULL `
-CREATE TABLE [dbo].[$($TableName)](	`
-[LogName] [nvarchar](30) NOT NULL,`
-[TimeCreated] [datetime] NOT NULL,`
-[Id] [nvarchar](30) NOT NULL,`
-[ProviderName] [nvarchar](100) NOT NULL,`
-[LevelDisplayName] [nvarchar](30) NOT NULL,`
-[Message] [nvarchar](max) NOT NULL,`
-[ComputerName] [nvarchar](100) NOT NULL,`
-[UTCMonitored] [datetime] NOT NULL,`
-[ServiceFlag] [nvarchar](10) NOT NULL,`
-[ManageStatus] [nvarchar](2) NULL,`
-[Manager] [nvarchar](20) NULL,`
-[ManageScript] [nvarchar](max) NULL,`
+CREATE TABLE [dbo].[$($TableName)]( `
+[LogName] [nvarchar](30) NOT NULL, `
+[TimeCreated] [datetime] NOT NULL, `
+[Id] [nvarchar](30) NOT NULL, `
+[ProviderName] [nvarchar](100) NOT NULL, `
+[LevelDisplayName] [nvarchar](30) NOT NULL, `
+[Message] [nvarchar](max) NOT NULL, `
+[ComputerName] [nvarchar](100) NOT NULL, `
+[UTCMonitored] [datetime] NOT NULL, `
+[ServiceFlag] [nvarchar](10) NOT NULL, `
+[ManageStatus] [nvarchar](2) NULL, `
+[Manager] [nvarchar](20) NULL, `
+[ManageScript] [nvarchar](max) NULL, `
 [ManageDate] [datetime] NULL `
 ) `
 ELSE `

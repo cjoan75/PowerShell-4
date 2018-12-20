@@ -230,7 +230,7 @@ param(
         
 	$cmd.CommandText = " `
 IF OBJECT_ID('[dbo].[$($TableName)]') IS NULL `
-CREATE TABLE [dbo].[$($TableName)](	`
+CREATE TABLE [dbo].[$($TableName)]( `
 [ComputerName] [nvarchar](100) NOT NULL, `
 [CanPing] [nvarchar](5) NOT NULL, `
 [CanPort135] [nvarchar](5) NOT NULL, `
