@@ -81,16 +81,22 @@ Function Get-CRLFreshness
   # Configure the Commandlet
   [CmdletBinding()]
     Param (
-        [Parameter(Mandatory=$true,ValueFromPipeline=$True,ValueFromPipelineByPropertyName=$True,Position=0,ParameterSetName = "Single")][ValidateNotNullOrEmpty()][String]$CDP,
-        [Parameter(Mandatory=$False,ValueFromPipeline=$True,ValueFromPipelineByPropertyName=$True,Position=1,ParameterSetName = "Single")][ValidatePattern("\b(?:(?:25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)\.){3}(?:25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)\b")][string]$ServerIP = $Null,        
-        [parameter(Mandatory=$false,ValueFromPipeline=$True,ValueFromPipelineByPropertyName=$True,Position=2,ParameterSetName = "Single")][Int]$WarningHours = 0,
-        [parameter(Mandatory=$true,ParameterSetName = "Batch")][Switch]$Batch,
-        [parameter(Mandatory=$true,ParameterSetName = "Batch")][String]$InputFile,
-        [string]$Logfile = ".\CRLFreshCheck.Log",
-        [string]$TempFile = ".\TempCRL.crl",
-        [string]$MailFrom = "CRL Freshness Check Script <crlfreshcheck@yourdomain.com>",
-		[string]$MailTo = "Receiver Address <receipient@youromdain.com>",
-		[string]$MailServer = "your-smtp.server.com")
+        [Parameter(Mandatory=$true,ValueFromPipeline=$True,ValueFromPipelineByPropertyName=$True,Position=0,ParameterSetName = "Single")][ValidateNotNullOrEmpty()]
+		[String]$CDP
+        , [Parameter(Mandatory=$False,ValueFromPipeline=$True,ValueFromPipelineByPropertyName=$True,Position=1,ParameterSetName = "Single")][ValidatePattern("\b(?:(?:25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)\.){3}(?:25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)\b")]
+		[string]$ServerIP = $Null
+        , [parameter(Mandatory=$false,ValueFromPipeline=$True,ValueFromPipelineByPropertyName=$True,Position=2,ParameterSetName = "Single")]
+		[Int]$WarningHours = 0
+        , [parameter(Mandatory=$true,ParameterSetName = "Batch")]
+		[Switch]$Batch
+        , [parameter(Mandatory=$true,ParameterSetName = "Batch")]
+		[String]$InputFile
+        , [string]$Logfile = ".\CRLFreshCheck.Log"
+		, [string]$TempFile = ".\TempCRL.crl"
+		, [string]$MailFrom = "CRL Freshness Check Script <crlfreshcheck@yourdomain.com>"
+		, [string]$MailTo = "Receiver Address <receipient@youromdain.com>"
+		, [string]$MailServer = "your-smtp.server.com"
+	)
 
 # Begin the Commandlet
 Begin {
